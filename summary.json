@@ -1,0 +1,29 @@
+{
+  "n_samples": 1994,
+  "n_features": 18,
+  "feature_names": [
+    "population",
+    "householdsize",
+    "racepctblack",
+    "racePctWhite",
+    "agePct12t29",
+    "agePct65up",
+    "pctUrban",
+    "medIncome",
+    "PctPopUnderPov",
+    "PctNotHSGrad",
+    "PctBSorMore",
+    "PctUnemployed",
+    "MalePctDivorce",
+    "PctKids2Par",
+    "PctIlleg",
+    "NumImmig",
+    "PctHousOwnOcc",
+    "PctVacantBoarded"
+  ],
+  "class_counts": {
+    "Low": 679,
+    "Medium": 662,
+    "High": 653
+  }
+}

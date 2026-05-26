@@ -1,0 +1,214 @@
+{
+  "summary": {
+    "n_samples": 1994,
+    "n_features": 18,
+    "feature_names": [
+      "population",
+      "householdsize",
+      "racepctblack",
+      "racePctWhite",
+      "agePct12t29",
+      "agePct65up",
+      "pctUrban",
+      "medIncome",
+      "PctPopUnderPov",
+      "PctNotHSGrad",
+      "PctBSorMore",
+      "PctUnemployed",
+      "MalePctDivorce",
+      "PctKids2Par",
+      "PctIlleg",
+      "NumImmig",
+      "PctHousOwnOcc",
+      "PctVacantBoarded"
+    ],
+    "class_counts": {
+      "Low": 679,
+      "Medium": 662,
+      "High": 653
+    }
+  },
+  "outlier_removed": 100,
+  "class_counts_clean": {
+    "Low": 670,
+    "Medium": 647,
+    "High": 577
+  },
+  "fisher_features": {
+    "PctKids2Par": 0.9062392343104128,
+    "PctIlleg": 0.7220025490530323,
+    "racePctWhite": 0.6105692026533516,
+    "MalePctDivorce": 0.4508309775967968,
+    "racepctblack": 0.3791533398778203,
+    "PctPopUnderPov": 0.3729799117826982,
+    "PctUnemployed": 0.2939365234585808,
+    "PctNotHSGrad": 0.2902877401873783,
+    "PctHousOwnOcc": 0.2843138543077596,
+    "medIncome": 0.24880885202811512,
+    "PctVacantBoarded": 0.16888026799393155,
+    "PctBSorMore": 0.13798455344424385,
+    "population": 0.10031383296985247,
+    "NumImmig": 0.07071069693023592,
+    "agePct12t29": 0.0303128623026942,
+    "householdsize": 0.017165200763257366,
+    "agePct65up": 0.008511703104333872,
+    "pctUrban": 0.0004289683896319555
+  },
+  "fisher_pcs": {
+    "PC1": {
+      "eigenvalue": 7.065975734405287,
+      "explained_var_ratio": 0.39234694547780163,
+      "fisher": 0.8637954667564488
+    },
+    "PC2": {
+      "eigenvalue": 2.5729799653650987,
+      "explained_var_ratio": 0.1428678597452814,
+      "fisher": 0.038721856468554076
+    },
+    "PC3": {
+      "eigenvalue": 1.8927730719978786,
+      "explained_var_ratio": 0.10509853998861861,
+      "fisher": 0.021846487837483945
+    },
+    "PC4": {
+      "eigenvalue": 1.4111445598839099,
+      "explained_var_ratio": 0.07835552774434595,
+      "fisher": 0.03036933502893036
+    },
+    "PC5": {
+      "eigenvalue": 1.2642498764099006,
+      "explained_var_ratio": 0.07019902076862439,
+      "fisher": 0.00025639587537538923
+    },
+    "PC6": {
+      "eigenvalue": 0.7821905211152534,
+      "explained_var_ratio": 0.04343208542975406,
+      "fisher": 0.001514344756930649
+    },
+    "PC7": {
+      "eigenvalue": 0.737814993671565,
+      "explained_var_ratio": 0.040968079990034996,
+      "fisher": 0.020650583668615677
+    },
+    "PC8": {
+      "eigenvalue": 0.6138582681094864,
+      "explained_var_ratio": 0.03408523118418568,
+      "fisher": 0.004858589356703554
+    },
+    "PC9": {
+      "eigenvalue": 0.41244008825239475,
+      "explained_var_ratio": 0.0229012403807868,
+      "fisher": 0.008764589074010098
+    },
+    "PC10": {
+      "eigenvalue": 0.3244821868084586,
+      "explained_var_ratio": 0.01801727031644997,
+      "fisher": 0.0023108977526219484
+    },
+    "PC11": {
+      "eigenvalue": 0.21434350335210092,
+      "explained_var_ratio": 0.011901685200209058,
+      "fisher": 0.012720006343531957
+    },
+    "PC12": {
+      "eigenvalue": 0.1802612588061163,
+      "explained_var_ratio": 0.01000922688372575,
+      "fisher": 0.007314314667347486
+    },
+    "PC13": {
+      "eigenvalue": 0.15011696443344877,
+      "explained_var_ratio": 0.00833542806736239,
+      "fisher": 0.003510500406661812
+    },
+    "PC14": {
+      "eigenvalue": 0.12714020464736112,
+      "explained_var_ratio": 0.00705961537596664,
+      "fisher": 0.00979600997678835
+    },
+    "PC15": {
+      "eigenvalue": 0.10765911000001985,
+      "explained_var_ratio": 0.005977903767160555,
+      "fisher": 0.009252161363835837
+    },
+    "PC16": {
+      "eigenvalue": 0.06794234291047148,
+      "explained_var_ratio": 0.0037725816945184372,
+      "fisher": 0.005607276585861331
+    },
+    "PC17": {
+      "eigenvalue": 0.04578845262476764,
+      "explained_var_ratio": 0.002542459838633262,
+      "fisher": 0.0014336153138250212
+    },
+    "PC18": {
+      "eigenvalue": 0.038347613529770085,
+      "explained_var_ratio": 0.002129298146540385,
+      "fisher": 0.002748812486260189
+    }
+  },
+  "eigval_fisher_pearson": 0.920071500077128,
+  "eigval_fisher_spearman": 0.500515995872033,
+  "separability": {
+    "PCA-2D silhouette": 0.06960527264308765,
+    "LDA-2D silhouette": 0.11169133593783787,
+    "PCA-2D 5NN accuracy (5-fold)": 0.5834303583643953,
+    "LDA-2D 5NN accuracy (5-fold)": 0.6383241892476721
+  },
+  "clustering": {
+    "KMeans ARI": 0.20155698637423158,
+    "KMeans NMI": 0.21531169189641938,
+    "DBSCAN ARI": 0.01889088297068263,
+    "DBSCAN NMI": 0.05039803307591221
+  },
+  "dbscan_clusters": 1,
+  "dbscan_noise": 150,
+  "ttest": {
+    "36": {
+      "t": 9.647369112856094,
+      "p": 1.9188344942992367e-14,
+      "mean_low": 0.7863888888888889,
+      "mean_high": 0.4705555555555556,
+      "std_low": 0.1317823482170025,
+      "std_high": 0.14565996497605443
+    },
+    "64": {
+      "t": 12.990573229106579,
+      "p": 1.9410308404757987e-23,
+      "mean_low": 0.8106249999999999,
+      "mean_high": 0.475625,
+      "std_low": 0.1060828517177561,
+      "std_high": 0.17693936724917855
+    }
+  },
+  "ttest_population": {
+    "t": 39.88978521301888,
+    "p": 3.0793928518852752e-214
+  },
+  "feature_for_test": "PctKids2Par",
+  "class_corr_top_pearson": {
+    "PctKids2Par": -0.6882912617149268,
+    "PctIlleg": 0.6302237725925549,
+    "racePctWhite": -0.6084909337379132,
+    "MalePctDivorce": 0.5525533336159411,
+    "PctPopUnderPov": 0.5164206689365174,
+    "racepctblack": 0.5092841007383297,
+    "PctUnemployed": 0.473937896484303,
+    "PctNotHSGrad": 0.4706880153141446,
+    "PctHousOwnOcc": -0.46946869090747084,
+    "medIncome": -0.4460375102728979
+  },
+  "class_corr_top_spearman": {
+    "PctKids2Par": -0.6994551581449291,
+    "PctIlleg": 0.6836604607319742,
+    "racePctWhite": -0.644319895622243,
+    "PctPopUnderPov": 0.5706209664764499,
+    "racepctblack": 0.5644257897982213,
+    "MalePctDivorce": 0.5580741482112923,
+    "PctUnemployed": 0.4974269009350966,
+    "PctHousOwnOcc": -0.4751580481210743,
+    "PctNotHSGrad": 0.47342006650672797,
+    "medIncome": -0.4373206054687362
+  },
+  "pearson_spearman_rank_agreement": 0.9876160990712075,
+  "som_mean_cell_purity": 0.6896511274214246
+}
