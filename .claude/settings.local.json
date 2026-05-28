@@ -3,7 +3,14 @@
     "allow": [
       "Bash(python3 notebook/analysis.py)",
       "Bash(python3 notebook/make_notebook.py)",
-      "Bash(jupyter nbconvert *)"
+      "Bash(jupyter nbconvert *)",
+      "Bash(pdflatex -interaction=nonstopmode crime.tex)",
+      "Bash(pdflatex -interaction=nonstopmode crime_tr.tex)",
+      "Bash(python3 -c ' *)",
+      "Bash(rm -f crime_tr.aux crime_tr.out && pdflatex -interaction=nonstopmode crime_tr.tex 2>&1 | grep -cE \"Invalid UTF-8\"; echo \"---\"; pdflatex -interaction=nonstopmode crime_tr.tex 2>&1 | grep -E \"Output written\")"
+    ],
+    "additionalDirectories": [
+      "/home/se/Desktop/Crime/ACCESS_latex_template_20240429"
     ]
   }
 }

@@ -26,9 +26,12 @@ nb = nbf.v4.new_notebook()
 nb.cells = []
 
 nb.cells.append(nbf.v4.new_markdown_cell(
-    "# CSE 555 Final Project — Communities and Crime Analysis\n\n"
+    "# CSE 555: Statistical Data Analysis — Final Project\n\n"
+    "## Communities and Crime Analysis\n\n"
     "**Author:** Serkan Eren  \n"
     "**Dataset:** UCI Communities and Crime  \n"
+    "**Working set:** 43 features selected by label-blind hierarchical clustering "
+    "on the absolute Pearson correlation distance (see `feature_selection.py`).  \n"
     "**Target:** `ViolentCrimesPerPop` discretised into 3 classes (Low / Medium / High) by tertiles.\n\n"
     "All figures are written to `../figures/`."
 ))

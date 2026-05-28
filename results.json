@@ -1,26 +1,51 @@
 {
   "summary": {
     "n_samples": 1994,
-    "n_features": 18,
+    "n_features": 43,
     "feature_names": [
       "population",
       "householdsize",
-      "racepctblack",
-      "racePctWhite",
       "agePct12t29",
       "agePct65up",
+      "racePctAsian",
+      "racePctHisp",
       "pctUrban",
+      "PopDens",
+      "PctUsePubTrans",
+      "LandArea",
       "medIncome",
-      "PctPopUnderPov",
-      "PctNotHSGrad",
+      "blackPerCap",
+      "HispPerCap",
+      "AsianPerCap",
+      "indianPerCap",
+      "OtherPerCap",
+      "MedOwnCostPctInc",
+      "MedOwnCostPctIncNoMtg",
+      "MedRentPctHousInc",
       "PctBSorMore",
-      "PctUnemployed",
-      "MalePctDivorce",
+      "PctEmploy",
+      "PctEmplProfServ",
+      "PctEmplManu",
+      "pctWFarmSelf",
+      "PctPopUnderPov",
       "PctKids2Par",
       "PctIlleg",
+      "MalePctNevMarr",
+      "PctWorkMom",
       "NumImmig",
+      "PctForeignBorn",
+      "PctImmigRec8",
       "PctHousOwnOcc",
-      "PctVacantBoarded"
+      "MedNumBR",
+      "PctVacantBoarded",
+      "PctHousOccup",
+      "PctVacMore6Mos",
+      "MedYrHousBuilt",
+      "PctWOFullPlumb",
+      "PctPersDenseHous",
+      "PctBornSameState",
+      "PctSameHouse85",
+      "LemasPctOfficDrugUn"
     ],
     "class_counts": {
       "Low": 679,
@@ -30,185 +55,335 @@
   },
   "outlier_removed": 100,
   "class_counts_clean": {
-    "Low": 670,
-    "Medium": 647,
-    "High": 577
+    "Low": 660,
+    "Medium": 649,
+    "High": 585
   },
   "fisher_features": {
-    "PctKids2Par": 0.9062392343104128,
-    "PctIlleg": 0.7220025490530323,
-    "racePctWhite": 0.6105692026533516,
-    "MalePctDivorce": 0.4508309775967968,
-    "racepctblack": 0.3791533398778203,
-    "PctPopUnderPov": 0.3729799117826982,
-    "PctUnemployed": 0.2939365234585808,
-    "PctNotHSGrad": 0.2902877401873783,
-    "PctHousOwnOcc": 0.2843138543077596,
-    "medIncome": 0.24880885202811512,
-    "PctVacantBoarded": 0.16888026799393155,
-    "PctBSorMore": 0.13798455344424385,
-    "population": 0.10031383296985247,
-    "NumImmig": 0.07071069693023592,
-    "agePct12t29": 0.0303128623026942,
-    "householdsize": 0.017165200763257366,
-    "agePct65up": 0.008511703104333872,
-    "pctUrban": 0.0004289683896319555
+    "PctKids2Par": 0.8968228618282589,
+    "PctIlleg": 0.6946082810459037,
+    "PctPopUnderPov": 0.37376450167488323,
+    "PctPersDenseHous": 0.2793160641774739,
+    "PctHousOwnOcc": 0.2678337036303603,
+    "medIncome": 0.25528874965935416,
+    "PctVacantBoarded": 0.18275997731569205,
+    "PctHousOccup": 0.1443584812865494,
+    "MedNumBR": 0.1412771892274554,
+    "PctBSorMore": 0.1393208105824613,
+    "PctEmploy": 0.1276601252050862,
+    "racePctHisp": 0.12206236223120431,
+    "MedRentPctHousInc": 0.10987523553392882,
+    "PctWOFullPlumb": 0.09738275094443151,
+    "blackPerCap": 0.09350408713971863,
+    "population": 0.09237134066443554,
+    "HispPerCap": 0.08929999133119464,
+    "LemasPctOfficDrugUn": 0.08811568478019659,
+    "PctSameHouse85": 0.07010653370562553,
+    "PctImmigRec8": 0.06863128834130183,
+    "NumImmig": 0.060649637071399344,
+    "MalePctNevMarr": 0.044442420617500776,
+    "AsianPerCap": 0.03657143576336588,
+    "PopDens": 0.03306550641623657,
+    "LandArea": 0.028139493570831044,
+    "agePct12t29": 0.025554628374057402,
+    "PctForeignBorn": 0.024771948970123983,
+    "PctWorkMom": 0.017483574882745694,
+    "OtherPerCap": 0.01745486902723337,
+    "householdsize": 0.017021720575915302,
+    "PctBornSameState": 0.0160172652326678,
+    "PctEmplProfServ": 0.015055057504727003,
+    "indianPerCap": 0.011096658329506206,
+    "agePct65up": 0.010298843007308083,
+    "racePctAsian": 0.008732029070074941,
+    "pctWFarmSelf": 0.007819755847114064,
+    "PctEmplManu": 0.006323952455055412,
+    "PctVacMore6Mos": 0.006298765361794384,
+    "MedYrHousBuilt": 0.0026297212733789755,
+    "MedOwnCostPctIncNoMtg": 0.0022710790055094497,
+    "MedOwnCostPctInc": 0.0022630948869047573,
+    "pctUrban": 0.0002133207699205606,
+    "PctUsePubTrans": 0.0001724981106496145
   },
   "fisher_pcs": {
     "PC1": {
-      "eigenvalue": 7.065975734405287,
-      "explained_var_ratio": 0.39234694547780163,
-      "fisher": 0.8637954667564488
+      "eigenvalue": 8.00965920886856,
+      "explained_var_ratio": 0.1861727963751895,
+      "fisher": 0.560667232698521
     },
     "PC2": {
-      "eigenvalue": 2.5729799653650987,
-      "explained_var_ratio": 0.1428678597452814,
-      "fisher": 0.038721856468554076
+      "eigenvalue": 6.147309395120056,
+      "explained_var_ratio": 0.1428852027818848,
+      "fisher": 0.06122254691315329
     },
     "PC3": {
-      "eigenvalue": 1.8927730719978786,
-      "explained_var_ratio": 0.10509853998861861,
-      "fisher": 0.021846487837483945
+      "eigenvalue": 3.6837490217593736,
+      "explained_var_ratio": 0.08562335033754687,
+      "fisher": 0.009583349668343918
     },
     "PC4": {
-      "eigenvalue": 1.4111445598839099,
-      "explained_var_ratio": 0.07835552774434595,
-      "fisher": 0.03036933502893036
+      "eigenvalue": 2.7533352461535134,
+      "explained_var_ratio": 0.06399724492238157,
+      "fisher": 0.01634097520259422
     },
     "PC5": {
-      "eigenvalue": 1.2642498764099006,
-      "explained_var_ratio": 0.07019902076862439,
-      "fisher": 0.00025639587537538923
+      "eigenvalue": 2.3814482054041446,
+      "explained_var_ratio": 0.055353275371798884,
+      "fisher": 0.03474927668774849
     },
     "PC6": {
-      "eigenvalue": 0.7821905211152534,
-      "explained_var_ratio": 0.04343208542975406,
-      "fisher": 0.001514344756930649
+      "eigenvalue": 2.170963729577439,
+      "explained_var_ratio": 0.05046087203273607,
+      "fisher": 0.002918093493560366
     },
     "PC7": {
-      "eigenvalue": 0.737814993671565,
-      "explained_var_ratio": 0.040968079990034996,
-      "fisher": 0.020650583668615677
+      "eigenvalue": 2.0833533399987543,
+      "explained_var_ratio": 0.048424496851963865,
+      "fisher": 0.03651308817905476
     },
     "PC8": {
-      "eigenvalue": 0.6138582681094864,
-      "explained_var_ratio": 0.03408523118418568,
-      "fisher": 0.004858589356703554
+      "eigenvalue": 1.4811493458167955,
+      "explained_var_ratio": 0.03442714706946284,
+      "fisher": 0.007704727132528737
     },
     "PC9": {
-      "eigenvalue": 0.41244008825239475,
-      "explained_var_ratio": 0.0229012403807868,
-      "fisher": 0.008764589074010098
+      "eigenvalue": 1.098699702503985,
+      "explained_var_ratio": 0.025537665293583693,
+      "fisher": 0.03720611346885217
     },
     "PC10": {
-      "eigenvalue": 0.3244821868084586,
-      "explained_var_ratio": 0.01801727031644997,
-      "fisher": 0.0023108977526219484
+      "eigenvalue": 1.0834057686254912,
+      "explained_var_ratio": 0.025182180201960343,
+      "fisher": 0.0021969339759670063
     },
     "PC11": {
-      "eigenvalue": 0.21434350335210092,
-      "explained_var_ratio": 0.011901685200209058,
-      "fisher": 0.012720006343531957
+      "eigenvalue": 0.9383348756210022,
+      "explained_var_ratio": 0.02181021978279704,
+      "fisher": 0.002731875136406627
     },
     "PC12": {
-      "eigenvalue": 0.1802612588061163,
-      "explained_var_ratio": 0.01000922688372575,
-      "fisher": 0.007314314667347486
+      "eigenvalue": 0.8948263846277233,
+      "explained_var_ratio": 0.020798928637561453,
+      "fisher": 0.0018557788765382645
     },
     "PC13": {
-      "eigenvalue": 0.15011696443344877,
-      "explained_var_ratio": 0.00833542806736239,
-      "fisher": 0.003510500406661812
+      "eigenvalue": 0.8262121686105576,
+      "explained_var_ratio": 0.01920409168708756,
+      "fisher": 0.0023740675711553167
     },
     "PC14": {
-      "eigenvalue": 0.12714020464736112,
-      "explained_var_ratio": 0.00705961537596664,
-      "fisher": 0.00979600997678835
+      "eigenvalue": 0.7646116417427339,
+      "explained_var_ratio": 0.01777227766777578,
+      "fisher": 0.023410972658697064
     },
     "PC15": {
-      "eigenvalue": 0.10765911000001985,
-      "explained_var_ratio": 0.005977903767160555,
-      "fisher": 0.009252161363835837
+      "eigenvalue": 0.7004920995624306,
+      "explained_var_ratio": 0.016281912827185982,
+      "fisher": 0.0008648049132605227
     },
     "PC16": {
-      "eigenvalue": 0.06794234291047148,
-      "explained_var_ratio": 0.0037725816945184372,
-      "fisher": 0.005607276585861331
+      "eigenvalue": 0.667908029948267,
+      "explained_var_ratio": 0.015524543855652724,
+      "fisher": 0.0017606720019965444
     },
     "PC17": {
-      "eigenvalue": 0.04578845262476764,
-      "explained_var_ratio": 0.002542459838633262,
-      "fisher": 0.0014336153138250212
+      "eigenvalue": 0.6038241696364536,
+      "explained_var_ratio": 0.014035008387831909,
+      "fisher": 0.0036077300525599524
     },
     "PC18": {
-      "eigenvalue": 0.038347613529770085,
-      "explained_var_ratio": 0.002129298146540385,
-      "fisher": 0.002748812486260189
+      "eigenvalue": 0.5885753451680489,
+      "explained_var_ratio": 0.013680571798373274,
+      "fisher": 0.0028199027799963995
+    },
+    "PC19": {
+      "eigenvalue": 0.5634874996939322,
+      "explained_var_ratio": 0.013097441577080786,
+      "fisher": 0.0025979842253910884
+    },
+    "PC20": {
+      "eigenvalue": 0.5247179188555611,
+      "explained_var_ratio": 0.012196299457203616,
+      "fisher": 2.77180708660483e-05
+    },
+    "PC21": {
+      "eigenvalue": 0.46712867595871427,
+      "explained_var_ratio": 0.010857721858375849,
+      "fisher": 0.0048251669547259715
+    },
+    "PC22": {
+      "eigenvalue": 0.4433182305025385,
+      "explained_var_ratio": 0.010304282929462748,
+      "fisher": 0.007589950541624924
+    },
+    "PC23": {
+      "eigenvalue": 0.41787546533832054,
+      "explained_var_ratio": 0.009712903119833017,
+      "fisher": 0.002501657748768048
+    },
+    "PC24": {
+      "eigenvalue": 0.37926826547604936,
+      "explained_var_ratio": 0.00881553530790208,
+      "fisher": 0.0009107071425679651
+    },
+    "PC25": {
+      "eigenvalue": 0.37026197338400246,
+      "explained_var_ratio": 0.008606197239948878,
+      "fisher": 1.3520779913277223e-05
+    },
+    "PC26": {
+      "eigenvalue": 0.35692676973952575,
+      "explained_var_ratio": 0.008296239963617323,
+      "fisher": 0.0020441985504842147
+    },
+    "PC27": {
+      "eigenvalue": 0.3277080188380184,
+      "explained_var_ratio": 0.007617092896298822,
+      "fisher": 0.006776360686497127
+    },
+    "PC28": {
+      "eigenvalue": 0.31055554531692936,
+      "explained_var_ratio": 0.00721840877292978,
+      "fisher": 0.004498923404406136
+    },
+    "PC29": {
+      "eigenvalue": 0.2843770998728819,
+      "explained_var_ratio": 0.006609929152763504,
+      "fisher": 0.0013559592177477696
+    },
+    "PC30": {
+      "eigenvalue": 0.2656281515519773,
+      "explained_var_ratio": 0.006174137311066683,
+      "fisher": 0.0015479201304096578
+    },
+    "PC31": {
+      "eigenvalue": 0.24246396915907978,
+      "explained_var_ratio": 0.005635719820462881,
+      "fisher": 0.0012541484982472179
+    },
+    "PC32": {
+      "eigenvalue": 0.2188394594764963,
+      "explained_var_ratio": 0.005086602696262462,
+      "fisher": 0.004668522323378576
+    },
+    "PC33": {
+      "eigenvalue": 0.19431515917894232,
+      "explained_var_ratio": 0.004516571257161387,
+      "fisher": 0.004241768479262458
+    },
+    "PC34": {
+      "eigenvalue": 0.1402706264645732,
+      "explained_var_ratio": 0.0032603852545055006,
+      "fisher": 0.005836465972921425
+    },
+    "PC35": {
+      "eigenvalue": 0.12155086808378528,
+      "explained_var_ratio": 0.002825271890211506,
+      "fisher": 0.0008353469757208176
+    },
+    "PC36": {
+      "eigenvalue": 0.10248808375305317,
+      "explained_var_ratio": 0.002382185390149181,
+      "fisher": 0.003214317925897657
+    },
+    "PC37": {
+      "eigenvalue": 0.09119777536761944,
+      "explained_var_ratio": 0.0021197587089082236,
+      "fisher": 0.005584724177908877
+    },
+    "PC38": {
+      "eigenvalue": 0.08183826824561029,
+      "explained_var_ratio": 0.0019022106749458539,
+      "fisher": 2.3502674202107333e-05
+    },
+    "PC39": {
+      "eigenvalue": 0.06679476455949393,
+      "explained_var_ratio": 0.0015525464663333657,
+      "fisher": 0.0009034516703959328
+    },
+    "PC40": {
+      "eigenvalue": 0.05623463923147881,
+      "explained_var_ratio": 0.0013070918207459218,
+      "fisher": 0.0015008281349398079
+    },
+    "PC41": {
+      "eigenvalue": 0.04673069379655237,
+      "explained_var_ratio": 0.001086186529761961,
+      "fisher": 0.011891007449716537
+    },
+    "PC42": {
+      "eigenvalue": 0.0421499291920561,
+      "explained_var_ratio": 0.0009797133660833744,
+      "fisher": 0.0019485970261476453
+    },
+    "PC43": {
+      "eigenvalue": 0.028729736989800792,
+      "explained_var_ratio": 0.0006677806552109831,
+      "fisher": 0.0009343448311670839
     }
   },
-  "eigval_fisher_pearson": 0.920071500077128,
-  "eigval_fisher_spearman": 0.500515995872033,
+  "eigval_fisher_pearson": 0.7606491739838734,
+  "eigval_fisher_spearman": 0.49033524614919966,
   "separability": {
-    "PCA-2D silhouette": 0.06960527264308765,
-    "LDA-2D silhouette": 0.11169133593783787,
-    "PCA-2D 5NN accuracy (5-fold)": 0.5834303583643953,
-    "LDA-2D 5NN accuracy (5-fold)": 0.6383241892476721
+    "PCA-2D silhouette": 0.04858623636906278,
+    "LDA-2D silhouette": 0.12693647105355138,
+    "PCA-2D 5NN accuracy (5-fold)": 0.5691544163839678,
+    "LDA-2D 5NN accuracy (5-fold)": 0.659449121190546
   },
   "clustering": {
-    "KMeans ARI": 0.20155698637423158,
-    "KMeans NMI": 0.21531169189641938,
-    "DBSCAN ARI": 0.01889088297068263,
-    "DBSCAN NMI": 0.05039803307591221
+    "KMeans ARI": 0.14185166655190357,
+    "KMeans NMI": 0.14707608861425733,
+    "DBSCAN ARI": 0.017959865506006346,
+    "DBSCAN NMI": 0.03890484388628666
   },
-  "dbscan_clusters": 1,
-  "dbscan_noise": 150,
+  "dbscan_clusters": 6,
+  "dbscan_noise": 233,
   "ttest": {
     "36": {
-      "t": 9.647369112856094,
-      "p": 1.9188344942992367e-14,
-      "mean_low": 0.7863888888888889,
-      "mean_high": 0.4705555555555556,
-      "std_low": 0.1317823482170025,
-      "std_high": 0.14565996497605443
+      "t": 9.011385090943604,
+      "p": 2.8492779833652507e-13,
+      "mean_low": 0.7586111111111111,
+      "mean_high": 0.4630555555555555,
+      "std_low": 0.13045311752892635,
+      "std_high": 0.14733478775407957
     },
     "64": {
-      "t": 12.990573229106579,
-      "p": 1.9410308404757987e-23,
-      "mean_low": 0.8106249999999999,
-      "mean_high": 0.475625,
-      "std_low": 0.1060828517177561,
-      "std_high": 0.17693936724917855
+      "t": 12.730994533215325,
+      "p": 7.348935254331148e-23,
+      "mean_low": 0.7925,
+      "mean_high": 0.44421875,
+      "std_low": 0.11220729116450584,
+      "std_high": 0.18790241208737574
     }
   },
   "ttest_population": {
-    "t": 39.88978521301888,
-    "p": 3.0793928518852752e-214
+    "t": 39.28346973432519,
+    "p": 2.626902312067897e-207
   },
   "feature_for_test": "PctKids2Par",
   "class_corr_top_pearson": {
-    "PctKids2Par": -0.6882912617149268,
-    "PctIlleg": 0.6302237725925549,
-    "racePctWhite": -0.6084909337379132,
-    "MalePctDivorce": 0.5525533336159411,
-    "PctPopUnderPov": 0.5164206689365174,
-    "racepctblack": 0.5092841007383297,
-    "PctUnemployed": 0.473937896484303,
-    "PctNotHSGrad": 0.4706880153141446,
-    "PctHousOwnOcc": -0.46946869090747084,
-    "medIncome": -0.4460375102728979
+    "PctKids2Par": -0.6854715910001222,
+    "PctIlleg": 0.6222149132131259,
+    "PctPopUnderPov": 0.5166843330919415,
+    "PctPersDenseHous": 0.46681169670811895,
+    "PctHousOwnOcc": -0.4587324666341153,
+    "medIncome": -0.45088418067258884,
+    "PctVacantBoarded": 0.37561219820376074,
+    "PctHousOccup": -0.35482742017983465,
+    "MedNumBR": -0.3505893242069469,
+    "PctBSorMore": -0.348322092977128
   },
   "class_corr_top_spearman": {
-    "PctKids2Par": -0.6994551581449291,
-    "PctIlleg": 0.6836604607319742,
-    "racePctWhite": -0.644319895622243,
-    "PctPopUnderPov": 0.5706209664764499,
-    "racepctblack": 0.5644257897982213,
-    "MalePctDivorce": 0.5580741482112923,
-    "PctUnemployed": 0.4974269009350966,
-    "PctHousOwnOcc": -0.4751580481210743,
-    "PctNotHSGrad": 0.47342006650672797,
-    "medIncome": -0.4373206054687362
+    "PctKids2Par": -0.7009202410158644,
+    "PctIlleg": 0.6847290574994337,
+    "PctPersDenseHous": 0.6069598411715442,
+    "PctPopUnderPov": 0.5724381520696847,
+    "PctHousOwnOcc": -0.4655763251384084,
+    "medIncome": -0.4460404356705988,
+    "PctHousOccup": -0.41446062007338563,
+    "PctVacantBoarded": 0.384345595038204,
+    "MedNumBR": -0.34904053533932994,
+    "PctEmploy": -0.3438737016549017
   },
-  "pearson_spearman_rank_agreement": 0.9876160990712075,
-  "som_mean_cell_purity": 0.6896511274214246
+  "pearson_spearman_rank_agreement": 0.9685895499848988,
+  "som_mean_cell_purity": 0.6747061474693591
 }

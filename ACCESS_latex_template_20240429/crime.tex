@@ -30,7 +30,7 @@
 
 \address[1]{Artificial Intelligence Graduate Program, Department of Computer Engineering, Faculty of Engineering, Gebze Technical University, Kocaeli, T\"urkiye}
 
-\tfootnote{This work was conducted as the final project of the CSE 555: Statistical Pattern Recognition course in the Master's Degree Program at Gebze Technical University.}
+\tfootnote{This work was conducted as the final project of the CSE 555: Statistical Data Analysis course in the Master's Degree Program at Gebze Technical University.}
 
 \markboth
 {S.~Eren: Statistical and Dimensionality-Reduction Analysis of the Communities and Crime Dataset}
@@ -39,11 +39,11 @@
 \corresp{s.eren2018@gtu.edu.tr}
 
 \begin{abstract}
-This work investigates the structure of the UCI \emph{Communities and Crime} dataset through a sequence of exploratory, statistical, and dimensionality-reduction analyses. A curated subset of eighteen normalized sociodemographic variables is studied together with a three-level discretization of the continuous target \texttt{ViolentCrimesPerPop} into Low, Medium, and High crime classes by tertiles. The pipeline includes per-feature box-plot inspection and Isolation-Forest-based multivariate outlier cleaning, Pearson and Spearman correlation analysis, z-score normalization with per-feature Fisher Distance, principal component analysis (PCA) with Fisher Distance per principal component, linear discriminant analysis (LDA), and a comparison of K-Means, DBSCAN, t-SNE, and Self-Organizing Map projections. Quantitative separability is reported through silhouette and 5-NN cross-validation accuracy on the 2-D embeddings, and the SOM organisation is summarised by a per-neuron class-purity hit-map. The analysis confirms that family-structure and socioeconomic variables (e.g., \texttt{PctKids2Par}, \texttt{PctIlleg}, \texttt{PctPopUnderPov}) carry the strongest individual class signal, that the leading PCA component inherits most of this discriminative content, and that LDA produces a tighter class-separable 2-D embedding than PCA. A Welch's t-test on \texttt{PctKids2Par} between Low and High classes confirms a highly significant mean difference at both $n=36$ and $n=64$.
+This work investigates the structure of the UCI \emph{Communities and Crime} dataset through a sequence of exploratory, statistical, and dimensionality-reduction analyses. The 122 predictive attributes of the dataset are first reduced to a working set of forty-three normalized sociodemographic variables through a label-blind, data-driven feature selection pipeline: low-coverage LEMAS attributes are dropped, and the remaining predictors are grouped by agglomerative hierarchical clustering on absolute Pearson correlation distance ($d = 1 - |r|$, complete linkage), from each cluster one representative being retained. The continuous target \texttt{ViolentCrimesPerPop} is discretized into Low, Medium, and High crime classes by tertiles. The pipeline includes per-feature box-plot inspection and Isolation-Forest-based multivariate outlier cleaning, Pearson and Spearman correlation analysis, z-score normalization with per-feature Fisher Distance, principal component analysis (PCA) with Fisher Distance per principal component, linear discriminant analysis (LDA), and a comparison of K-Means, DBSCAN, t-SNE, and Self-Organizing Map projections. Quantitative separability is reported through silhouette and 5-NN cross-validation accuracy on the 2-D embeddings, and the SOM organisation is summarised by a per-neuron class-purity hit-map. The analysis shows that family-structure and socioeconomic representatives (e.g., \texttt{PctKids2Par}, \texttt{PctIlleg}, \texttt{PctPopUnderPov}) carry the strongest individual class signal, that the leading PCA component inherits most of this discriminative content, and that LDA produces a tighter class-separable 2-D embedding than PCA. A Welch's t-test on \texttt{PctKids2Par} between Low and High classes establishes a highly significant mean difference at both $n=36$ and $n=64$.
 \end{abstract}
 
 \begin{keywords}
-Communities and Crime, exploratory data analysis, Fisher Distance, PCA, LDA, K-Means, DBSCAN, t-SNE, Self-Organizing Map, hypothesis testing.
+Communities and Crime, exploratory data analysis, hierarchical clustering, feature selection, Fisher Distance, PCA, LDA, K-Means, DBSCAN, t-SNE, Self-Organizing Map, hypothesis testing.
 \end{keywords}
 
 \titlepgskip=-21pt
@@ -54,95 +54,170 @@ Communities and Crime, exploratory data analysis, Fisher Distance, PCA, LDA, K-M
 \label{sec:introduction}
 \PARstart{T}{he} \emph{Communities and Crime} dataset from the UCI Machine Learning Repository \cite{uciccrime} is a widely used benchmark for sociodemographic modelling of community-level violent crime in the United States. It aggregates information from the 1990 U.S.~Census, the 1990 U.S.~Law Enforcement Management and Administrative Statistics (LEMAS) survey, and the 1995 FBI Uniform Crime Reports (UCR), and contains $1\,994$ communities described by $128$ attributes. Each predictive attribute is already normalized to the $[0,1]$ interval by the dataset authors so that comparisons across communities of different population are meaningful.
 
-The aim of this study is not to build a competitive predictive model, but to apply the statistical and pattern-recognition tools taught in CSE 555 to a real, mixed-quality dataset, and to interpret what each tool exposes about the data. To reduce dimensionality to a tractable yet representative working set, eighteen sociodemographic variables covering age structure, ethnic composition, education, employment, family stability, housing, and immigration are selected (Table~\ref{tab:features}). To obtain a multi-class problem as required by the assignment, the continuous response \texttt{ViolentCrimesPerPop} is discretized into three equal-frequency classes \emph{Low}, \emph{Medium}, and \emph{High} by its tertiles.
+The aim of this study is not to build a competitive predictive model, but to apply the statistical data-analysis tools taught in CSE 555 to a real, mixed-quality dataset, and to interpret what each tool exposes about the data. A central design choice of the project is to replace subjective hand-curation of the working feature set with a fully data-driven, label-blind dimensionality reduction. Concretely, low-coverage attributes are first dropped, then the remaining predictors are grouped by agglomerative hierarchical clustering on the absolute Pearson correlation distance, and one representative per cluster is retained. This procedure produces a working set of 43 sociodemographic features that spans every conceptual block of the original dataset --- demographics, ethnic composition, urbanization, income and housing cost, education, employment, poverty, family structure, immigration, housing quality, and residential mobility --- while bounding the within-cluster pairwise correlation. The selection mechanism is described in Section~\ref{sec:dataset}. To obtain a multi-class problem as required by the assignment, the continuous response \texttt{ViolentCrimesPerPop} is discretized into three equal-frequency classes \emph{Low}, \emph{Medium}, and \emph{High} by its tertiles.
 
-The remainder of the paper is organized as follows. Section~\ref{sec:dataset} describes the dataset and the preprocessing pipeline. Sections~\ref{sec:boxplot}--\ref{sec:hypothesis} address the eight analytical tasks of the project in order: distributions and outliers (Section~\ref{sec:boxplot}), correlation analysis (Section~\ref{sec:corr}), per-feature Fisher Distance after z-scoring (Section~\ref{sec:fisher}), PCA-based Fisher analysis (Section~\ref{sec:pca}), top/bottom PC scatter plots (Section~\ref{sec:pcscatter}), LDA (Section~\ref{sec:lda}), clustering with K-Means, DBSCAN, t-SNE, and SOM (Section~\ref{sec:cluster}), and a Welch t-test (Section~\ref{sec:hypothesis}). Section~\ref{sec:conclusion} summarizes the main findings.
+The remainder of the paper is organized as follows. Section~\ref{sec:dataset} describes the dataset, the missingness filter, and the dendrogram-based feature selection. Sections~\ref{sec:boxplot}--\ref{sec:hypothesis} address the eight analytical tasks of the project in order: distributions and outliers (Section~\ref{sec:boxplot}), correlation analysis (Section~\ref{sec:corr}), per-feature Fisher Distance after z-scoring (Section~\ref{sec:fisher}), PCA-based Fisher analysis (Section~\ref{sec:pca}), top/bottom PC scatter plots (Section~\ref{sec:pcscatter}), LDA (Section~\ref{sec:lda}), clustering with K-Means, DBSCAN, t-SNE, and SOM (Section~\ref{sec:cluster}), and a Welch t-test (Section~\ref{sec:hypothesis}). Section~\ref{sec:conclusion} summarizes the main findings.
 
 % ===================================================================
-\section{Dataset and Preprocessing}
+\section{Dataset and Feature Selection}
 \label{sec:dataset}
-The Communities and Crime dataset \cite{uciccrime} contains $1\,994$ rows and $128$ columns, of which five are non-predictive identifiers (\texttt{state}, \texttt{county}, \texttt{community}, \texttt{communityname}, \texttt{fold}). A non-trivial fraction of the LEMAS-derived columns is missing for most communities; those columns were therefore excluded from the working subset. After identifier removal, a curated set of $18$ sociodemographic features (Table~\ref{tab:features}) was selected based on (i) low missingness, (ii) interpretability for crime-related analysis, and (iii) coverage of distinct conceptual domains (demographics, economy, education, family, housing, immigration). The continuous response \texttt{ViolentCrimesPerPop} was discretized by tertiles into three classes \emph{Low}, \emph{Medium}, and \emph{High} (679 / 662 / 653 samples before cleaning).
+The Communities and Crime dataset \cite{uciccrime} contains $1\,994$ communities described by $128$ columns: five non-predictive identifiers (\texttt{state}, \texttt{county}, \texttt{community}, \texttt{communityname}, \texttt{fold}), $122$ candidate predictors, and the goal attribute \texttt{ViolentCrimesPerPop}. All predictive variables are already normalized to $[0,1]$ by the dataset authors through an unsupervised equal-interval binning that clips values beyond $\pm 3$ standard deviations; this normalization preserves the within-variable distribution shape but does not preserve relative magnitudes across variables. The continuous response \texttt{ViolentCrimesPerPop} is discretized into three equal-frequency classes \emph{Low}, \emph{Medium}, and \emph{High} by its tertiles, yielding $679 / 662 / 653$ samples before any cleaning. All processing was carried out in Python~3.10 using \texttt{NumPy}, \texttt{pandas}, \texttt{scikit-learn} \cite{pedregosa}, \texttt{scipy}, \texttt{seaborn}, and \texttt{MiniSom} \cite{minisom}.
+
+\subsection{Identifier Removal and Missingness Filter}
+\label{ssec:miss}
+The five identifier columns were dropped first. The dataset then contains a contiguous block of $22$ variables derived from the LEMAS police-force survey (e.g., \texttt{LemasSwornFT}, \texttt{PolicPerPop}, \texttt{RacialMatchCommPol}) that is missing for $1\,675$ of $1\,994$ communities, i.e., for $84\%$ of the sample. Imputing such a deep gap would inject substantial artefactual variance and contaminate any downstream covariance-based method (PCA, LDA, Fisher Distance); these $22$ columns were therefore removed entirely. The remaining $100$ predictors carry at most $0.05\%$ missingness each and were imputed by the per-column median.
+
+\subsection{Feature Selection via Hierarchical Clustering on Correlation Distance}
+\label{ssec:fselect}
+The $100$ surviving predictors still contain heavy conceptual redundancy: \texttt{medIncome}, \texttt{medFamInc}, \texttt{perCapInc}, \texttt{whitePerCap}, and the owner-occupied housing value quartiles \texttt{OwnOcc\{Low,Med,Hi\}Quart} all measure the same underlying construct (community wealth) at pairwise $|r| > 0.85$. A hand-curated working set inevitably reflects the analyst's prior expectations; we therefore replace it with an entirely label-blind procedure based on agglomerative hierarchical clustering of features in their pairwise-correlation geometry. Because the class label is never consulted during selection, the downstream supervised analyses (Fisher Distance, LDA, K-NN separability) remain free of selection-induced data leakage.
+
+Two features that carry the same information must be treated as redundant regardless of the sign of their correlation: \texttt{racePctWhite} and \texttt{racepctblack} correlate at $r \approx -0.85$ but encode a single ethnic-composition axis. We therefore use the absolute-value Pearson correlation distance
+\begin{equation}
+d_{ij} \;=\; 1 - |r_{ij}|, \qquad d_{ij}\in[0,1],
+\label{eq:corrdist}
+\end{equation}
+which maps both perfectly positively and perfectly negatively correlated pairs to $d=0$ and statistically independent pairs to $d=1$. The condensed pairwise distance matrix over the $100$ predictors is passed to agglomerative clustering with \emph{complete linkage}. Complete linkage merges two clusters only when the \emph{maximum} pairwise distance across them does not exceed the threshold, which guarantees that within every resulting cluster the pairwise correlation is bounded from below by $1 - d_{\mathrm{th}}$. Average and single linkage do not provide this guarantee and produce clusters that mix tightly and loosely correlated members.
+
+A threshold sweep over $d_{\mathrm{th}}\in\{0.20, 0.25, \ldots, 0.60\}$ yields between $57$ and $29$ clusters, respectively. The operating point $d_{\mathrm{th}} = 0.35$ --- corresponding to a within-cluster correlation floor of $|r|\geq 0.65$ --- was retained. This choice produces exactly $43$ clusters, which is the smallest cluster count at which the four largest obvious redundancy blocks (income/wealth, family-structure, deprivation, and recent-immigration shares) consolidate into single groups, while conceptually distinct dimensions (e.g., immigration recency proportions vs.\ immigration share of population, or two-parent households vs.\ never-married mothers) remain separate. Figure~\ref{fig:dendrogram} shows the resulting dendrogram with the cut and the colour-coded clusters.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=\textwidth]{feature_dendrogram.png}
+\caption{Agglomerative hierarchical clustering of the $100$ candidate predictors on the absolute Pearson correlation distance $d = 1 - |r|$ with complete linkage. The horizontal red line at $d=0.35$ is the cut that produces $43$ clusters and enforces a within-cluster correlation floor of $|r|\geq 0.65$. Singleton clusters (vertical leaves that reach $d \approx 1$ without joining any sub-tree below the cut) correspond to features that carry conceptually unique information.}
+\label{fig:dendrogram}
+\end{figure*}
+
+\subsection{Selection of a Cluster Representative}
+\label{ssec:rep}
+From each of the $43$ clusters exactly one representative is retained. For singleton clusters the representative is the cluster member itself ($24$ singletons). For each multi-member cluster, the default rule is to take the \emph{centroid} feature, i.e., the member whose mean pairwise correlation distance to the other members is lowest; this is the feature that best summarizes the cluster on its own. For $7$ of the $19$ multi-member clusters the centroid coincides with a feature widely used in the criminology and social-science literature and is kept as is. For the other $12$ multi-member clusters an interpretability-driven override was applied to favour the canonical literature variable over a near-equivalent centroid (e.g., \texttt{medIncome} is preferred to the centroid \texttt{RentHighQ} in the income-and-wealth cluster, since median income is the standard community-wealth proxy in the relevant literature). All overrides stay inside the cluster they replace, so the within-cluster correlation guarantee is preserved. The multi-member clusters and their final representatives are listed in Table~\ref{tab:clusters}.
+
+\begin{table*}[!t]
+\caption{The $19$ multi-member clusters at $d_{\mathrm{th}}=0.35$, their members, and the representative retained for downstream analysis. ``$\star$'' marks the algorithmic centroid; the chosen representative is shown in \textbf{bold}. Singleton clusters (24 features) are listed in Table~\ref{tab:features}.}
+\label{tab:clusters}
+\centering
+\footnotesize
+\begin{tabular}{cclp{8.0cm}}
+\toprule
+Cluster & Size & Theme & Members (centroid $\star$, representative in \textbf{bold}) \\
+\midrule
+ 1 & 11 & Income / wealth          & \textbf{medIncome}, medFamInc, perCapInc, whitePerCap, OwnOcc\{Low,Med,Hi\}Quart, Rent\{Low,Med\}Q, RentHighQ$^\star$, MedRent \\
+ 6 &  7 & Family structure         & MalePctDivorce, FemalePctDiv, TotalPctDiv, PctFam2Par$^\star$, \textbf{PctKids2Par}, PctYoungKids2Par, PctTeen2Par \\
+ 7 &  3 & Home ownership           & PctPersOwnOccup$^\star$, PctHousLess3BR, \textbf{PctHousOwnOcc} \\
+10 &  7 & Deprivation              & pctWInvInc, pctWPubAsst, \textbf{PctPopUnderPov}, PctLess9thGrade, PctNotHSGrad$^\star$, PctUnemployed, PctHousNoPhone \\
+12 &  3 & Race / illegitimacy      & racepctblack, racePctWhite, \textbf{PctIlleg}$^\star$ \\
+15 &  3 & Education / occupation   & \textbf{PctBSorMore}, PctOccupManu, PctOccupMgmtProf$^\star$ \\
+22 &  5 & Immigration share        & PctRecentImmig, PctRecImmig5, PctRecImmig8$^\star$, PctRecImmig10, \textbf{PctForeignBorn} \\
+25 &  2 & Employment               & pctWWage$^\star$, \textbf{PctEmploy} \\
+26 &  3 & Elderly / retirement     & \textbf{agePct65up}$^\star$, pctWSocSec, pctWRetire \\
+29 &  2 & State-level residence    & \textbf{PctBornSameState}$^\star$, PctSameState85 \\
+30 &  2 & Local residence          & \textbf{PctSameHouse85}$^\star$, PctSameCity85 \\
+32 &  6 & Population-scaled counts & \textbf{population}$^\star$, numbUrban, NumUnderPov, NumIlleg, HousVacant, NumInShelters \\
+33 &  2 & Population-scaled counts & \textbf{NumImmig}$^\star$, NumStreet \\
+36 &  4 & Immigration recency      & PctImmigRecent, PctImmigRec5, \textbf{PctImmigRec8}$^\star$, PctImmigRec10 \\
+37 &  3 & Youth age structure      & agePct12t21, \textbf{agePct12t29}, agePct16t24$^\star$ \\
+40 &  2 & Working motherhood       & PctWorkMomYoungKids$^\star$, \textbf{PctWorkMom} \\
+41 &  4 & Household size           & \textbf{householdsize}, PersPerFam, PersPerOccupHous$^\star$, PersPerOwnOccHous \\
+42 &  3 & Hispanic / language      & \textbf{racePctHisp}, PctSpeakEnglOnly, PctNotSpeakEnglWell$^\star$ \\
+43 &  4 & Crowded housing          & PctLargHouseFam, PctLargHouseOccup$^\star$, PersPerRentOccHous, \textbf{PctPersDenseHous} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Final Working Set}
+\label{ssec:final}
+The procedure of Sections~\ref{ssec:miss}--\ref{ssec:rep} produces a deterministic working set of $43$ features --- $24$ from singleton clusters and $19$ from multi-member clusters --- listed by conceptual block in Table~\ref{tab:features}. Each retained feature represents a non-redundant axis of variation in the data, in the precise sense that no two retained features sit inside the same hierarchical-clustering cluster at the chosen correlation floor. Inter-cluster correlations are of course not bounded by this procedure: the cluster-12 representative \texttt{PctIlleg} and the cluster-6 representative \texttt{PctKids2Par}, for instance, still correlate at $|r|\approx 0.87$ because the dendrogram exposes them as two distinct but conceptually proximate ``concentrated disadvantage'' axes. This residual between-cluster correlation is itself a substantive observation about the dataset and is revisited in Sections~\ref{sec:corr} and \ref{sec:pca}. The same $43$-feature working set is used in every subsequent analysis.
 
 \begin{table}[!t]
-\caption{Selected features and their interpretation. All values are normalized to $[0,1]$ by the dataset authors.}
+\caption{The $43$ retained features grouped by conceptual block. All variables are already normalized to $[0,1]$ by the dataset authors.}
 \label{tab:features}
 \centering
-\small
-\begin{tabular}{p{2.3cm}p{5.5cm}}
+\footnotesize
+\begin{tabular}{p{1.55cm}p{6.1cm}}
 \toprule
-Feature & Description \\
+Block & Features \\
 \midrule
-\texttt{population} & Community population \\
-\texttt{householdsize} & Mean household size \\
-\texttt{racepctblack} & Percent of Black population \\
-\texttt{racePctWhite} & Percent of White population \\
-\texttt{agePct12t29} & Percent of population aged 12--29 \\
-\texttt{agePct65up} & Percent of population aged $\geq 65$ \\
-\texttt{pctUrban} & Percent of population living in urban areas \\
-\texttt{medIncome} & Median household income \\
-\texttt{PctPopUnderPov} & Percent of population under poverty line \\
-\texttt{PctNotHSGrad} & Percent without a high-school diploma \\
-\texttt{PctBSorMore} & Percent with a Bachelor's degree or higher \\
-\texttt{PctUnemployed} & Percent unemployed \\
-\texttt{MalePctDivorce} & Percent of divorced males \\
-\texttt{PctKids2Par} & Percent of kids in two-parent households \\
-\texttt{PctIlleg} & Percent of children born to never-married parents \\
-\texttt{NumImmig} & Number of foreign-born residents \\
-\texttt{PctHousOwnOcc} & Percent of owner-occupied housing units \\
-\texttt{PctVacantBoarded} & Percent of boarded-up vacant housing \\
+Demography      & \texttt{population}, \texttt{householdsize}, \texttt{agePct12t29}, \texttt{agePct65up}, \texttt{racePctAsian}, \texttt{racePctHisp} \\
+Urbanization    & \texttt{pctUrban}, \texttt{PopDens}, \texttt{PctUsePubTrans}, \texttt{LandArea} \\
+Income / wealth & \texttt{medIncome}, \texttt{blackPerCap}, \texttt{HispPerCap}, \texttt{AsianPerCap}, \texttt{indianPerCap}, \texttt{OtherPerCap} \\
+Housing cost    & \texttt{MedOwnCostPctInc}, \texttt{MedOwnCostPctIncNoMtg}, \texttt{MedRentPctHousInc} \\
+Education       & \texttt{PctBSorMore} \\
+Employment      & \texttt{PctEmploy}, \texttt{PctEmplProfServ}, \texttt{PctEmplManu}, \texttt{pctWFarmSelf} \\
+Poverty         & \texttt{PctPopUnderPov} \\
+Family          & \texttt{PctKids2Par}, \texttt{PctIlleg}, \texttt{MalePctNevMarr}, \texttt{PctWorkMom} \\
+Immigration     & \texttt{NumImmig}, \texttt{PctForeignBorn}, \texttt{PctImmigRec8} \\
+Housing quality & \texttt{PctHousOwnOcc}, \texttt{MedNumBR}, \texttt{PctVacantBoarded}, \texttt{PctHousOccup}, \texttt{PctVacMore6Mos}, \texttt{MedYrHousBuilt}, \texttt{PctWOFullPlumb}, \texttt{PctPersDenseHous} \\
+Mobility        & \texttt{PctBornSameState}, \texttt{PctSameHouse85} \\
+Policing        & \texttt{LemasPctOfficDrugUn} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Any residual missing values in the working subset were imputed by the per-column median. All subsequent analyses were carried out in Python~3.10 using \texttt{NumPy}, \texttt{pandas}, \texttt{scikit-learn}~\cite{pedregosa}, \texttt{scipy}, \texttt{seaborn}, and \texttt{MiniSom}~\cite{minisom}. The complete Jupyter notebook accompanies this report.
-
 % ===================================================================
 \section{Distributions and Outlier Detection (Task 1)}
 \label{sec:boxplot}
-Figure~\ref{fig:box_before} presents per-feature box plots of the eighteen selected variables before outlier removal. Several features are visibly right-skewed and exhibit a long upper tail of extreme values --- most notably \texttt{population}, \texttt{NumImmig}, \texttt{PctIlleg}, \texttt{PctVacantBoarded}, and \texttt{PctPopUnderPov}. These tails reflect a small set of communities that are demographically or socioeconomically extreme (very large cities, communities with very high immigration counts, or extreme deprivation). In contrast, variables such as \texttt{agePct12t29}, \texttt{agePct65up}, and \texttt{householdsize} are tightly concentrated around the population median with comparatively few outliers.
+Figure~\ref{fig:box_before} presents per-feature box plots of the $43$ selected variables before outlier removal, split into two panels and annotated by conceptual block for readability. Three distributional patterns are apparent. First, several features are strongly right-skewed with a long upper tail of extreme values --- most notably \texttt{population}, \texttt{PopDens}, \texttt{LandArea}, \texttt{NumImmig}, \texttt{PctIlleg}, and \texttt{PctVacantBoarded}; these tails reflect a small set of communities that are demographically or socioeconomically extreme (very large or dense cities, very high immigration counts, or concentrated deprivation). Second, the protective family and housing variables (\texttt{PctKids2Par}, \texttt{PctHousOwnOcc}, \texttt{PctEmploy}) are \emph{left}-skewed, with a long lower tail of disadvantaged communities. Third, \texttt{pctUrban} is markedly bimodal: its box spans almost the entire $[0,1]$ range because communities are predominantly either fully urban ($\approx 1$) or fully rural ($\approx 0$), a characteristic worth recalling when interpreting the projections of later sections. In contrast, \texttt{agePct12t29}, \texttt{agePct65up}, and the per-capita income variables are tightly concentrated around their median.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{boxplot_before.png}
-\caption{Box plots of the eighteen selected features prior to outlier removal. Several socioeconomic variables show clear right-skew with long upper tails.}
+\caption{Box plots of the $43$ selected features prior to outlier removal, grouped by conceptual block. Several socioeconomic variables show clear right-skew with long upper tails, the family/housing protective variables are left-skewed, and \texttt{pctUrban} is bimodal.}
 \label{fig:box_before}
 \end{figure}
 
-A multivariate outlier detector was preferred over a per-feature filter (e.g.\ univariate IQR rejection), because the latter discards any sample that is extreme on \emph{any} dimension. In a sociodemographic dataset such as this one, several class-discriminative features (\texttt{PctPopUnderPov}, \texttt{PctIlleg}, \texttt{PctVacantBoarded}) intrinsically have heavy upper tails populated almost exclusively by High-crime communities, so a per-feature rule would severely deplete the High-crime class and bias every subsequent analysis. As a preliminary experiment, applying a per-feature IQR rule with multiplier $k=3$ removed $358$ rows ($18.0\%$) and shrank the High-crime class from $653$ to $418$ samples --- an imbalance large enough to distort the supervised analyses of Sections~\ref{sec:fisher}--\ref{sec:lda}.
+\textbf{Why a multivariate detector.} A per-feature filter such as univariate IQR rejection discards any sample that is extreme on \emph{any} single dimension. This is doubly inappropriate here. Conceptually, several class-discriminative features (\texttt{PctPopUnderPov}, \texttt{PctIlleg}, \texttt{PctVacantBoarded}) intrinsically carry heavy upper tails populated almost exclusively by High-crime communities, so marginal trimming would deplete precisely the class the analysis is meant to characterize. Statistically, the probability that a row is flagged grows rapidly with the feature count, because a row is rejected as soon as it exceeds the threshold on \emph{at least one} of the $43$ marginals --- a direct manifestation of the curse of dimensionality. Table~\ref{tab:outlier} quantifies both effects: a per-feature IQR rule with multiplier $k=3$ removes $730$ rows ($36.6\%$ of the data) and collapses the High-crime class by more than half ($653 \rightarrow 295$, $-54.8\%$), which would render the supervised analyses of Sections~\ref{sec:fisher}--\ref{sec:lda} meaningless.
 
-The final pipeline therefore uses the multivariate \emph{Isolation Forest} \cite{liu2008isolation} of \texttt{scikit-learn} \cite{pedregosa} with $200$ trees and a contamination rate of $5\%$. The detector isolates each sample by recursive random partitioning of the feature space; samples that are isolated with unusually short paths are flagged as anomalous. With contamination $=0.05$ the filter removes $100$ rows ($5.0\%$), leaving $1\,894$ communities with class distribution \emph{Low}: 670, \emph{Medium}: 647, \emph{High}: 577 --- preserving the near-balance of the original tertile split.
+\begin{table}[!t]
+\caption{Outlier-cleaning comparison on the $43$-feature working set. The per-feature IQR rule is shown only as a rejected baseline; the multivariate Isolation Forest is the method actually used.}
+\label{tab:outlier}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+ & Before & IQR ($k=3$) & Isolation Forest \\
+\midrule
+Rows kept            & $1\,994$ & $1\,264$ & $1\,894$ \\
+Rows removed         & ---      & $730\ (36.6\%)$ & $100\ (5.0\%)$ \\
+\midrule
+\emph{Low}           & $679$ & $524\ (-22.8\%)$ & $660\ (-2.8\%)$ \\
+\emph{Medium}        & $662$ & $445\ (-32.8\%)$ & $649\ (-2.0\%)$ \\
+\emph{High}          & $653$ & $295\ (-54.8\%)$ & $585\ (-10.4\%)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The final pipeline therefore uses the multivariate \emph{Isolation Forest} \cite{liu2008isolation} of \texttt{scikit-learn} \cite{pedregosa} with $200$ trees and a contamination rate of $5\%$. The detector isolates each sample by recursive random partitioning of the feature space; a sample that requires unusually few random splits to be isolated occupies a sparse region of the $43$-dimensional space and is flagged as a \emph{joint} anomaly. With contamination $=0.05$ the filter removes $100$ rows ($5.0\%$), leaving $1\,894$ communities with class distribution \emph{Low}: $660$, \emph{Medium}: $649$, \emph{High}: $585$ (Table~\ref{tab:outlier}). Notably, the High-class shrinkage is \emph{milder} on the $43$-feature set ($-10.4\%$) than on a smaller $18$-feature set ($-11.6\%$ in preliminary runs): the additional dimensions give the detector more evidence with which to separate legitimately extreme High-crime communities from communities that are genuinely anomalous across many axes simultaneously.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{boxplot_after.png}
-\caption{Box plots after Isolation Forest cleaning (contamination $=0.05$). The most extreme tails of \texttt{population}, \texttt{NumImmig}, \texttt{PctIlleg}, and \texttt{PctVacantBoarded} are trimmed while the bulk of each distribution is preserved.}
+\caption{Box plots after Isolation Forest cleaning (contamination $=0.05$). The bulk of each distribution is preserved, yet marginal outlier points (circles beyond the whiskers) remain visible --- a direct visual confirmation that the detector removes joint anomalies rather than per-feature extremes.}
 \label{fig:box_after}
 \end{figure}
 
-The trimmed High-class shrinkage ($653\rightarrow 577$, $-11.6\%$) is now far milder than under per-feature IQR, while the qualitative shape of every feature distribution is preserved (Figure~\ref{fig:box_after}). All subsequent analyses use the cleaned dataset.
+A subtle but important confirmation is visible in Figure~\ref{fig:box_after}: many marginal outlier points (circles beyond the whiskers) \emph{persist} after cleaning. A per-feature IQR rule, by construction, would have produced boxplots with no points beyond the whiskers; their persistence here demonstrates that Isolation Forest targets samples that are anomalous in the \emph{joint} $43$-dimensional distribution, not those that are merely extreme on an individual axis. The qualitative shape of every feature distribution --- skew, median, and interquartile range --- is preserved, and all subsequent analyses use this cleaned dataset of $1\,894$ communities.
 
 % ===================================================================
 \section{Correlation Analysis (Task 2)}
 \label{sec:corr}
-The full Pearson correlation matrix among the eighteen features and the ordinally encoded class label is shown in Figure~\ref{fig:corrheat}. Several intuitive sociodemographic block structures emerge. Income, education, family stability, and home ownership form a positively correlated block (\texttt{medIncome}, \texttt{PctBSorMore}, \texttt{PctKids2Par}, \texttt{PctHousOwnOcc}), while indicators of deprivation form a separate positively correlated block (\texttt{PctPopUnderPov}, \texttt{PctNotHSGrad}, \texttt{PctUnemployed}, \texttt{PctVacantBoarded}, \texttt{PctIlleg}, \texttt{MalePctDivorce}). The two blocks are strongly anti-correlated with each other, reflecting the well-known socioeconomic gradient.
+The full Pearson correlation matrix among the $43$ features and the ordinally encoded class label is shown in Figure~\ref{fig:corrheat}. With $44$ rows the per-cell numeric annotations would be illegible, so they are omitted and the conceptual-block boundaries of Table~\ref{tab:features} are drawn as black separators; the colour field alone then makes the macro-structure legible. The same two opposed super-blocks that the dendrogram of Section~\ref{sec:dataset} exposed re-appear here in correlation space. An \emph{advantage} super-block --- median income and the per-capita income variables, education (\texttt{PctBSorMore}), employment (\texttt{PctEmploy}), family stability (\texttt{PctKids2Par}), and home ownership (\texttt{PctHousOwnOcc}, \texttt{MedNumBR}) --- is internally positively correlated. A \emph{disadvantage} super-block --- poverty (\texttt{PctPopUnderPov}), illegitimacy (\texttt{PctIlleg}), overcrowding (\texttt{PctPersDenseHous}), and housing decay (\texttt{PctVacantBoarded}) --- is likewise internally positively correlated. The two super-blocks are strongly anti-correlated with each other, which is the well-known socioeconomic ``advantage--disadvantage'' gradient that the rest of this paper repeatedly recovers.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{correlation_heatmap.png}
-\caption{Pearson correlation matrix of the eighteen features and the ordinally coded crime class.}
+\caption{Pearson correlation matrix of the $43$ features and the ordinally coded crime class. Numeric annotations are omitted for legibility; black lines mark the conceptual-block boundaries of Table~\ref{tab:features}. The opposed warm/cool blocks are the advantage--disadvantage socioeconomic gradient.}
 \label{fig:corrheat}
 \end{figure}
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{feature_class_correlation.png}
-\caption{Per-feature Pearson correlation with the (ordinal) crime class. Red bars indicate positive correlation with higher crime levels.}
+\caption{Per-feature Pearson correlation with the (ordinal) crime class, all $43$ features ranked. Red bars indicate positive correlation with higher crime levels, blue bars negative (protective) correlation.}
 \label{fig:classcorr}
 \end{figure}
 
-Figure~\ref{fig:classcorr} ranks features by absolute Pearson correlation with the (ordinal) crime class. The strongest individual correlates are \texttt{PctKids2Par} ($-0.69$), \texttt{PctIlleg} ($+0.63$), \texttt{racePctWhite} ($-0.61$), \texttt{MalePctDivorce} ($+0.55$), \texttt{PctPopUnderPov} ($+0.52$), and \texttt{medIncome} ($-0.45$). The signs are consistent with the established sociological literature on community-level crime: family stability, education, income, and home ownership are protective, while poverty, family disruption, unemployment, and housing decay co-occur with higher violent crime. Demographic-only variables such as \texttt{pctUrban}, \texttt{householdsize}, \texttt{agePct12t29}, and \texttt{agePct65up} carry very little individual class signal.
+Figure~\ref{fig:classcorr} ranks all $43$ features by their correlation with the (ordinal) crime class. The strongest individual correlates are \texttt{PctKids2Par} ($-0.69$), \texttt{PctIlleg} ($+0.62$), \texttt{PctPopUnderPov} ($+0.52$), \texttt{PctPersDenseHous} ($+0.47$), \texttt{PctHousOwnOcc} ($-0.46$), \texttt{medIncome} ($-0.45$), and \texttt{PctVacantBoarded} ($+0.38$). The signs are consistent with the social-disorganization account of community-level crime: family stability, income, education, and stable owner-occupied housing are protective, whereas poverty, family disruption, and housing decay co-occur with higher violent crime. Two observations are specific to the data-driven $43$-feature set. First, \texttt{PctPersDenseHous} (the share of people living in housing with more than one occupant per room) emerges as the fourth-strongest individual correlate; this overcrowding signal is conceptually distinct from poverty and would have been easy to overlook in a smaller hand-picked set, yet the clustering pipeline retains it as the representative of its own block. Second, the housing-quality block is collectively informative rather than incidental: \texttt{PctHousOwnOcc}, \texttt{PctVacantBoarded}, \texttt{PctHousOccup}, and \texttt{MedNumBR} all rank in the top ten, indicating that the physical state of the housing stock tracks community crime almost as closely as the canonical income and family variables. At the opposite end, demographic and geographic variables --- \texttt{pctUrban}, \texttt{LandArea}, \texttt{agePct65up}, \texttt{householdsize}, \texttt{MedYrHousBuilt}, and the ethnicity-specific per-capita income variables --- carry essentially no individual class signal.
 
-Because the class label is an \emph{ordinal} tertile rather than an interval-scale variable, the Spearman rank correlation was also computed for the feature-class relationship. The Spearman values are typically slightly stronger in magnitude (e.g., \texttt{PctKids2Par} $-0.70$, \texttt{PctIlleg} $+0.68$, \texttt{racePctWhite} $-0.64$), and the absolute-correlation \emph{ranking} of features under the two metrics is essentially identical (Spearman rank agreement $0.99$ between Pearson and Spearman rankings). This confirms that the qualitative conclusions of this section are not artefacts of treating the ordinal class label as interval-scaled.
+Because the class label is an \emph{ordinal} tertile rather than an interval-scale variable, the Spearman rank correlation was also computed for the feature--class relationship. The Spearman magnitudes are typically slightly larger (e.g., \texttt{PctKids2Par} $-0.70$, \texttt{PctIlleg} $+0.69$, \texttt{PctPopUnderPov} $+0.57$). The most pronounced shift is \texttt{PctPersDenseHous}, which rises from $+0.47$ (Pearson) to $+0.61$ (Spearman, third overall); the gap indicates that overcrowding relates to the crime tertile monotonically but non-linearly, consistent with a threshold effect in which crime rises sharply only once density passes a critical level. Despite such individual shifts, the absolute-correlation \emph{ranking} of features under the two metrics is almost identical (Spearman rank agreement $0.97$), confirming that the qualitative conclusions of this section are not artefacts of treating the ordinal class label as interval-scaled.
 
 % ===================================================================
 \section{Z-Score Normalization and Per-Feature Fisher Distance (Task 3)}
@@ -157,41 +232,41 @@ where $\mu_c^{(f)}$ is the class-$c$ mean of feature $f$ and $\mu^{(f)}$ is its 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{fisher_features.png}
-\caption{Per-feature Fisher Distance after z-score normalization. \texttt{PctKids2Par} and \texttt{PctIlleg} dominate.}
+\caption{Per-feature Fisher Distance after z-score normalization, all $43$ features ranked. \texttt{PctKids2Par} and \texttt{PctIlleg} dominate; roughly half of the features have Fisher Distance close to zero.}
 \label{fig:fisher_feat}
 \end{figure}
 
-The resulting ranking (Figure~\ref{fig:fisher_feat}) is largely consistent with the correlation ranking of Section~\ref{sec:corr}. The two top-ranked features are \texttt{PctKids2Par} ($J\!=\!0.91$) and \texttt{PctIlleg} ($J\!=\!0.72$), followed by \texttt{racePctWhite} ($0.61$), \texttt{MalePctDivorce} ($0.45$), and \texttt{racepctblack} ($0.38$). Features such as \texttt{pctUrban}, \texttt{householdsize}, and \texttt{agePct65up} have Fisher Distance values close to zero, indicating that their class-conditional distributions are nearly indistinguishable. The Fisher Distance and absolute class correlation rankings agree well, since for univariate normalized features both quantities effectively measure the contrast between class means relative to within-class scatter.
+The resulting ranking (Figure~\ref{fig:fisher_feat}) is almost identical to the correlation ranking of Section~\ref{sec:corr}, which is expected: for a single z-scored feature, both the Fisher Distance and the absolute class correlation measure the contrast between class means relative to within-class scatter. The two top-ranked features are \texttt{PctKids2Par} ($J\!=\!0.90$) and \texttt{PctIlleg} ($J\!=\!0.69$), followed by \texttt{PctPopUnderPov} ($0.37$), \texttt{PctPersDenseHous} ($0.28$), \texttt{PctHousOwnOcc} ($0.27$), and \texttt{medIncome} ($0.26$). Two structural observations stand out. First, the discriminative content is sharply concentrated: \texttt{PctKids2Par} and \texttt{PctIlleg} dwarf every other feature, and there is a large drop to the third-ranked \texttt{PctPopUnderPov}, whose score is less than half that of \texttt{PctIlleg}. Second, roughly half of the $43$ features have a Fisher Distance below $0.03$ --- \texttt{pctUrban} and \texttt{PctUsePubTrans} are effectively zero ($J\approx 2\times 10^{-4}$), as are the housing-cost ratios \texttt{MedOwnCostPctInc} and \texttt{MedYrHousBuilt}. In other words, although the working set spans $43$ conceptually distinct axes, the single-feature class signal lives in only about six to ten of them. This concentration foreshadows the principal-component analysis of Section~\ref{sec:pca}: when most individual axes are class-uninformative and the informative ones are mutually correlated, a very small number of linear combinations should capture essentially all of the separability.
 
 % ===================================================================
 \section{PCA and Fisher Distance per Principal Component (Task 4)}
 \label{sec:pca}
-PCA was applied to the z-scored data, producing $18$ principal components. The leading component PC1 alone explains $39.2\%$ of the variance, and the first five components together account for $78.9\%$ of the total variance (Figure~\ref{fig:scree}). This is consistent with the strong correlation block-structure observed in Section~\ref{sec:corr}: a single socioeconomic ``advantage--disadvantage'' axis dominates the feature space.
+PCA was applied to the z-scored data, producing $43$ principal components. The leading component PC1 explains $18.6\%$ of the variance and PC2 a further $14.3\%$; the first five components together account for only $53.4\%$ of the total variance, and sixteen components are needed to reach $80\%$ (Figure~\ref{fig:scree}). The scree curve is therefore far flatter than it would be for a small hand-picked feature set: because the $43$ features deliberately span many weakly-correlated conceptual blocks, the variance is distributed across many directions rather than collapsing onto a single dominant axis.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{pca_scree.png}
-\caption{PCA scree plot. PC1 captures $39.2\%$ of the variance; the top five components capture $78.9\%$.}
+\caption{PCA scree plot for the $43$-feature working set. PC1 captures $18.6\%$ of the variance and PC2 a further $14.3\%$; the top five components capture $53.4\%$, and sixteen are needed for $80\%$.}
 \label{fig:scree}
 \end{figure}
 
-Treating each PC projection as a feature, the Fisher Distance from Equation~(\ref{eq:fisher}) was recomputed (Figure~\ref{fig:fishercmp}). The Fisher Distance of PC1 is $0.86$, which is the second-highest score in the entire study (only the original \texttt{PctKids2Par} feature, with $J=0.91$, scores higher). All other principal components have Fisher Distance below $0.04$.
+Treating each PC projection as a feature, the Fisher Distance from Equation~(\ref{eq:fisher}) was recomputed (Figure~\ref{fig:fishercmp}). The Fisher Distance of PC1 is $0.56$, comfortably the largest among the principal components; every other PC scores below $0.07$. Crucially, however, PC1's $0.56$ is itself \emph{lower} than the two best original features (\texttt{PctKids2Par} at $0.90$ and \texttt{PctIlleg} at $0.69$). The unsupervised leading component is thus a worse single-axis class discriminator than simply retaining the best raw feature, because PC1 is built to maximize total variance and necessarily blends the discriminative ``advantage--disadvantage'' direction with correlated but less discriminative variation. This is the central motivation for the supervised projection (LDA) of Section~\ref{sec:lda}.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{fisher_comparison.png}
-\caption{Per-feature Fisher Distance for the z-scored original features (left) and for the $18$ principal components (right). PC1 inherits most of the discriminative content of the leading correlated block of features.}
+\caption{Fisher Distance per z-scored original feature (left) and per principal component (right), on a shared vertical scale. The per-feature signal is spread over several variables, whereas the per-PC signal is concentrated almost entirely in PC1.}
 \label{fig:fishercmp}
 \end{figure}
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.95\columnwidth]{eigval_vs_fisher.png}
-\caption{Eigenvalue versus Fisher Distance for the $18$ principal components. Pearson correlation $r=0.92$, Spearman $\rho=0.50$.}
+\caption{Eigenvalue versus Fisher Distance for the $43$ principal components. Pearson correlation $r=0.76$, Spearman $\rho=0.49$. PC2 has the second-largest eigenvalue yet a near-zero Fisher Distance.}
 \label{fig:eigfisher}
 \end{figure}
 
-There is a strong positive relationship between the eigenvalue of a principal component (its variance) and its Fisher Distance: the Pearson correlation between the two is $r=0.92$ and the Spearman rank correlation is $\rho=0.50$ (Figure~\ref{fig:eigfisher}). The result, however, must be interpreted with care. The high Pearson coefficient is driven almost entirely by PC1, which is a strong outlier with both the largest eigenvalue and by far the largest Fisher Distance. The rank correlation $\rho=0.50$ is more informative: among the remaining PCs, higher-variance components tend to be more class-discriminative, but the ordering is far from strict (several mid-variance components such as PC11 and PC4 in fact carry slightly more class signal than the lower-variance PC5--PC10). This is consistent with the theoretical observation that PCA maximizes variance, not class separability; the alignment between the leading PCA direction and the discriminative direction here is a property of this particular dataset, where the dominant axis of variation \emph{is} the socioeconomic gradient that drives the crime class.
+The relationship between the eigenvalue of a principal component (its variance) and its Fisher Distance is positive but weak and entirely concentrated in the leading component: the Pearson correlation is $r=0.76$ and the Spearman rank correlation is only $\rho=0.49$ (Figure~\ref{fig:eigfisher}). The high Pearson coefficient is an artefact driven solely by PC1, which sits in the far corner of the scatter with both the largest eigenvalue and by far the largest Fisher Distance; with PC1 removed, the eigenvalue--Fisher association essentially vanishes. The clearest illustration is \textbf{PC2}: it carries the second-largest variance ($14.3\%$) yet a near-zero Fisher Distance ($0.06$), and PC3 (third-largest variance) scores only $0.01$. These high-variance, class-irrelevant components are a direct demonstration of the textbook caveat that PCA maximizes variance, \emph{not} class separability: PC2 captures a large axis of community variation --- orthogonal to the crime gradient --- along which the three classes are essentially indistinguishable. Only PC1 happens to align with the discriminative direction, and even it does so imperfectly. This is a more nuanced picture than a smaller feature set would have suggested, where PC1 alone tends to dominate both variance and separability; on the full $43$-dimensional set, variance and discriminability are clearly dissociated beyond the leading component.
 
 % ===================================================================
 \section{Scatter Plots on the First and Last Two PCs (Task 5)}
@@ -203,11 +278,11 @@ Figure~\ref{fig:pcscat} shows the projection of the cleaned data onto the two mo
 \includegraphics[width=\columnwidth]{pca_top2.png}
 \\[2pt]
 \includegraphics[width=\columnwidth]{pca_bottom2.png}
-\caption{Top: projection onto (PC1, PC2). A clear monotone ordering Low $\rightarrow$ Medium $\rightarrow$ High emerges along PC1. Bottom: projection onto the two least important PCs, which show no class structure.}
+\caption{Top: projection onto (PC1, PC2). A clear monotone ordering Low $\rightarrow$ Medium $\rightarrow$ High emerges along the horizontal PC1 axis, while the vertical PC2 axis adds no separation. Bottom: projection onto the two least important PCs (PC42, PC43), which show no class structure.}
 \label{fig:pcscat}
 \end{figure}
 
-The (PC1, PC2) plot shows a clean, almost monotone gradient: \emph{Low}-crime communities concentrate on the negative side of PC1, \emph{High}-crime communities on the positive side, and \emph{Medium} communities form an overlapping band in between. PC2 contributes little additional separation. In contrast, the projection onto the two least important PCs shows essentially no class structure: the three classes are interleaved in a small isotropic cloud, which is expected because these components capture noise-like residual variance.
+The (PC1, PC2) plot makes the dissociation of Section~\ref{sec:pca} directly visible. Along the horizontal PC1 axis the three classes form a clean, almost monotone gradient: \emph{Low}-crime communities concentrate on the negative side, \emph{High}-crime communities on the positive side, and \emph{Medium} communities occupy an overlapping band in between. Along the vertical PC2 axis, by contrast, the three classes are thoroughly intermixed: despite carrying the second-largest variance ($14.3\%$), PC2 provides no class separation whatsoever. The entire vertical spread of the plot is therefore class-irrelevant variation --- the visual counterpart of PC2's near-zero Fisher Distance --- and confirms that what makes a community high-crime is its position along the single PC1 ``advantage--disadvantage'' axis, not its position on the largest competing axis of variation. The projection onto the two least important components (PC42, PC43), each capturing only $0.1\%$ of the variance, shows the opposite extreme: the three classes are interleaved in a small isotropic cloud with no discernible structure, as expected for directions that capture noise-like residual variance.
 
 % ===================================================================
 \section{LDA Projection and Class-Separability Comparison (Task 6)}
@@ -229,18 +304,18 @@ A Linear Discriminant Analysis was fit with $n_{\text{components}}=2$. By constr
 \toprule
 Metric & PCA (PC1,PC2) & LDA (LD1,LD2) \\
 \midrule
-Silhouette (true labels) & $0.070$ & $0.112$ \\
-5-NN accuracy (5-fold CV) & $0.583$ & $0.638$ \\
+Silhouette (true labels) & $0.049$ & $0.127$ \\
+5-NN accuracy (5-fold CV) & $0.569$ & $0.659$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-To make the comparison quantitative, two metrics were computed on the 2-D embeddings (Table~\ref{tab:sep}). The silhouette coefficient (with the true class labels as the partition) increases by $60\%$ from PCA ($0.070$) to LDA ($0.112$). The mean 5-fold cross-validated accuracy of a 5-NN classifier trained on the 2-D embedding also improves from $58.3\%$ on PCA to $63.8\%$ on LDA, a relative gain of $+5.5$ percentage points. Both metrics confirm visually what Figures~\ref{fig:pcscat} and \ref{fig:lda} suggest: LDA reveals tighter class separability than PCA. The improvement is bounded because, as Section~\ref{sec:pca} showed, the leading PCA direction is already strongly aligned with the discriminative direction; LDA's advantage lies in additionally exploiting class labels to deflate the within-class scatter along the second discriminant axis.
+To make the comparison quantitative --- the bonus requested by the assignment --- two metrics were computed on the 2-D embeddings (Table~\ref{tab:sep}). The silhouette coefficient (using the true class labels as the partition) rises from $0.049$ for PCA to $0.127$ for LDA, an increase of roughly $160\%$ ($2.6\times$). The mean $5$-fold cross-validated accuracy of a $5$-NN classifier trained on the 2-D embedding improves from $56.9\%$ on PCA to $65.9\%$ on LDA, a gain of $+9.0$ percentage points. Both metrics confirm what Figures~\ref{fig:pcscat} and \ref{fig:lda} show: LDA reveals substantially tighter class separability than PCA. Importantly, this gap is \emph{wider} on the $43$-feature set than a low-dimensional analysis would suggest, and the reason follows directly from Section~\ref{sec:pca}. The PCA embedding must spend one of its two axes (PC2) on the largest available direction of variance, which Task~4 showed to be class-irrelevant; only PC1 carries class signal, so PCA effectively has a single useful discriminative axis. LDA, being supervised, orients \emph{both} of its axes to maximize between-class relative to within-class scatter, and therefore exploits the rich $43$-dimensional feature space far more efficiently. In short, PCA wastes half of its 2-D budget on class-irrelevant variance whereas LDA does not, and the metric gap quantifies exactly that difference.
 
 % ===================================================================
 \section{Clustering Comparison: K-Means, DBSCAN, t-SNE, SOM (Task 7)}
 \label{sec:cluster}
-The four algorithms were applied with two different inputs as required by the assignment. K-Means ($k\!=\!3$) and DBSCAN ($\varepsilon\!=\!0.5$, $\mathrm{minPts}\!=\!10$) operate on the 2-D PCA projection (PC1, PC2). t-SNE (perplexity $30$, PCA initialization) and a $12\times 12$ MiniSom \cite{minisom} are fit on the full $18$-dimensional z-scored data.
+The four algorithms were applied with two different inputs as required by the assignment. K-Means ($k\!=\!3$) and DBSCAN ($\varepsilon\!=\!0.5$, $\mathrm{minPts}\!=\!10$) operate on the 2-D PCA projection (PC1, PC2). t-SNE (perplexity $30$, PCA initialization) and a $12\times 12$ MiniSom \cite{minisom} are fit on the full $43$-dimensional z-scored data.
 
 \begin{figure}[!t]
 \centering
@@ -252,21 +327,21 @@ The four algorithms were applied with two different inputs as required by the as
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{cluster_dbscan.png}
-\caption{DBSCAN ($\varepsilon=0.5$, $\mathrm{minPts}=10$) on (PC1, PC2). The bulk of the data collapses into a single dense cluster with $150$ samples ($7.9\%$) flagged as noise.}
+\caption{DBSCAN ($\varepsilon=0.5$, $\mathrm{minPts}=10$) on (PC1, PC2). The bulk of the data collapses into one dominant dense cluster (plus a few tiny fringe clusters), with $233$ samples ($12.3\%$) flagged as noise.}
 \label{fig:dbscan}
 \end{figure}
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{cluster_tsne.png}
-\caption{t-SNE embedding of the full $18$-dimensional z-scored data, coloured by true class. A continuous gradient is visible across the embedding.}
+\caption{t-SNE embedding of the full $43$-dimensional z-scored data, coloured by true class. A continuous gradient is visible across the embedding.}
 \label{fig:tsne}
 \end{figure}
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{cluster_som.png}
-\caption{$12\times 12$ MiniSom trained on the original z-scored data. Left: scatter of winners coloured by true class (jittered for visibility). Centre: per-neuron hit-count heat-map. Right: dominant class per neuron with per-cell purity (text labels, in $\%$); the mean purity of non-empty cells is $69\%$.}
+\caption{$12\times 12$ MiniSom trained on the original z-scored data. Left: scatter of winners coloured by true class (jittered for visibility). Centre: per-neuron hit-count heat-map. Right: dominant class per neuron with per-cell purity (text labels, in $\%$); the mean purity of non-empty cells is $67.5\%$.}
 \label{fig:som}
 \end{figure}
 
@@ -278,19 +353,19 @@ The four algorithms were applied with two different inputs as required by the as
 \toprule
 Method (input) & ARI & NMI \\
 \midrule
-K-Means, $k=3$ (PCA-2D)  & $0.202$ & $0.215$ \\
-DBSCAN ($\varepsilon=0.5$) (PCA-2D) & $0.019$ & $0.050$ \\
+K-Means, $k=3$ (PCA-2D)  & $0.142$ & $0.147$ \\
+DBSCAN ($\varepsilon=0.5$) (PCA-2D) & $0.018$ & $0.039$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{K-Means} on the (PC1, PC2) plane recovers three clusters whose boundaries are essentially vertical cuts along PC1. This is consistent with the structure seen in Section~\ref{sec:pcscatter}: PC1 carries almost all of the class signal, so unsupervised partitioning along PC1 already gives non-trivial agreement with the true labels (ARI $=0.20$, NMI $=0.22$). However, the agreement is far from perfect because the three classes overlap heavily along PC2.
+\paragraph{K-Means} on the (PC1, PC2) plane recovers three clusters whose boundaries are roughly vertical cuts along PC1, echoing the gradient of Section~\ref{sec:pcscatter}. Because PC1 is the only one of the two input axes that carries class signal, partitioning along it gives some agreement with the true labels (ARI $=0.14$, NMI $=0.15$), but the agreement is weaker than a small-feature analysis would yield. The reason is the same dissociation identified in Sections~\ref{sec:pca}--\ref{sec:lda}: K-Means treats PC1 and PC2 isotropically, yet PC2 ($14.3\%$ of variance) is class-irrelevant, so a substantial part of the partitioning effort is spent splitting communities along a direction unrelated to crime. Unsupervised clustering in the PCA plane therefore inherits the weakness of PCA itself.
 
-\paragraph{DBSCAN} essentially fails: at $\varepsilon=0.5$, $\mathrm{minPts}=10$ it finds a single dense cluster plus $150$ noise points (ARI $=0.02$). Because the data form a single continuous ``socioeconomic gradient'' rather than well-separated density modes, density-based clustering cannot recover the three classes; DBSCAN exposes that the class structure of this dataset is gradient-like, not modal.
+\paragraph{DBSCAN} essentially fails: at $\varepsilon=0.5$, $\mathrm{minPts}=10$ it produces one dominant dense cluster, a handful of tiny fringe clusters, and $233$ noise points ($12.3\%$), for an ARI of only $0.018$. Because the data form a single continuous ``socioeconomic gradient'' rather than well-separated density modes, density-based clustering cannot recover the three classes; DBSCAN exposes that the class structure of this dataset is gradient-like, not modal.
 
-\paragraph{t-SNE} on the full $18$-dimensional data produces a single, smoothly curved manifold along which the three classes form a continuous gradient (\emph{Low} on one side, \emph{High} on the other). This visualisation reinforces the picture that the classes are largely defined by position along a one-dimensional socioeconomic continuum, not by separate compact clusters.
+\paragraph{t-SNE} on the full $43$-dimensional data produces a single, smoothly varying point cloud along which the three classes form a continuous gradient (\emph{Low} on one side, \emph{High} on the other) rather than separated islands. This reinforces the picture that the classes are largely defined by position along a one-dimensional socioeconomic continuum, not by compact modal clusters --- the same conclusion reached independently by PCA, DBSCAN, and the SOM.
 
-\paragraph{SOM} The $12\times 12$ MiniSom grid (Figure~\ref{fig:som}) provides the most class-organised non-linear view. The hit-count heat-map (centre panel) shows that the SOM allocates capacity smoothly across the grid with two slightly heavier hubs. The dominant-class panel (right) reveals contiguous regions of Low, Medium, and High classes arranged along an approximately diagonal gradient on the lattice, with several cells reaching $\geq 90\%$ purity. The mean per-neuron purity over non-empty cells is $69\%$, well above the $\approx 35\%$ expected from chance under the (near-uniform) class distribution. The SOM thus confirms, on the original feature space, the same gradient-like organisation seen in the t-SNE map.
+\paragraph{SOM} The $12\times 12$ MiniSom grid (Figure~\ref{fig:som}) provides the most class-organised non-linear view. The hit-count heat-map (centre panel) shows that the SOM allocates capacity smoothly across the grid with a few slightly heavier hubs. The dominant-class panel (right) reveals contiguous regions of Low, Medium, and High classes arranged along a gradient on the lattice, with several cells reaching $\geq 90\%$ purity. The mean per-neuron purity over non-empty cells is $67.5\%$, well above the $\approx 35\%$ expected from chance under the (near-uniform) class distribution. The SOM thus confirms, on the original $43$-dimensional feature space, the same gradient-like organisation seen in the t-SNE map.
 
 % ===================================================================
 \section{Hypothesis Test on \texttt{PctKids2Par} (Task 8)}
@@ -310,21 +385,21 @@ Two independent random samples of sizes $n=36$ and $n=64$ were drawn (without re
 \toprule
 $n$ per class & $\bar x_{\text{Low}}$ ($\pm$ s.d.) & $\bar x_{\text{High}}$ ($\pm$ s.d.) & $t$ \ ($p$-value) \\
 \midrule
-$36$ & $0.786\pm 0.118$ & $0.471\pm 0.155$ & $9.65$ \ ($1.9\!\times\!10^{-14}$) \\
-$64$ & $0.811\pm 0.099$ & $0.476\pm 0.165$ & $12.99$ \ ($1.9\!\times\!10^{-23}$) \\
-all  & $-$              & $-$              & $39.89$ \ ($\approx 10^{-214}$) \\
+$36$ & $0.759\pm 0.130$ & $0.463\pm 0.147$ & $9.01$ \ ($2.8\!\times\!10^{-13}$) \\
+$64$ & $0.792\pm 0.112$ & $0.444\pm 0.188$ & $12.73$ \ ($7.3\!\times\!10^{-23}$) \\
+all  & $-$              & $-$              & $39.28$ \ ($\approx 10^{-207}$) \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-In all three settings (samples of size $36$, $64$, and the full classes) the p-value is many orders of magnitude smaller than any conventional significance level $\alpha\in\{0.05, 0.01, 0.001\}$. The null hypothesis of equal means is therefore rejected with overwhelming evidence in favour of $H_1$: \texttt{PctKids2Par} is, on average, substantially higher in Low-crime communities than in High-crime communities (approximately $0.80$ vs.\ $0.47$ on the normalized scale, a $\approx 0.33$ shift on a $[0,1]$ scale). As expected, increasing the sample size from $36$ to $64$ leaves the sample means almost unchanged but increases $|t|$ from $9.65$ to $12.99$, illustrating the higher statistical power of a larger sample for the same effect size. The full-class $t=39.89$ extrapolates this trend to the limit of the available data.
+In all three settings (samples of size $36$, $64$, and the full classes) the p-value is many orders of magnitude smaller than any conventional significance level $\alpha\in\{0.05, 0.01, 0.001\}$. The null hypothesis of equal means is therefore rejected with overwhelming evidence in favour of $H_1$: \texttt{PctKids2Par} is, on average, substantially higher in Low-crime communities than in High-crime communities (approximately $0.79$ vs.\ $0.45$ on the normalized scale, a $\approx 0.33$ shift on a $[0,1]$ scale). As expected, increasing the sample size from $36$ to $64$ leaves the sample means almost unchanged but increases $|t|$ from $9.01$ to $12.73$, illustrating the higher statistical power of a larger sample for the same effect size. The full-class $t=39.28$ extrapolates this trend to the limit of the available data.
 
 % ===================================================================
 \section{Conclusion}
 \label{sec:conclusion}
-This project applied a complete exploratory and statistical analysis pipeline to the UCI Communities and Crime dataset, with the continuous violent-crime rate discretized into three classes. The following coherent picture emerges. First, family-structure and socioeconomic variables (\texttt{PctKids2Par}, \texttt{PctIlleg}, \texttt{PctPopUnderPov}, \texttt{MalePctDivorce}, \texttt{racePctWhite}, \texttt{medIncome}) carry the strongest individual class signal, as confirmed independently by both Pearson and Spearman correlation and by per-feature Fisher Distance (Spearman--Pearson rank agreement $0.99$), while purely demographic variables such as \texttt{pctUrban}, \texttt{householdsize}, \texttt{agePct12t29}, and \texttt{agePct65up} are essentially class-uninformative. Second, the discriminative content is concentrated along a single principal direction: PC1 alone explains $39.2\%$ of the variance and obtains a Fisher Distance ($0.86$) higher than every original feature except \texttt{PctKids2Par}. Eigenvalues and Fisher Distances of principal components are strongly positively correlated in raw value ($r=0.92$) but only moderately so in rank ($\rho=0.50$): high variance does not strictly imply high discriminability beyond the dominant component. Third, the LDA 2-D embedding outperforms the PCA 2-D embedding in revealing class separability, both visually and quantitatively (silhouette $0.112$ vs.\ $0.070$; 5-NN CV accuracy $63.8\%$ vs.\ $58.3\%$). Fourth, unsupervised clustering reveals that the class structure of this dataset is gradient-like rather than modal: K-Means partitions PC1 into three slabs and recovers moderate agreement with the labels (ARI $0.20$), DBSCAN collapses to a single dense cluster with $150$ noise points, and both t-SNE and SOM produce a continuous manifold along which the three classes shade smoothly into each other; nevertheless the SOM achieves a mean per-neuron class purity of $69\%$, well above the chance level. Finally, a Welch's t-test on \texttt{PctKids2Par} rejects the null hypothesis of equal class means with extreme significance at both $n=36$ ($t=9.65$) and $n=64$ ($t=12.99$), formally confirming the descriptive evidence of the earlier sections.
+This project applied a complete exploratory and statistical analysis pipeline to the UCI Communities and Crime dataset. A label-blind, hierarchical-clustering feature selection reduced the $122$ predictors to a non-redundant working set of $43$ features, and the continuous violent-crime rate was discretized into three classes. The following coherent picture emerges. First, family-structure and socioeconomic representatives (\texttt{PctKids2Par}, \texttt{PctIlleg}, \texttt{PctPopUnderPov}, \texttt{PctPersDenseHous}, \texttt{PctHousOwnOcc}, \texttt{medIncome}) carry the strongest individual class signal, as confirmed independently by both Pearson and Spearman correlation and by per-feature Fisher Distance (Spearman--Pearson rank agreement $0.97$); the data-driven set also surfaces overcrowding (\texttt{PctPersDenseHous}) as a top correlate that a hand-picked set might have missed, while demographic and geographic variables such as \texttt{pctUrban}, \texttt{agePct65up}, and \texttt{LandArea} are essentially class-uninformative. Second, the discriminative content is concentrated in very few directions but no longer in a single dominant one: PC1 explains only $18.6\%$ of the variance and obtains a Fisher Distance of $0.56$ --- itself lower than the two best raw features --- while the second-largest variance component PC2 ($14.3\%$) is class-irrelevant (Fisher $0.06$). Eigenvalue and Fisher Distance are thus only weakly related ($r=0.76$ driven entirely by PC1, $\rho=0.49$): high variance does not imply high discriminability, a point made starkly by PC2. Third, the LDA 2-D embedding clearly outperforms the PCA 2-D embedding in revealing class separability, both visually and quantitatively (silhouette $0.127$ vs.\ $0.049$; 5-NN CV accuracy $65.9\%$ vs.\ $56.9\%$), precisely because PCA must spend one of its two axes on class-irrelevant variance whereas supervised LDA does not. Fourth, unsupervised clustering reveals that the class structure is gradient-like rather than modal: K-Means on the PCA plane recovers only modest agreement (ARI $0.14$), DBSCAN collapses to one dominant cluster with $233$ noise points (ARI $0.02$), and both t-SNE and SOM produce a continuous manifold along which the three classes shade smoothly into each other; nevertheless the SOM achieves a mean per-neuron class purity of $67.5\%$, well above the chance level. Finally, a Welch's t-test on \texttt{PctKids2Par} rejects the null hypothesis of equal class means with extreme significance at both $n=36$ ($t=9.01$) and $n=64$ ($t=12.73$), formally confirming the descriptive evidence of the earlier sections.
 
-Overall, the dataset is best understood not as three well-separated clusters but as a one-dimensional socioeconomic continuum along which violent crime rises monotonically. This explains why simple linear methods (PCA, LDA) capture most of the available structure, why density-based clustering fails, and why the strongest individual predictors are family-structure and deprivation indicators rather than purely demographic ones.
+Overall, the dataset is best understood not as three well-separated clusters but as a one-dimensional socioeconomic continuum along which violent crime rises monotonically. This explains why a supervised linear method (LDA) outperforms the unsupervised PCA projection, why density-based clustering fails, and why the strongest individual predictors are family-structure and deprivation indicators rather than purely demographic ones. The data-driven $43$-feature selection both removes the subjectivity of manual curation and exposes structure --- such as the dissociation between PCA variance and class separability, and the role of overcrowding --- that a smaller hand-picked working set would have obscured.
 
 \appendix
 \section{A}

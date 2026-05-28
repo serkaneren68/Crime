@@ -56,15 +56,35 @@ df_full = df_full.drop(columns=non_predictive)
 
 TARGET = "ViolentCrimesPerPop"
 
-# We pick a curated subset (>10 features) of well-known sociodemographic features
-# with low missingness. All are already normalized to [0,1].
-selected = [
-    "population", "householdsize", "racepctblack", "racePctWhite",
-    "agePct12t29", "agePct65up", "pctUrban", "medIncome",
-    "PctPopUnderPov", "PctNotHSGrad", "PctBSorMore", "PctUnemployed",
-    "MalePctDivorce", "PctKids2Par", "PctIlleg", "NumImmig",
-    "PctHousOwnOcc", "PctVacantBoarded",
+# Working set of 43 features obtained by a label-blind, data-driven
+# hierarchical-clustering pipeline on the |Pearson r| distance over the
+# 100 low-missingness predictors. See notebook/feature_selection.py and
+# the corresponding Section II of the report for full justification.
+# The features are grouped here by conceptual block, which is also the
+# layout used by the boxplot panels.
+feat_blocks = [
+    ("Demography",      ["population", "householdsize", "agePct12t29",
+                          "agePct65up", "racePctAsian", "racePctHisp"]),
+    ("Urbanization",    ["pctUrban", "PopDens", "PctUsePubTrans", "LandArea"]),
+    ("Income / wealth", ["medIncome", "blackPerCap", "HispPerCap",
+                          "AsianPerCap", "indianPerCap", "OtherPerCap"]),
+    ("Housing cost",    ["MedOwnCostPctInc", "MedOwnCostPctIncNoMtg",
+                          "MedRentPctHousInc"]),
+    ("Education",       ["PctBSorMore"]),
+    ("Employment",      ["PctEmploy", "PctEmplProfServ", "PctEmplManu",
+                          "pctWFarmSelf"]),
+    ("Poverty",         ["PctPopUnderPov"]),
+    ("Family",          ["PctKids2Par", "PctIlleg", "MalePctNevMarr",
+                          "PctWorkMom"]),
+    ("Immigration",     ["NumImmig", "PctForeignBorn", "PctImmigRec8"]),
+    ("Housing quality", ["PctHousOwnOcc", "MedNumBR", "PctVacantBoarded",
+                          "PctHousOccup", "PctVacMore6Mos", "MedYrHousBuilt",
+                          "PctWOFullPlumb", "PctPersDenseHous"]),
+    ("Mobility",        ["PctBornSameState", "PctSameHouse85"]),
+    ("Policing",        ["LemasPctOfficDrugUn"]),
 ]
+selected = [f for _, feats in feat_blocks for f in feats]
+assert len(selected) == 43, f"expected 43 features, got {len(selected)}"
 missing = df_full[selected + [TARGET]].isna().sum()
 print("Missing values per selected feature:\n", missing)
 
@@ -98,41 +118,86 @@ with open(os.path.join(ROOT, "summary.json"), "w") as fh:
     json.dump(summary, fh, indent=2)
 
 # ----------------------------------------------------------------------------
-# Task 1 - Boxplots + outlier detection (IQR method)
+# Task 1 - Boxplots + outlier detection (multivariate Isolation Forest)
 # ----------------------------------------------------------------------------
 print("\n[Task 1] Boxplots and outlier detection ...")
-fig, ax = plt.subplots(figsize=(13, 6))
-df[selected].boxplot(ax=ax, rot=75, grid=False)
-ax.set_title("Feature distributions (before outlier removal)")
-ax.set_ylabel("Normalized value")
-fig.tight_layout()
-fig.savefig(os.path.join(FIG, "boxplot_before.png"))
-plt.close(fig)
 
-# Multivariate outlier detection via Isolation Forest. A multivariate
-# detector is preferred over per-feature IQR masking because the latter
-# discards rows that are extreme on any single dimension -- this would
-# remove ~18% of the data and severely unbalance the class distribution
-# (the High-crime class is intrinsically extreme on several axes). We use
-# IsolationForest with a modest contamination=0.05 so that only the most
-# globally anomalous communities are removed.
+# Split features into two visual panels so 43 boxes remain readable.
+# Block boundaries from feat_blocks: panel 1 = first 6 blocks (~22 features),
+# panel 2 = remaining blocks (~21 features).
+PANEL_SPLIT = 6
+panel1_blocks = feat_blocks[:PANEL_SPLIT]
+panel2_blocks = feat_blocks[PANEL_SPLIT:]
+panel1_feats = [f for _, fs in panel1_blocks for f in fs]
+panel2_feats = [f for _, fs in panel2_blocks for f in fs]
+
+def two_panel_boxplot(data, title, fname):
+    fig, axes = plt.subplots(2, 1, figsize=(13, 9))
+    for ax, panel_feats, panel_blocks in [
+        (axes[0], panel1_feats, panel1_blocks),
+        (axes[1], panel2_feats, panel2_blocks),
+    ]:
+        data[panel_feats].boxplot(ax=ax, rot=70, grid=False)
+        ax.set_ylabel("Normalized value")
+        ax.set_ylim(-0.05, 1.05)
+        # block separators
+        cum = 0
+        for name, fs in panel_blocks[:-1]:
+            cum += len(fs)
+            ax.axvline(cum + 0.5, color="lightgrey", linewidth=0.7,
+                       linestyle="--")
+        # block labels
+        cum = 0
+        for name, fs in panel_blocks:
+            mid = cum + len(fs) / 2 + 0.5
+            ax.text(mid, 1.07, name, ha="center", va="bottom",
+                    fontsize=8, color="#444", transform=ax.get_xaxis_transform())
+            cum += len(fs)
+    fig.suptitle(title)
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIG, fname))
+    plt.close(fig)
+
+two_panel_boxplot(df, "Feature distributions (before outlier removal)",
+                  "boxplot_before.png")
+
+# ----------------------------------------------------------------------------
+# Outlier-method comparison: per-feature IQR (rejected) vs Isolation Forest
+# ----------------------------------------------------------------------------
+# (a) Per-feature IQR with k = 3. Any row that is outside [Q1 - 3*IQR,
+#     Q3 + 3*IQR] in any single feature is dropped. Reported only as a
+#     baseline to motivate the multivariate alternative.
+q1 = df[selected].quantile(0.25)
+q3 = df[selected].quantile(0.75)
+iqr = q3 - q1
+lo = q1 - 3.0 * iqr
+hi = q3 + 3.0 * iqr
+mask_iqr = ((df[selected] >= lo) & (df[selected] <= hi)).all(axis=1)
+n_iqr_removed = int((~mask_iqr).sum())
+iqr_class_after = df.loc[mask_iqr, "CrimeClass"].value_counts().sort_index()
+print(f"Per-feature IQR (k=3) would remove {n_iqr_removed} rows "
+      f"({n_iqr_removed/len(df)*100:.1f}%)")
+print("  class distribution under IQR rule:\n",
+      iqr_class_after.to_string().replace("\n", "\n  "))
+
+# (b) Multivariate Isolation Forest. Each random tree partitions the feature
+#     space; anomalies are isolated with unusually short average paths.
+#     contamination=0.05 flags the top 5% globally most anomalous samples.
 iso = IsolationForest(contamination=0.05, random_state=42, n_estimators=200)
 iso_pred = iso.fit_predict(df[selected].values)  # +1 inlier, -1 outlier
 inside = iso_pred == 1
 n_removed = int((~inside).sum())
-print(f"IsolationForest removed {n_removed} rows ({n_removed/len(df)*100:.1f}%)")
+print(f"IsolationForest removed {n_removed} rows "
+      f"({n_removed/len(df)*100:.1f}%)")
 
 df_clean = df[inside].reset_index(drop=True)
 print(f"Cleaned dataset shape: {df_clean.shape}")
-print("Class distribution after cleaning:\n", df_clean["CrimeClass"].value_counts().sort_index())
+print("Class distribution after Isolation Forest cleaning:\n",
+      df_clean["CrimeClass"].value_counts().sort_index())
 
-fig, ax = plt.subplots(figsize=(13, 6))
-df_clean[selected].boxplot(ax=ax, rot=75, grid=False)
-ax.set_title("Feature distributions after IsolationForest cleaning (5%)")
-ax.set_ylabel("Normalized value")
-fig.tight_layout()
-fig.savefig(os.path.join(FIG, "boxplot_after.png"))
-plt.close(fig)
+two_panel_boxplot(df_clean,
+                  "Feature distributions after Isolation Forest cleaning (contamination = 0.05)",
+                  "boxplot_after.png")
 
 # Use cleaned dataset for the rest of the analysis
 X = df_clean[selected].values
@@ -153,11 +218,25 @@ corr_df = pd.DataFrame(X, columns=selected)
 corr_df["CrimeClass"] = y_int
 corr_matrix = corr_df.corr(method="pearson")
 
-fig, ax = plt.subplots(figsize=(11, 9))
+# With 43 features the matrix is 44x44, so numeric annotations are illegible.
+# We drop them and instead reveal block structure by drawing separators at the
+# conceptual-block boundaries (the feature order is already the block order).
+fig, ax = plt.subplots(figsize=(12, 10))
 sns.heatmap(corr_matrix, cmap="coolwarm", center=0, square=True,
-            annot=True, fmt=".2f", annot_kws={"size": 7},
-            cbar_kws={"shrink": 0.7}, ax=ax)
-ax.set_title("Pearson correlation matrix (features + ordinal class)")
+            annot=False, cbar_kws={"shrink": 0.6, "label": "Pearson r"},
+            xticklabels=True, yticklabels=True, ax=ax)
+ax.tick_params(axis="both", labelsize=6)
+# block boundaries (cumulative feature counts)
+cum = 0
+for _, fs in feat_blocks[:-1]:
+    cum += len(fs)
+    ax.axhline(cum, color="black", linewidth=0.5)
+    ax.axvline(cum, color="black", linewidth=0.5)
+# separator before the class row/col
+ax.axhline(len(selected), color="black", linewidth=1.2)
+ax.axvline(len(selected), color="black", linewidth=1.2)
+ax.set_title("Pearson correlation matrix (43 features + ordinal class)\n"
+             "black lines mark conceptual-block boundaries")
 fig.tight_layout()
 fig.savefig(os.path.join(FIG, "correlation_heatmap.png"))
 plt.close(fig)
@@ -210,11 +289,12 @@ fisher_raw = fisher_distance_per_feature(Xz, y)
 fisher_series = pd.Series(fisher_raw, index=selected).sort_values(ascending=False)
 print("Fisher Distance (z-scored features):\n", fisher_series)
 
-fig, ax = plt.subplots(figsize=(9, 5))
+fig, ax = plt.subplots(figsize=(8, 9))
 fisher_series.plot(kind="barh", ax=ax, color="#3a7bb0")
 ax.invert_yaxis()
+ax.tick_params(axis="y", labelsize=7)
 ax.set_xlabel("Fisher Distance  (trace(S_B)/trace(S_W))")
-ax.set_title("Per-feature Fisher Distance (z-scored features)")
+ax.set_title("Per-feature Fisher Distance (z-scored, 43 features)")
 fig.tight_layout()
 fig.savefig(os.path.join(FIG, "fisher_features.png"))
 plt.close(fig)
@@ -241,16 +321,17 @@ print(f"Pearson corr(eigenvalue, Fisher of PC) = {corr_eig_fisher:.3f}")
 spearman_eig_fisher = stats.spearmanr(eigvals, fisher_pcs).correlation
 print(f"Spearman corr(eigenvalue, Fisher of PC) = {spearman_eig_fisher:.3f}")
 
-# Comparison bar chart
-fig, axes = plt.subplots(1, 2, figsize=(13, 5))
+# Comparison bar chart. Share the y-axis so the two panels are directly
+# comparable: the per-feature signal is spread over several bars, whereas the
+# per-PC signal is concentrated almost entirely in PC1.
+fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharey=True)
 fisher_series.plot(kind="bar", ax=axes[0], color="#3a7bb0")
 axes[0].set_title("Fisher Distance per original (z-scored) feature")
 axes[0].set_ylabel("Fisher Distance")
-axes[0].tick_params(axis="x", rotation=75)
+axes[0].tick_params(axis="x", rotation=90, labelsize=6)
 pc_df["fisher"].plot(kind="bar", ax=axes[1], color="#c0504d")
 axes[1].set_title("Fisher Distance per principal component")
-axes[1].set_ylabel("Fisher Distance")
-axes[1].tick_params(axis="x", rotation=75)
+axes[1].tick_params(axis="x", rotation=90, labelsize=6)
 fig.tight_layout()
 fig.savefig(os.path.join(FIG, "fisher_comparison.png"))
 plt.close(fig)

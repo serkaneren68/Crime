@@ -17,76 +17,96 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \citation{uciccrime}
-\citation{uciccrime}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
 \newlabel{sec:introduction}{{I}{1}{Introduction}{section.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {II}Dataset and Preprocessing}{1}{section.2}\protected@file@percent }
-\newlabel{sec:dataset}{{II}{1}{Dataset and Preprocessing}{section.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Selected features and their interpretation. All values are normalized to $[0,1]$ by the dataset authors.}}{2}{table.1}\protected@file@percent }
-\newlabel{tab:features}{{1}{2}{Selected features and their interpretation. All values are normalized to $[0,1]$ by the dataset authors}{table.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Distributions and Outlier Detection (Task 1)}{2}{section.3}\protected@file@percent }
-\newlabel{sec:boxplot}{{III}{2}{Distributions and Outlier Detection (Task 1)}{section.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Box plots of the eighteen selected features prior to outlier removal. Several socioeconomic variables show clear right-skew with long upper tails.}}{2}{figure.1}\protected@file@percent }
-\newlabel{fig:box_before}{{1}{2}{Box plots of the eighteen selected features prior to outlier removal. Several socioeconomic variables show clear right-skew with long upper tails}{figure.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Box plots after IQR-based cleaning ($k=3$). The most extreme tails are removed while the bulk of each distribution is preserved.}}{2}{figure.2}\protected@file@percent }
-\newlabel{fig:box_after}{{2}{2}{Box plots after IQR-based cleaning ($k=3$). The most extreme tails are removed while the bulk of each distribution is preserved}{figure.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Correlation Analysis (Task 2)}{2}{section.4}\protected@file@percent }
-\newlabel{sec:corr}{{IV}{2}{Correlation Analysis (Task 2)}{section.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Pearson correlation matrix of the eighteen features and the ordinally coded crime class.}}{3}{figure.3}\protected@file@percent }
-\newlabel{fig:corrheat}{{3}{3}{Pearson correlation matrix of the eighteen features and the ordinally coded crime class}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Per-feature Pearson correlation with the (ordinal) crime class. Red bars indicate positive correlation with higher crime levels.}}{3}{figure.4}\protected@file@percent }
-\newlabel{fig:classcorr}{{4}{3}{Per-feature Pearson correlation with the (ordinal) crime class. Red bars indicate positive correlation with higher crime levels}{figure.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Z-Score Normalization and Per-Feature Fisher Distance (Task 3)}{3}{section.5}\protected@file@percent }
-\newlabel{sec:fisher}{{V}{3}{Z-Score Normalization and Per-Feature Fisher Distance (Task 3)}{section.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Per-feature Fisher Distance after z-score normalization. \texttt  {PctKids2Par} and \texttt  {PctIlleg} dominate.}}{3}{figure.5}\protected@file@percent }
-\newlabel{fig:fisher_feat}{{5}{3}{Per-feature Fisher Distance after z-score normalization. \texttt {PctKids2Par} and \texttt {PctIlleg} dominate}{figure.5}{}}
-\newlabel{eq:fisher}{{1}{3}{Z-Score Normalization and Per-Feature Fisher Distance (Task 3)}{equation.5.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}PCA and Fisher Distance per Principal Component (Task 4)}{3}{section.6}\protected@file@percent }
-\newlabel{sec:pca}{{VI}{3}{PCA and Fisher Distance per Principal Component (Task 4)}{section.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces PCA scree plot. PC1 captures $39.6\%$ of the variance; the top five components capture $79.4\%$.}}{4}{figure.6}\protected@file@percent }
-\newlabel{fig:scree}{{6}{4}{PCA scree plot. PC1 captures $39.6\%$ of the variance; the top five components capture $79.4\%$}{figure.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Per-feature Fisher Distance for the z-scored original features (left) and for the $18$ principal components (right). PC1 inherits most of the discriminative content of the leading correlated block of features.}}{4}{figure.7}\protected@file@percent }
-\newlabel{fig:fishercmp}{{7}{4}{Per-feature Fisher Distance for the z-scored original features (left) and for the $18$ principal components (right). PC1 inherits most of the discriminative content of the leading correlated block of features}{figure.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Eigenvalue versus Fisher Distance for the $18$ principal components. Pearson correlation $r=0.93$, Spearman $\rho =0.66$.}}{4}{figure.8}\protected@file@percent }
-\newlabel{fig:eigfisher}{{8}{4}{Eigenvalue versus Fisher Distance for the $18$ principal components. Pearson correlation $r=0.93$, Spearman $\rho =0.66$}{figure.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Top: projection onto (PC1, PC2). A clear monotone ordering Low $\rightarrow $ Medium $\rightarrow $ High emerges along PC1. Bottom: projection onto the two least important PCs, which show no class structure.}}{4}{figure.9}\protected@file@percent }
-\newlabel{fig:pcscat}{{9}{4}{Top: projection onto (PC1, PC2). A clear monotone ordering Low $\rightarrow $ Medium $\rightarrow $ High emerges along PC1. Bottom: projection onto the two least important PCs, which show no class structure}{figure.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Scatter Plots on the First and Last Two PCs (Task 5)}{4}{section.7}\protected@file@percent }
-\newlabel{sec:pcscatter}{{VII}{4}{Scatter Plots on the First and Last Two PCs (Task 5)}{section.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VIII}LDA Projection and Class-Separability Comparison (Task 6)}{4}{section.8}\protected@file@percent }
-\newlabel{sec:lda}{{VIII}{4}{LDA Projection and Class-Separability Comparison (Task 6)}{section.8}{}}
+\citation{uciccrime}
+\citation{pedregosa}
 \citation{minisom}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces LDA 2-D projection. The three classes form a clearer left--right ordering than in the PCA projection.}}{5}{figure.10}\protected@file@percent }
-\newlabel{fig:lda}{{10}{5}{LDA 2-D projection. The three classes form a clearer left--right ordering than in the PCA projection}{figure.10}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Quantitative separability of the 2-D PCA and LDA embeddings. Higher is better in both cases.}}{5}{table.2}\protected@file@percent }
-\newlabel{tab:sep}{{2}{5}{Quantitative separability of the 2-D PCA and LDA embeddings. Higher is better in both cases}{table.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IX}Clustering Comparison: K-Means, DBSCAN, t-SNE, SOM (Task 7)}{5}{section.9}\protected@file@percent }
-\newlabel{sec:cluster}{{IX}{5}{Clustering Comparison: K-Means, DBSCAN, t-SNE, SOM (Task 7)}{section.9}{}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0a}K-Means}{5}{paragraph.9.0.0.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces K-Means ($k=3$) on the (PC1, PC2) projection. Left: true classes; right: assigned clusters.}}{5}{figure.11}\protected@file@percent }
-\newlabel{fig:kmeans}{{11}{5}{K-Means ($k=3$) on the (PC1, PC2) projection. Left: true classes; right: assigned clusters}{figure.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces DBSCAN ($\varepsilon =0.5$, $\mathrm  {minPts}=10$) on (PC1, PC2). Most samples form a single dense cluster, with a few small satellites and $149$ noise points.}}{5}{figure.12}\protected@file@percent }
-\newlabel{fig:dbscan}{{12}{5}{DBSCAN ($\varepsilon =0.5$, $\mathrm {minPts}=10$) on (PC1, PC2). Most samples form a single dense cluster, with a few small satellites and $149$ noise points}{figure.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces t-SNE embedding of the full $18$-dimensional z-scored data, coloured by true class. A continuous gradient is visible across the embedding.}}{5}{figure.13}\protected@file@percent }
-\newlabel{fig:tsne}{{13}{5}{t-SNE embedding of the full $18$-dimensional z-scored data, coloured by true class. A continuous gradient is visible across the embedding}{figure.13}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Adjusted Rand Index (ARI) and Normalised Mutual Information (NMI) between cluster assignments and the true class labels.}}{5}{table.3}\protected@file@percent }
-\newlabel{tab:clust}{{3}{5}{Adjusted Rand Index (ARI) and Normalised Mutual Information (NMI) between cluster assignments and the true class labels}{table.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Winning units on a $12\times 12$ MiniSom grid trained on the original z-scored data. Small jitter is added so overlapping winners remain visible.}}{6}{figure.14}\protected@file@percent }
-\newlabel{fig:som}{{14}{6}{Winning units on a $12\times 12$ MiniSom grid trained on the original z-scored data. Small jitter is added so overlapping winners remain visible}{figure.14}{}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0b}DBSCAN}{6}{paragraph.9.0.0.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0c}t-SNE}{6}{paragraph.9.0.0.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0d}SOM}{6}{paragraph.9.0.0.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {X}Hypothesis Test on \texttt  {PctKids2Par} (Task 8)}{6}{section.10}\protected@file@percent }
-\newlabel{sec:hypothesis}{{X}{6}{Hypothesis Test on \texttt {PctKids2Par} (Task 8)}{section.10}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Welch's t-test results on \texttt  {PctKids2Par} between the Low and High crime classes.}}{6}{table.4}\protected@file@percent }
-\newlabel{tab:ttest}{{4}{6}{Welch's t-test results on \texttt {PctKids2Par} between the Low and High crime classes}{table.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {XI}Conclusion}{6}{section.11}\protected@file@percent }
-\newlabel{sec:conclusion}{{XI}{6}{Conclusion}{section.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Dataset and Feature Selection}{2}{section.2}\protected@file@percent }
+\newlabel{sec:dataset}{{II}{2}{Dataset and Feature Selection}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Identifier Removal and Missingness Filter}{2}{subsection.2.1}\protected@file@percent }
+\newlabel{ssec:miss}{{\mbox  {II-A}}{2}{Identifier Removal and Missingness Filter}{subsection.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Feature Selection via Hierarchical Clustering on Correlation Distance}{2}{subsection.2.2}\protected@file@percent }
+\newlabel{ssec:fselect}{{\mbox  {II-B}}{2}{Feature Selection via Hierarchical Clustering on Correlation Distance}{subsection.2.2}{}}
+\newlabel{eq:corrdist}{{1}{2}{Feature Selection via Hierarchical Clustering on Correlation Distance}{equation.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Selection of a Cluster Representative}{2}{subsection.2.3}\protected@file@percent }
+\newlabel{ssec:rep}{{\mbox  {II-C}}{2}{Selection of a Cluster Representative}{subsection.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Agglomerative hierarchical clustering of the $100$ candidate predictors on the absolute Pearson correlation distance $d = 1 - |r|$ with complete linkage. The horizontal red line at $d=0.35$ is the cut that produces $43$ clusters and enforces a within-cluster correlation floor of $|r|\geq 0.65$. Singleton clusters (vertical leaves that reach $d \approx 1$ without joining any sub-tree below the cut) correspond to features that carry conceptually unique information.}}{3}{figure.1}\protected@file@percent }
+\newlabel{fig:dendrogram}{{1}{3}{Agglomerative hierarchical clustering of the $100$ candidate predictors on the absolute Pearson correlation distance $d = 1 - |r|$ with complete linkage. The horizontal red line at $d=0.35$ is the cut that produces $43$ clusters and enforces a within-cluster correlation floor of $|r|\geq 0.65$. Singleton clusters (vertical leaves that reach $d \approx 1$ without joining any sub-tree below the cut) correspond to features that carry conceptually unique information}{figure.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The $19$ multi-member clusters at $d_{\mathrm  {th}}=0.35$, their members, and the representative retained for downstream analysis. ``$\star $'' marks the algorithmic centroid; the chosen representative is shown in {\fontencoding  {T1}\fontseries  {b}\selectfont  {b}old}. Singleton clusters (24 features) are listed in Table\nobreakspace  {}\ref  {tab:features}.}}{3}{table.1}\protected@file@percent }
+\newlabel{tab:clusters}{{1}{3}{The $19$ multi-member clusters at $d_{\mathrm {th}}=0.35$, their members, and the representative retained for downstream analysis. ``$\star $'' marks the algorithmic centroid; the chosen representative is shown in \textbf {bold}. Singleton clusters (24 features) are listed in Table~\ref {tab:features}}{table.1}{}}
+\citation{liu2008isolation}
+\citation{pedregosa}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The $43$ retained features grouped by conceptual block. All variables are already normalized to $[0,1]$ by the dataset authors.}}{4}{table.2}\protected@file@percent }
+\newlabel{tab:features}{{2}{4}{The $43$ retained features grouped by conceptual block. All variables are already normalized to $[0,1]$ by the dataset authors}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Final Working Set}{4}{subsection.2.4}\protected@file@percent }
+\newlabel{ssec:final}{{\mbox  {II-D}}{4}{Final Working Set}{subsection.2.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Distributions and Outlier Detection (Task 1)}{4}{section.3}\protected@file@percent }
+\newlabel{sec:boxplot}{{III}{4}{Distributions and Outlier Detection (Task 1)}{section.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Box plots of the $43$ selected features prior to outlier removal, grouped by conceptual block. Several socioeconomic variables show clear right-skew with long upper tails, the family/housing protective variables are left-skewed, and \texttt  {pctUrban} is bimodal.}}{4}{figure.2}\protected@file@percent }
+\newlabel{fig:box_before}{{2}{4}{Box plots of the $43$ selected features prior to outlier removal, grouped by conceptual block. Several socioeconomic variables show clear right-skew with long upper tails, the family/housing protective variables are left-skewed, and \texttt {pctUrban} is bimodal}{figure.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Outlier-cleaning comparison on the $43$-feature working set. The per-feature IQR rule is shown only as a rejected baseline; the multivariate Isolation Forest is the method actually used.}}{4}{table.3}\protected@file@percent }
+\newlabel{tab:outlier}{{3}{4}{Outlier-cleaning comparison on the $43$-feature working set. The per-feature IQR rule is shown only as a rejected baseline; the multivariate Isolation Forest is the method actually used}{table.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Box plots after Isolation Forest cleaning (contamination $=0.05$). The bulk of each distribution is preserved, yet marginal outlier points (circles beyond the whiskers) remain visible --- a direct visual confirmation that the detector removes joint anomalies rather than per-feature extremes.}}{5}{figure.3}\protected@file@percent }
+\newlabel{fig:box_after}{{3}{5}{Box plots after Isolation Forest cleaning (contamination $=0.05$). The bulk of each distribution is preserved, yet marginal outlier points (circles beyond the whiskers) remain visible --- a direct visual confirmation that the detector removes joint anomalies rather than per-feature extremes}{figure.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Correlation Analysis (Task 2)}{5}{section.4}\protected@file@percent }
+\newlabel{sec:corr}{{IV}{5}{Correlation Analysis (Task 2)}{section.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pearson correlation matrix of the $43$ features and the ordinally coded crime class. Numeric annotations are omitted for legibility; black lines mark the conceptual-block boundaries of Table\nobreakspace  {}\ref  {tab:features}. The opposed warm/cool blocks are the advantage--disadvantage socioeconomic gradient.}}{5}{figure.4}\protected@file@percent }
+\newlabel{fig:corrheat}{{4}{5}{Pearson correlation matrix of the $43$ features and the ordinally coded crime class. Numeric annotations are omitted for legibility; black lines mark the conceptual-block boundaries of Table~\ref {tab:features}. The opposed warm/cool blocks are the advantage--disadvantage socioeconomic gradient}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Per-feature Pearson correlation with the (ordinal) crime class, all $43$ features ranked. Red bars indicate positive correlation with higher crime levels, blue bars negative (protective) correlation.}}{5}{figure.5}\protected@file@percent }
+\newlabel{fig:classcorr}{{5}{5}{Per-feature Pearson correlation with the (ordinal) crime class, all $43$ features ranked. Red bars indicate positive correlation with higher crime levels, blue bars negative (protective) correlation}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Z-Score Normalization and Per-Feature Fisher Distance (Task 3)}{6}{section.5}\protected@file@percent }
+\newlabel{sec:fisher}{{V}{6}{Z-Score Normalization and Per-Feature Fisher Distance (Task 3)}{section.5}{}}
+\newlabel{eq:fisher}{{2}{6}{Z-Score Normalization and Per-Feature Fisher Distance (Task 3)}{equation.5.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Per-feature Fisher Distance after z-score normalization, all $43$ features ranked. \texttt  {PctKids2Par} and \texttt  {PctIlleg} dominate; roughly half of the features have Fisher Distance close to zero.}}{6}{figure.6}\protected@file@percent }
+\newlabel{fig:fisher_feat}{{6}{6}{Per-feature Fisher Distance after z-score normalization, all $43$ features ranked. \texttt {PctKids2Par} and \texttt {PctIlleg} dominate; roughly half of the features have Fisher Distance close to zero}{figure.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}PCA and Fisher Distance per Principal Component (Task 4)}{6}{section.6}\protected@file@percent }
+\newlabel{sec:pca}{{VI}{6}{PCA and Fisher Distance per Principal Component (Task 4)}{section.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces PCA scree plot for the $43$-feature working set. PC1 captures $18.6\%$ of the variance and PC2 a further $14.3\%$; the top five components capture $53.4\%$, and sixteen are needed for $80\%$.}}{7}{figure.7}\protected@file@percent }
+\newlabel{fig:scree}{{7}{7}{PCA scree plot for the $43$-feature working set. PC1 captures $18.6\%$ of the variance and PC2 a further $14.3\%$; the top five components capture $53.4\%$, and sixteen are needed for $80\%$}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Fisher Distance per z-scored original feature (left) and per principal component (right), on a shared vertical scale. The per-feature signal is spread over several variables, whereas the per-PC signal is concentrated almost entirely in PC1.}}{7}{figure.8}\protected@file@percent }
+\newlabel{fig:fishercmp}{{8}{7}{Fisher Distance per z-scored original feature (left) and per principal component (right), on a shared vertical scale. The per-feature signal is spread over several variables, whereas the per-PC signal is concentrated almost entirely in PC1}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Eigenvalue versus Fisher Distance for the $43$ principal components. Pearson correlation $r=0.76$, Spearman $\rho =0.49$. PC2 has the second-largest eigenvalue yet a near-zero Fisher Distance.}}{7}{figure.9}\protected@file@percent }
+\newlabel{fig:eigfisher}{{9}{7}{Eigenvalue versus Fisher Distance for the $43$ principal components. Pearson correlation $r=0.76$, Spearman $\rho =0.49$. PC2 has the second-largest eigenvalue yet a near-zero Fisher Distance}{figure.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Scatter Plots on the First and Last Two PCs (Task 5)}{7}{section.7}\protected@file@percent }
+\newlabel{sec:pcscatter}{{VII}{7}{Scatter Plots on the First and Last Two PCs (Task 5)}{section.7}{}}
+\citation{minisom}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Top: projection onto (PC1, PC2). A clear monotone ordering Low $\rightarrow $ Medium $\rightarrow $ High emerges along the horizontal PC1 axis, while the vertical PC2 axis adds no separation. Bottom: projection onto the two least important PCs (PC42, PC43), which show no class structure.}}{8}{figure.10}\protected@file@percent }
+\newlabel{fig:pcscat}{{10}{8}{Top: projection onto (PC1, PC2). A clear monotone ordering Low $\rightarrow $ Medium $\rightarrow $ High emerges along the horizontal PC1 axis, while the vertical PC2 axis adds no separation. Bottom: projection onto the two least important PCs (PC42, PC43), which show no class structure}{figure.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Quantitative separability of the 2-D PCA and LDA embeddings. Higher is better in both cases.}}{8}{table.4}\protected@file@percent }
+\newlabel{tab:sep}{{4}{8}{Quantitative separability of the 2-D PCA and LDA embeddings. Higher is better in both cases}{table.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}LDA Projection and Class-Separability Comparison (Task 6)}{8}{section.8}\protected@file@percent }
+\newlabel{sec:lda}{{VIII}{8}{LDA Projection and Class-Separability Comparison (Task 6)}{section.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces LDA 2-D projection. The three classes form a clearer left--right ordering than in the PCA projection.}}{8}{figure.11}\protected@file@percent }
+\newlabel{fig:lda}{{11}{8}{LDA 2-D projection. The three classes form a clearer left--right ordering than in the PCA projection}{figure.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IX}Clustering Comparison: K-Means, DBSCAN, t-SNE, SOM (Task 7)}{8}{section.9}\protected@file@percent }
+\newlabel{sec:cluster}{{IX}{8}{Clustering Comparison: K-Means, DBSCAN, t-SNE, SOM (Task 7)}{section.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0a}K-Means}{8}{paragraph.9.0.0.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces K-Means ($k=3$) on the (PC1, PC2) projection. Left: true classes; right: assigned clusters.}}{9}{figure.12}\protected@file@percent }
+\newlabel{fig:kmeans}{{12}{9}{K-Means ($k=3$) on the (PC1, PC2) projection. Left: true classes; right: assigned clusters}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces DBSCAN ($\varepsilon =0.5$, $\mathrm  {minPts}=10$) on (PC1, PC2). The bulk of the data collapses into one dominant dense cluster (plus a few tiny fringe clusters), with $233$ samples ($12.3\%$) flagged as noise.}}{9}{figure.13}\protected@file@percent }
+\newlabel{fig:dbscan}{{13}{9}{DBSCAN ($\varepsilon =0.5$, $\mathrm {minPts}=10$) on (PC1, PC2). The bulk of the data collapses into one dominant dense cluster (plus a few tiny fringe clusters), with $233$ samples ($12.3\%$) flagged as noise}{figure.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces t-SNE embedding of the full $43$-dimensional z-scored data, coloured by true class. A continuous gradient is visible across the embedding.}}{9}{figure.14}\protected@file@percent }
+\newlabel{fig:tsne}{{14}{9}{t-SNE embedding of the full $43$-dimensional z-scored data, coloured by true class. A continuous gradient is visible across the embedding}{figure.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Adjusted Rand Index (ARI) and Normalised Mutual Information (NMI) between cluster assignments and the true class labels.}}{9}{table.5}\protected@file@percent }
+\newlabel{tab:clust}{{5}{9}{Adjusted Rand Index (ARI) and Normalised Mutual Information (NMI) between cluster assignments and the true class labels}{table.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces $12\times 12$ MiniSom trained on the original z-scored data. Left: scatter of winners coloured by true class (jittered for visibility). Centre: per-neuron hit-count heat-map. Right: dominant class per neuron with per-cell purity (text labels, in $\%$); the mean purity of non-empty cells is $67.5\%$.}}{9}{figure.15}\protected@file@percent }
+\newlabel{fig:som}{{15}{9}{$12\times 12$ MiniSom trained on the original z-scored data. Left: scatter of winners coloured by true class (jittered for visibility). Centre: per-neuron hit-count heat-map. Right: dominant class per neuron with per-cell purity (text labels, in $\%$); the mean purity of non-empty cells is $67.5\%$}{figure.15}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0b}DBSCAN}{9}{paragraph.9.0.0.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0c}t-SNE}{9}{paragraph.9.0.0.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0d}SOM}{9}{paragraph.9.0.0.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {X}Hypothesis Test on \texttt  {PctKids2Par} (Task 8)}{9}{section.10}\protected@file@percent }
+\newlabel{sec:hypothesis}{{X}{9}{Hypothesis Test on \texttt {PctKids2Par} (Task 8)}{section.10}{}}
 \citation{uciccrime}
 \bibcite{uciccrime}{1}
 \bibcite{minisom}{2}
 \bibcite{pedregosa}{3}
-\@writefile{toc}{\contentsline {section}{\numberline {}A}{7}{appendix.Appendix.A}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{REFERENCES}{7}{section*.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{Serkan Eren}{7}{section*.2}\protected@file@percent }
-\gdef \@abspage@last{7}
+\bibcite{liu2008isolation}{4}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Welch's t-test results on \texttt  {PctKids2Par} between the Low and High crime classes.}}{10}{table.6}\protected@file@percent }
+\newlabel{tab:ttest}{{6}{10}{Welch's t-test results on \texttt {PctKids2Par} between the Low and High crime classes}{table.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {XI}Conclusion}{10}{section.11}\protected@file@percent }
+\newlabel{sec:conclusion}{{XI}{10}{Conclusion}{section.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}A}{10}{appendix.Appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{REFERENCES}{10}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Serkan Eren}{11}{section*.2}\protected@file@percent }
+\gdef \@abspage@last{11}

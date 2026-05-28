@@ -1,0 +1,649 @@
+{
+  "missingness_threshold": 0.05,
+  "distance_threshold": 0.35,
+  "n_features_total": 122,
+  "n_features_after_missing": 100,
+  "n_clusters": 43,
+  "max_abs_r_in_selected": 0.8432341167678896,
+  "dropped_for_missingness": [
+    "LemasSwornFT",
+    "LemasSwFTPerPop",
+    "LemasSwFTFieldOps",
+    "LemasSwFTFieldPerPop",
+    "LemasTotalReq",
+    "LemasTotReqPerPop",
+    "PolicReqPerOffic",
+    "PolicPerPop",
+    "RacialMatchCommPol",
+    "PctPolicWhite",
+    "PctPolicBlack",
+    "PctPolicHisp",
+    "PctPolicAsian",
+    "PctPolicMinor",
+    "OfficAssgnDrugUnits",
+    "NumKindsDrugsSeiz",
+    "PolicAveOTWorked",
+    "PolicCars",
+    "PolicOperBudg",
+    "LemasPctPolicOnPatr",
+    "LemasGangUnitDeploy",
+    "PolicBudgPerPop"
+  ],
+  "representatives": [
+    "RentHighQ",
+    "blackPerCap",
+    "HispPerCap",
+    "OtherPerCap",
+    "indianPerCap",
+    "PctFam2Par",
+    "PctPersOwnOccup",
+    "MedNumBR",
+    "AsianPerCap",
+    "PctNotHSGrad",
+    "PctWOFullPlumb",
+    "PctIlleg",
+    "PctVacantBoarded",
+    "PctHousOccup",
+    "PctOccupMgmtProf",
+    "PctEmplProfServ",
+    "PctEmplManu",
+    "pctUrban",
+    "pctWFarmSelf",
+    "PopDens",
+    "PctUsePubTrans",
+    "PctRecImmig8",
+    "racePctAsian",
+    "MedOwnCostPctInc",
+    "pctWWage",
+    "agePct65up",
+    "PctVacMore6Mos",
+    "MedOwnCostPctIncNoMtg",
+    "PctBornSameState",
+    "PctSameHouse85",
+    "MedYrHousBuilt",
+    "population",
+    "NumImmig",
+    "LandArea",
+    "LemasPctOfficDrugUn",
+    "PctImmigRec8",
+    "agePct16t24",
+    "MalePctNevMarr",
+    "MedRentPctHousInc",
+    "PctWorkMomYoungKids",
+    "PersPerOccupHous",
+    "PctNotSpeakEnglWell",
+    "PctLargHouseOccup"
+  ],
+  "cluster_summary": [
+    {
+      "cluster": 1,
+      "size": 11,
+      "representative": "RentHighQ",
+      "rep_mean_intra_d": 0.11233773713771436,
+      "members": [
+        "medIncome",
+        "medFamInc",
+        "perCapInc",
+        "whitePerCap",
+        "OwnOccLowQuart",
+        "OwnOccMedVal",
+        "OwnOccHiQuart",
+        "RentLowQ",
+        "RentMedian",
+        "RentHighQ",
+        "MedRent"
+      ]
+    },
+    {
+      "cluster": 2,
+      "size": 1,
+      "representative": "blackPerCap",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "blackPerCap"
+      ]
+    },
+    {
+      "cluster": 3,
+      "size": 1,
+      "representative": "HispPerCap",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "HispPerCap"
+      ]
+    },
+    {
+      "cluster": 4,
+      "size": 1,
+      "representative": "OtherPerCap",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "OtherPerCap"
+      ]
+    },
+    {
+      "cluster": 5,
+      "size": 1,
+      "representative": "indianPerCap",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "indianPerCap"
+      ]
+    },
+    {
+      "cluster": 6,
+      "size": 7,
+      "representative": "PctFam2Par",
+      "rep_mean_intra_d": 0.15366251926663269,
+      "members": [
+        "MalePctDivorce",
+        "FemalePctDiv",
+        "TotalPctDiv",
+        "PctFam2Par",
+        "PctKids2Par",
+        "PctYoungKids2Par",
+        "PctTeen2Par"
+      ]
+    },
+    {
+      "cluster": 7,
+      "size": 3,
+      "representative": "PctPersOwnOccup",
+      "rep_mean_intra_d": 0.1142207265913262,
+      "members": [
+        "PctPersOwnOccup",
+        "PctHousLess3BR",
+        "PctHousOwnOcc"
+      ]
+    },
+    {
+      "cluster": 8,
+      "size": 1,
+      "representative": "MedNumBR",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "MedNumBR"
+      ]
+    },
+    {
+      "cluster": 9,
+      "size": 1,
+      "representative": "AsianPerCap",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "AsianPerCap"
+      ]
+    },
+    {
+      "cluster": 10,
+      "size": 7,
+      "representative": "PctNotHSGrad",
+      "rep_mean_intra_d": 0.2258722809951499,
+      "members": [
+        "pctWInvInc",
+        "pctWPubAsst",
+        "PctPopUnderPov",
+        "PctLess9thGrade",
+        "PctNotHSGrad",
+        "PctUnemployed",
+        "PctHousNoPhone"
+      ]
+    },
+    {
+      "cluster": 11,
+      "size": 1,
+      "representative": "PctWOFullPlumb",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "PctWOFullPlumb"
+      ]
+    },
+    {
+      "cluster": 12,
+      "size": 3,
+      "representative": "PctIlleg",
+      "rep_mean_intra_d": 0.19292385850874777,
+      "members": [
+        "racepctblack",
+        "racePctWhite",
+        "PctIlleg"
+      ]
+    },
+    {
+      "cluster": 13,
+      "size": 1,
+      "representative": "PctVacantBoarded",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "PctVacantBoarded"
+      ]
+    },
+    {
+      "cluster": 14,
+      "size": 1,
+      "representative": "PctHousOccup",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "PctHousOccup"
+      ]
+    },
+    {
+      "cluster": 15,
+      "size": 3,
+      "representative": "PctOccupMgmtProf",
+      "rep_mean_intra_d": 0.11080603949814732,
+      "members": [
+        "PctBSorMore",
+        "PctOccupManu",
+        "PctOccupMgmtProf"
+      ]
+    },
+    {
+      "cluster": 16,
+      "size": 1,
+      "representative": "PctEmplProfServ",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "PctEmplProfServ"
+      ]
+    },
+    {
+      "cluster": 17,
+      "size": 1,
+      "representative": "PctEmplManu",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "PctEmplManu"
+      ]
+    },
+    {
+      "cluster": 18,
+      "size": 1,
+      "representative": "pctUrban",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "pctUrban"
+      ]
+    },
+    {
+      "cluster": 19,
+      "size": 1,
+      "representative": "pctWFarmSelf",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "pctWFarmSelf"
+      ]
+    },
+    {
+      "cluster": 20,
+      "size": 1,
+      "representative": "PopDens",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "PopDens"
+      ]
+    },
+    {
+      "cluster": 21,
+      "size": 1,
+      "representative": "PctUsePubTrans",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "PctUsePubTrans"
+      ]
+    },
+    {
+      "cluster": 22,
+      "size": 5,
+      "representative": "PctRecImmig8",
+      "rep_mean_intra_d": 0.021762496757993216,
+      "members": [
+        "PctRecentImmig",
+        "PctRecImmig5",
+        "PctRecImmig8",
+        "PctRecImmig10",
+        "PctForeignBorn"
+      ]
+    },
+    {
+      "cluster": 23,
+      "size": 1,
+      "representative": "racePctAsian",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "racePctAsian"
+      ]
+    },
+    {
+      "cluster": 24,
+      "size": 1,
+      "representative": "MedOwnCostPctInc",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "MedOwnCostPctInc"
+      ]
+    },
+    {
+      "cluster": 25,
+      "size": 2,
+      "representative": "pctWWage",
+      "rep_mean_intra_d": 0.13913642418788041,
+      "members": [
+        "pctWWage",
+        "PctEmploy"
+      ]
+    },
+    {
+      "cluster": 26,
+      "size": 3,
+      "representative": "agePct65up",
+      "rep_mean_intra_d": 0.20014109206494995,
+      "members": [
+        "agePct65up",
+        "pctWSocSec",
+        "pctWRetire"
+      ]
+    },
+    {
+      "cluster": 27,
+      "size": 1,
+      "representative": "PctVacMore6Mos",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "PctVacMore6Mos"
+      ]
+    },
+    {
+      "cluster": 28,
+      "size": 1,
+      "representative": "MedOwnCostPctIncNoMtg",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "MedOwnCostPctIncNoMtg"
+      ]
+    },
+    {
+      "cluster": 29,
+      "size": 2,
+      "representative": "PctBornSameState",
+      "rep_mean_intra_d": 0.23825893397501208,
+      "members": [
+        "PctBornSameState",
+        "PctSameState85"
+      ]
+    },
+    {
+      "cluster": 30,
+      "size": 2,
+      "representative": "PctSameHouse85",
+      "rep_mean_intra_d": 0.19689504339043185,
+      "members": [
+        "PctSameHouse85",
+        "PctSameCity85"
+      ]
+    },
+    {
+      "cluster": 31,
+      "size": 1,
+      "representative": "MedYrHousBuilt",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "MedYrHousBuilt"
+      ]
+    },
+    {
+      "cluster": 32,
+      "size": 6,
+      "representative": "population",
+      "rep_mean_intra_d": 0.09130870120836634,
+      "members": [
+        "population",
+        "numbUrban",
+        "NumUnderPov",
+        "NumIlleg",
+        "HousVacant",
+        "NumInShelters"
+      ]
+    },
+    {
+      "cluster": 33,
+      "size": 2,
+      "representative": "NumImmig",
+      "rep_mean_intra_d": 0.33890812323651154,
+      "members": [
+        "NumImmig",
+        "NumStreet"
+      ]
+    },
+    {
+      "cluster": 34,
+      "size": 1,
+      "representative": "LandArea",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "LandArea"
+      ]
+    },
+    {
+      "cluster": 35,
+      "size": 1,
+      "representative": "LemasPctOfficDrugUn",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "LemasPctOfficDrugUn"
+      ]
+    },
+    {
+      "cluster": 36,
+      "size": 4,
+      "representative": "PctImmigRec8",
+      "rep_mean_intra_d": 0.09769020095551757,
+      "members": [
+        "PctImmigRecent",
+        "PctImmigRec5",
+        "PctImmigRec8",
+        "PctImmigRec10"
+      ]
+    },
+    {
+      "cluster": 37,
+      "size": 3,
+      "representative": "agePct16t24",
+      "rep_mean_intra_d": 0.08586631216923696,
+      "members": [
+        "agePct12t21",
+        "agePct12t29",
+        "agePct16t24"
+      ]
+    },
+    {
+      "cluster": 38,
+      "size": 1,
+      "representative": "MalePctNevMarr",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "MalePctNevMarr"
+      ]
+    },
+    {
+      "cluster": 39,
+      "size": 1,
+      "representative": "MedRentPctHousInc",
+      "rep_mean_intra_d": 0.0,
+      "members": [
+        "MedRentPctHousInc"
+      ]
+    },
+    {
+      "cluster": 40,
+      "size": 2,
+      "representative": "PctWorkMomYoungKids",
+      "rep_mean_intra_d": 0.10081344633745526,
+      "members": [
+        "PctWorkMomYoungKids",
+        "PctWorkMom"
+      ]
+    },
+    {
+      "cluster": 41,
+      "size": 4,
+      "representative": "PersPerOccupHous",
+      "rep_mean_intra_d": 0.08596027414060377,
+      "members": [
+        "householdsize",
+        "PersPerFam",
+        "PersPerOccupHous",
+        "PersPerOwnOccHous"
+      ]
+    },
+    {
+      "cluster": 42,
+      "size": 3,
+      "representative": "PctNotSpeakEnglWell",
+      "rep_mean_intra_d": 0.08390922410869356,
+      "members": [
+        "racePctHisp",
+        "PctSpeakEnglOnly",
+        "PctNotSpeakEnglWell"
+      ]
+    },
+    {
+      "cluster": 43,
+      "size": 4,
+      "representative": "PctLargHouseOccup",
+      "rep_mean_intra_d": 0.11972660595240418,
+      "members": [
+        "PctLargHouseFam",
+        "PctLargHouseOccup",
+        "PersPerRentOccHous",
+        "PctPersDenseHous"
+      ]
+    }
+  ],
+  "manual_selection": [
+    "population",
+    "householdsize",
+    "racepctblack",
+    "racePctWhite",
+    "agePct12t29",
+    "agePct65up",
+    "pctUrban",
+    "medIncome",
+    "PctPopUnderPov",
+    "PctNotHSGrad",
+    "PctBSorMore",
+    "PctUnemployed",
+    "MalePctDivorce",
+    "PctKids2Par",
+    "PctIlleg",
+    "NumImmig",
+    "PctHousOwnOcc",
+    "PctVacantBoarded"
+  ],
+  "in_both": [
+    "NumImmig",
+    "PctIlleg",
+    "PctNotHSGrad",
+    "PctVacantBoarded",
+    "agePct65up",
+    "pctUrban",
+    "population"
+  ],
+  "only_manual": [
+    "MalePctDivorce",
+    "PctBSorMore",
+    "PctHousOwnOcc",
+    "PctKids2Par",
+    "PctPopUnderPov",
+    "PctUnemployed",
+    "agePct12t29",
+    "householdsize",
+    "medIncome",
+    "racePctWhite",
+    "racepctblack"
+  ],
+  "only_dendro": [
+    "AsianPerCap",
+    "HispPerCap",
+    "LandArea",
+    "LemasPctOfficDrugUn",
+    "MalePctNevMarr",
+    "MedNumBR",
+    "MedOwnCostPctInc",
+    "MedOwnCostPctIncNoMtg",
+    "MedRentPctHousInc",
+    "MedYrHousBuilt",
+    "OtherPerCap",
+    "PctBornSameState",
+    "PctEmplManu",
+    "PctEmplProfServ",
+    "PctFam2Par",
+    "PctHousOccup",
+    "PctImmigRec8",
+    "PctLargHouseOccup",
+    "PctNotSpeakEnglWell",
+    "PctOccupMgmtProf",
+    "PctPersOwnOccup",
+    "PctRecImmig8",
+    "PctSameHouse85",
+    "PctUsePubTrans",
+    "PctVacMore6Mos",
+    "PctWOFullPlumb",
+    "PctWorkMomYoungKids",
+    "PersPerOccupHous",
+    "PopDens",
+    "RentHighQ",
+    "agePct16t24",
+    "blackPerCap",
+    "indianPerCap",
+    "pctWFarmSelf",
+    "pctWWage",
+    "racePctAsian"
+  ],
+  "manual_to_cluster": {
+    "MalePctDivorce": {
+      "cluster": 6,
+      "representative": "PctFam2Par"
+    },
+    "PctBSorMore": {
+      "cluster": 15,
+      "representative": "PctOccupMgmtProf"
+    },
+    "PctHousOwnOcc": {
+      "cluster": 7,
+      "representative": "PctPersOwnOccup"
+    },
+    "PctKids2Par": {
+      "cluster": 6,
+      "representative": "PctFam2Par"
+    },
+    "PctPopUnderPov": {
+      "cluster": 10,
+      "representative": "PctNotHSGrad"
+    },
+    "PctUnemployed": {
+      "cluster": 10,
+      "representative": "PctNotHSGrad"
+    },
+    "agePct12t29": {
+      "cluster": 37,
+      "representative": "agePct16t24"
+    },
+    "householdsize": {
+      "cluster": 41,
+      "representative": "PersPerOccupHous"
+    },
+    "medIncome": {
+      "cluster": 1,
+      "representative": "RentHighQ"
+    },
+    "racePctWhite": {
+      "cluster": 12,
+      "representative": "PctIlleg"
+    },
+    "racepctblack": {
+      "cluster": 12,
+      "representative": "PctIlleg"
+    }
+  }
+}
