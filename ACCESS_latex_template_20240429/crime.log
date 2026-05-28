@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.25)  29 MAY 2026 00:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.25)  29 MAY 2026 02:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -602,10 +602,10 @@ Underfull \vbox (badness 6412) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<logo.png, id=81, 206.27063pt x 53.44969pt>
+<logo.png, id=82, 206.27063pt x 53.44969pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 59.
+Package pdftex.def Info: logo.png  used on input line 58.
 (pdftex.def)             Requested size: 91.32pt x 23.66309pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -648,12 +648,32 @@ Underfull \hbox (badness 2368) in paragraph at lines 72--73
 lue
  []
 
-<feature_dendrogram.png, id=116, 1084.05pt x 650.43pt>
+<feature_dendrogram.png, id=117, 1084.05pt x 650.43pt>
 File: feature_dendrogram.png Graphic file (type png)
 <use feature_dendrogram.png>
 Package pdftex.def Info: feature_dendrogram.png  used on input line 85.
 (pdftex.def)             Requested size: 505.12177pt x 303.07208pt.
+<notaglinelogo.png, id=120, 169.38281pt x 42.91031pt>
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 93.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[2 <./notaglinelogo.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 []\T1/times/b/n/8 medIncome\T1/times/m/n/8 , med-Fam-Inc, per-Cap-Inc, white-Pe
 r-Cap,
@@ -688,60 +708,7 @@ Underfull \hbox (badness 1810) in paragraph at lines 119--120
 []$, PersPer-OwnOc-c-
  []
 
-<notaglinelogo.png, id=125, 169.38281pt x 42.91031pt>
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 129.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[2 <./notaglinelogo.png>]
-
-LaTeX Warning: Text page 3 contains only floats.
-
-
-Overfull \vbox (6.40344pt too high) has occurred while \output is active []
-
-
-
-LaTeX Warning: Text page 3 contains only floats.
-
-
-Overfull \vbox (6.40344pt too high) has occurred while \output is active []
-
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 129.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[3 <./feature_dendrogram.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 140--141
 []\T1/pcr/m/n/8 pctUrban\T1/times/m/n/8 , \T1/pcr/m/n/8 PopDens\T1/times/m/n/8 
 , \T1/pcr/m/n/8 PctUsePubTrans\T1/times/m/n/8 ,
@@ -809,7 +776,7 @@ Underfull \hbox (badness 2261) in paragraph at lines 158--159
 es are
  []
 
-<boxplot_before.png, id=148, 930.47626pt x 640.49287pt>
+<boxplot_before.png, id=139, 930.47626pt x 640.49287pt>
 File: boxplot_before.png Graphic file (type png)
 <use boxplot_before.png>
 Package pdftex.def Info: boxplot_before.png  used on input line 162.
@@ -839,6 +806,26 @@ s-
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 168.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[3 <./feature_dendrogram.png>]
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
 Package pdftex.def Info: notaglinelogo.png  used on input line 189.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
@@ -857,7 +844,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [4 <./boxplot_before.png>]
-<boxplot_after.png, id=166, 930.47626pt x 640.49287pt>
+<boxplot_after.png, id=165, 930.47626pt x 640.49287pt>
 File: boxplot_after.png Graphic file (type png)
 <use boxplot_after.png>
 Package pdftex.def Info: boxplot_after.png  used on input line 192.
@@ -873,12 +860,12 @@ Underfull \hbox (badness 1515) in paragraph at lines 202--203
 1/pcr/n/n/10 MedNumBR\T1/times/n/n/10 ) --- is in-ter-
  []
 
-<correlation_heatmap.png, id=171, 813.94087pt x 732.63713pt>
+<correlation_heatmap.png, id=170, 813.94087pt x 732.63713pt>
 File: correlation_heatmap.png Graphic file (type png)
 <use correlation_heatmap.png>
 Package pdftex.def Info: correlation_heatmap.png  used on input line 206.
 (pdftex.def)             Requested size: 242.67355pt x 218.42897pt.
-<feature_class_correlation.png, id=174, 642.29962pt x 353.21962pt>
+<feature_class_correlation.png, id=173, 642.29962pt x 353.21962pt>
 File: feature_class_correlation.png Graphic file (type png)
 <use feature_class_correlation.png>
 Package pdftex.def Info: feature_class_correlation.png  used on input line 213.
@@ -909,20 +896,37 @@ edIncome \T1/times/n/n/10 ($\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/
  []
 
 
-Underfull \hbox (badness 6141) in paragraph at lines 218--219
-\T1/times/n/n/10 all rank in the top ten, in-di-cat-ing that the phys-i-cal
+Underfull \hbox (badness 1484) in paragraph at lines 218--219
+\T1/times/n/n/10 owner-occupied hous-ing are pro-tec-tive, whereas poverty,
  []
 
 
-Underfull \hbox (badness 2253) in paragraph at lines 218--219
-\T1/times/n/n/10 state of the hous-ing stock tracks com-mu-nity crime al-
+Underfull \hbox (badness 2359) in paragraph at lines 218--219
+\T1/times/n/n/10 driven $\OT1/cmr/m/n/10 43$\T1/times/n/n/10 -feature set. Firs
+t, \T1/pcr/n/n/10 PctPersDenseHous \T1/times/n/n/10 (the
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 218--219
-\T1/times/n/n/10 vari-ables --- \T1/pcr/n/n/10 pctUrban\T1/times/n/n/10 , \T1/p
-cr/n/n/10 LandArea\T1/times/n/n/10 , \T1/pcr/n/n/10 agePct65up\T1/times/n/n/10 
-,
+\T1/times/n/n/10 in-ci-den-tal: \T1/pcr/n/n/10 PctHousOwnOcc\T1/times/n/n/10 , 
+\T1/pcr/n/n/10 PctVacantBoarded\T1/times/n/n/10 ,
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 218--219
+\T1/times/n/n/10 and fam-ily vari-ables. At the op-po-site end, de-mo-graphic
+ []
+
+
+Underfull \hbox (badness 5985) in paragraph at lines 218--219
+\T1/times/n/n/10 and ge-o-graphic vari-ables --- \T1/pcr/n/n/10 pctUrban\T1/tim
+es/n/n/10 , \T1/pcr/n/n/10 LandArea\T1/times/n/n/10 ,
+ []
+
+
+Underfull \hbox (badness 3492) in paragraph at lines 218--219
+\T1/pcr/n/n/10 agePct65up\T1/times/n/n/10 , \T1/pcr/n/n/10 householdsize\T1/tim
+es/n/n/10 , \T1/pcr/n/n/10 MedYrHousBuilt\T1/times/n/n/10 ,
  []
 
 File: notaglinelogo.png Graphic file (type png)
@@ -969,7 +973,7 @@ r/n/n/10 PctIlleg $\OT1/cmr/m/n/10 +0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 69$\T1/t
 imes/n/n/10 ,
  []
 
-<fisher_features.png, id=187, 570.48131pt x 641.84793pt>
+<fisher_features.png, id=192, 570.48131pt x 641.84793pt>
 File: fisher_features.png Graphic file (type png)
 <use fisher_features.png>
 Package pdftex.def Info: fisher_features.png  used on input line 234.
@@ -978,6 +982,9 @@ Package pdftex.def Info: fisher_features.png  used on input line 234.
 Underfull \hbox (badness 2326) in paragraph at lines 239--240
 \T1/times/n/n/10 for a sin-gle z-scored fea-ture, both the Fisher Dis-tance
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
@@ -999,27 +1006,27 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [6 <./fisher_features.png>]
-<pca_scree.png, id=201, 498.21132pt x 280.94963pt>
+<pca_scree.png, id=209, 498.21132pt x 280.94963pt>
 File: pca_scree.png Graphic file (type png)
 <use pca_scree.png>
 Package pdftex.def Info: pca_scree.png  used on input line 248.
 (pdftex.def)             Requested size: 242.67355pt x 136.84772pt.
-<fisher_comparison.png, id=205, 1004.10132pt x 426.84468pt>
+<fisher_comparison.png, id=213, 1004.10132pt x 426.84468pt>
 File: fisher_comparison.png Graphic file (type png)
 <use fisher_comparison.png>
 Package pdftex.def Info: fisher_comparison.png  used on input line 257.
 (pdftex.def)             Requested size: 242.67355pt x 103.16125pt.
-<eigval_vs_fisher.png, id=206, 498.21132pt x 353.21962pt>
+<eigval_vs_fisher.png, id=214, 498.21132pt x 353.21962pt>
 File: eigval_vs_fisher.png Graphic file (type png)
 <use eigval_vs_fisher.png>
 Package pdftex.def Info: eigval_vs_fisher.png  used on input line 264.
 (pdftex.def)             Requested size: 230.53912pt x 163.44774pt.
-<pca_top2.png, id=209, 498.21132pt x 389.35463pt>
+<pca_top2.png, id=217, 498.21132pt x 389.35463pt>
 File: pca_top2.png Graphic file (type png)
 <use pca_top2.png>
 Package pdftex.def Info: pca_top2.png  used on input line 278.
 (pdftex.def)             Requested size: 242.67355pt x 189.6507pt.
-<pca_bottom2.png, id=210, 498.21132pt x 389.35463pt>
+<pca_bottom2.png, id=218, 498.21132pt x 389.35463pt>
 File: pca_bottom2.png Graphic file (type png)
 <use pca_bottom2.png>
 Package pdftex.def Info: pca_bottom2.png  used on input line 280.
@@ -1044,27 +1051,27 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [7 <./pca_scree.png> <./fisher_comparison.png> <./eigval_vs_fisher.png>]
-<lda_scatter.png, id=223, 498.21132pt x 389.35463pt>
+<lda_scatter.png, id=234, 498.21132pt x 389.35463pt>
 File: lda_scatter.png Graphic file (type png)
 <use lda_scatter.png>
 Package pdftex.def Info: lda_scatter.png  used on input line 294.
 (pdftex.def)             Requested size: 242.67355pt x 189.6507pt.
-<cluster_kmeans.png, id=229, 932.73468pt x 390.258pt>
+<cluster_kmeans.png, id=246, 932.73468pt x 390.258pt>
 File: cluster_kmeans.png Graphic file (type png)
 <use cluster_kmeans.png>
 Package pdftex.def Info: cluster_kmeans.png  used on input line 322.
 (pdftex.def)             Requested size: 242.67355pt x 101.53613pt.
-<cluster_dbscan.png, id=230, 932.73468pt x 390.258pt>
+<cluster_dbscan.png, id=247, 932.73468pt x 390.258pt>
 File: cluster_dbscan.png Graphic file (type png)
 <use cluster_dbscan.png>
 Package pdftex.def Info: cluster_dbscan.png  used on input line 329.
 (pdftex.def)             Requested size: 242.67355pt x 101.53613pt.
-<cluster_tsne.png, id=231, 498.21132pt x 389.35463pt>
+<cluster_tsne.png, id=248, 498.21132pt x 389.35463pt>
 File: cluster_tsne.png Graphic file (type png)
 <use cluster_tsne.png>
 Package pdftex.def Info: cluster_tsne.png  used on input line 336.
 (pdftex.def)             Requested size: 242.67355pt x 189.6507pt.
-<cluster_som.png, id=232, 1074.11287pt x 353.21962pt>
+<cluster_som.png, id=249, 1074.11287pt x 353.21962pt>
 File: cluster_som.png Graphic file (type png)
 <use cluster_som.png>
 Package pdftex.def Info: cluster_som.png  used on input line 343.
@@ -1096,7 +1103,7 @@ Underfull \hbox (badness 3029) in paragraph at lines 368--369
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 374.
+Package pdftex.def Info: notaglinelogo.png  used on input line 371.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1122,7 +1129,7 @@ Overfull \hbox (6.53545pt too wide) in paragraph at lines 384--393
 LaTeX Font Info:    Calculating math sizes for size <7.61> on input line 410.
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 419.
+Package pdftex.def Info: notaglinelogo.png  used on input line 417.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1143,28 +1150,28 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 ppendix.A}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.419 ...pectratio]{serkan_vek.jpg}}]{Serkan Eren}
-                                                  ]
+l.417 \bibitem{hastie}
+                      ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 419.
+(hyperref)                be the same. Added a new anchor on input line 445.
 
-<serkan_vek.jpg, id=283, 803.0pt x 803.0pt>
+<serkan_vek.jpg, id=307, 803.0pt x 803.0pt>
 File: serkan_vek.jpg Graphic file (type jpg)
 <use serkan_vek.jpg>
-Package pdftex.def Info: serkan_vek.jpg  used on input line 419.
+Package pdftex.def Info: serkan_vek.jpg  used on input line 445.
 (pdftex.def)             Requested size: 72.26688pt x 72.26688pt.
 File: serkan_vek.jpg Graphic file (type jpg)
 <use serkan_vek.jpg>
-Package pdftex.def Info: serkan_vek.jpg  used on input line 419.
+Package pdftex.def Info: serkan_vek.jpg  used on input line 445.
 (pdftex.def)             Requested size: 72.26688pt x 72.26688pt.
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 423.
+Package pdftex.def Info: bullet.png  used on input line 449.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 424.
+Package pdftex.def Info: notaglinelogo.png  used on input line 450.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1188,16 +1195,16 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `crime.out' has not changed.
-(rerunfilecheck)             Checksum: 19E2A6DE6D12774A727685548A69A8F7;4302.
+(rerunfilecheck)             Checksum: 1CA93C76286AF2F6A4D813B4476F373D;3557.
  ) 
 Here is how much of TeX's memory you used:
- 11365 strings out of 480247
- 179500 string characters out of 5896151
- 492477 words of memory out of 5000000
- 29048 multiletter control sequences out of 15000+600000
- 565591 words of font info for 179 fonts, out of 8000000 for 9000
+ 11389 strings out of 480247
+ 179788 string characters out of 5896151
+ 492732 words of memory out of 5000000
+ 29061 multiletter control sequences out of 15000+600000
+ 564970 words of font info for 177 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 70i,13n,76p,2656b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,13n,76p,2654b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{section*.1} has been referenced but does not exis
 t, replaced by a fixed one
 
@@ -1220,12 +1227,11 @@ ic/amsfonts/cm/cmsy9.pfb><./t1-formata-bold.pfb><./t1-formata-condmedium.pfb><.
 /t1-formata-italic.pfb><./t1-formata-medium.pfb><./t1-formata-mediumitalic.pfb>
 <./t1-formata-regular.pfb><./t1-giovannistd-bookitalic.pfb><./t1-times-bold.pfb
 ><./t1-times-italic.pfb><./t1-times.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/couri
-er/ucrr8a.pfb>
-Output written on crime.pdf (11 pages, 3561552 bytes).
+pe1/urw/courier/ucrr8a.pfb>
+Output written on crime.pdf (11 pages, 3558917 bytes).
 PDF statistics:
- 425 PDF objects out of 1000 (max. 8388607)
- 313 compressed objects within 4 object streams
- 62 named destinations out of 1000 (max. 500000)
+ 449 PDF objects out of 1000 (max. 8388607)
+ 339 compressed objects within 4 object streams
+ 75 named destinations out of 1000 (max. 500000)
  265 words of extra memory for PDF output out of 10000 (max. 10000000)
 

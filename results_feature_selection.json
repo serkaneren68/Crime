@@ -4,7 +4,22 @@
   "n_features_total": 122,
   "n_features_after_missing": 100,
   "n_clusters": 43,
-  "max_abs_r_in_selected": 0.8432341167678896,
+  "n_overrides": 12,
+  "overrides": {
+    "RentHighQ": "medIncome",
+    "PctFam2Par": "PctKids2Par",
+    "PctPersOwnOccup": "PctHousOwnOcc",
+    "PctNotHSGrad": "PctPopUnderPov",
+    "PctOccupMgmtProf": "PctBSorMore",
+    "PctRecImmig8": "PctForeignBorn",
+    "pctWWage": "PctEmploy",
+    "agePct16t24": "agePct12t29",
+    "PctWorkMomYoungKids": "PctWorkMom",
+    "PersPerOccupHous": "householdsize",
+    "PctNotSpeakEnglWell": "racePctHisp",
+    "PctLargHouseOccup": "PctPersDenseHous"
+  },
+  "max_abs_r_between_representatives": 0.8793417437040606,
   "dropped_for_missingness": [
     "LemasSwornFT",
     "LemasSwFTPerPop",
@@ -29,32 +44,77 @@
     "LemasGangUnitDeploy",
     "PolicBudgPerPop"
   ],
+  "final_features": [
+    "AsianPerCap",
+    "HispPerCap",
+    "LandArea",
+    "LemasPctOfficDrugUn",
+    "MalePctNevMarr",
+    "MedNumBR",
+    "MedOwnCostPctInc",
+    "MedOwnCostPctIncNoMtg",
+    "MedRentPctHousInc",
+    "MedYrHousBuilt",
+    "NumImmig",
+    "OtherPerCap",
+    "PctBSorMore",
+    "PctBornSameState",
+    "PctEmplManu",
+    "PctEmplProfServ",
+    "PctEmploy",
+    "PctForeignBorn",
+    "PctHousOccup",
+    "PctHousOwnOcc",
+    "PctIlleg",
+    "PctImmigRec8",
+    "PctKids2Par",
+    "PctPersDenseHous",
+    "PctPopUnderPov",
+    "PctSameHouse85",
+    "PctUsePubTrans",
+    "PctVacMore6Mos",
+    "PctVacantBoarded",
+    "PctWOFullPlumb",
+    "PctWorkMom",
+    "PopDens",
+    "agePct12t29",
+    "agePct65up",
+    "blackPerCap",
+    "householdsize",
+    "indianPerCap",
+    "medIncome",
+    "pctUrban",
+    "pctWFarmSelf",
+    "population",
+    "racePctAsian",
+    "racePctHisp"
+  ],
   "representatives": [
-    "RentHighQ",
+    "medIncome",
     "blackPerCap",
     "HispPerCap",
     "OtherPerCap",
     "indianPerCap",
-    "PctFam2Par",
-    "PctPersOwnOccup",
+    "PctKids2Par",
+    "PctHousOwnOcc",
     "MedNumBR",
     "AsianPerCap",
-    "PctNotHSGrad",
+    "PctPopUnderPov",
     "PctWOFullPlumb",
     "PctIlleg",
     "PctVacantBoarded",
     "PctHousOccup",
-    "PctOccupMgmtProf",
+    "PctBSorMore",
     "PctEmplProfServ",
     "PctEmplManu",
     "pctUrban",
     "pctWFarmSelf",
     "PopDens",
     "PctUsePubTrans",
-    "PctRecImmig8",
+    "PctForeignBorn",
     "racePctAsian",
     "MedOwnCostPctInc",
-    "pctWWage",
+    "PctEmploy",
     "agePct65up",
     "PctVacMore6Mos",
     "MedOwnCostPctIncNoMtg",
@@ -66,19 +126,21 @@
     "LandArea",
     "LemasPctOfficDrugUn",
     "PctImmigRec8",
-    "agePct16t24",
+    "agePct12t29",
     "MalePctNevMarr",
     "MedRentPctHousInc",
-    "PctWorkMomYoungKids",
-    "PersPerOccupHous",
-    "PctNotSpeakEnglWell",
-    "PctLargHouseOccup"
+    "PctWorkMom",
+    "householdsize",
+    "racePctHisp",
+    "PctPersDenseHous"
   ],
   "cluster_summary": [
     {
       "cluster": 1,
       "size": 11,
-      "representative": "RentHighQ",
+      "centroid": "RentHighQ",
+      "representative": "medIncome",
+      "overridden": true,
       "rep_mean_intra_d": 0.11233773713771436,
       "members": [
         "medIncome",
@@ -97,7 +159,9 @@
     {
       "cluster": 2,
       "size": 1,
+      "centroid": "blackPerCap",
       "representative": "blackPerCap",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "blackPerCap"
@@ -106,7 +170,9 @@
     {
       "cluster": 3,
       "size": 1,
+      "centroid": "HispPerCap",
       "representative": "HispPerCap",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "HispPerCap"
@@ -115,7 +181,9 @@
     {
       "cluster": 4,
       "size": 1,
+      "centroid": "OtherPerCap",
       "representative": "OtherPerCap",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "OtherPerCap"
@@ -124,7 +192,9 @@
     {
       "cluster": 5,
       "size": 1,
+      "centroid": "indianPerCap",
       "representative": "indianPerCap",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "indianPerCap"
@@ -133,7 +203,9 @@
     {
       "cluster": 6,
       "size": 7,
-      "representative": "PctFam2Par",
+      "centroid": "PctFam2Par",
+      "representative": "PctKids2Par",
+      "overridden": true,
       "rep_mean_intra_d": 0.15366251926663269,
       "members": [
         "MalePctDivorce",
@@ -148,7 +220,9 @@
     {
       "cluster": 7,
       "size": 3,
-      "representative": "PctPersOwnOccup",
+      "centroid": "PctPersOwnOccup",
+      "representative": "PctHousOwnOcc",
+      "overridden": true,
       "rep_mean_intra_d": 0.1142207265913262,
       "members": [
         "PctPersOwnOccup",
@@ -159,7 +233,9 @@
     {
       "cluster": 8,
       "size": 1,
+      "centroid": "MedNumBR",
       "representative": "MedNumBR",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "MedNumBR"
@@ -168,7 +244,9 @@
     {
       "cluster": 9,
       "size": 1,
+      "centroid": "AsianPerCap",
       "representative": "AsianPerCap",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "AsianPerCap"
@@ -177,7 +255,9 @@
     {
       "cluster": 10,
       "size": 7,
-      "representative": "PctNotHSGrad",
+      "centroid": "PctNotHSGrad",
+      "representative": "PctPopUnderPov",
+      "overridden": true,
       "rep_mean_intra_d": 0.2258722809951499,
       "members": [
         "pctWInvInc",
@@ -192,7 +272,9 @@
     {
       "cluster": 11,
       "size": 1,
+      "centroid": "PctWOFullPlumb",
       "representative": "PctWOFullPlumb",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "PctWOFullPlumb"
@@ -201,7 +283,9 @@
     {
       "cluster": 12,
       "size": 3,
+      "centroid": "PctIlleg",
       "representative": "PctIlleg",
+      "overridden": false,
       "rep_mean_intra_d": 0.19292385850874777,
       "members": [
         "racepctblack",
@@ -212,7 +296,9 @@
     {
       "cluster": 13,
       "size": 1,
+      "centroid": "PctVacantBoarded",
       "representative": "PctVacantBoarded",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "PctVacantBoarded"
@@ -221,7 +307,9 @@
     {
       "cluster": 14,
       "size": 1,
+      "centroid": "PctHousOccup",
       "representative": "PctHousOccup",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "PctHousOccup"
@@ -230,7 +318,9 @@
     {
       "cluster": 15,
       "size": 3,
-      "representative": "PctOccupMgmtProf",
+      "centroid": "PctOccupMgmtProf",
+      "representative": "PctBSorMore",
+      "overridden": true,
       "rep_mean_intra_d": 0.11080603949814732,
       "members": [
         "PctBSorMore",
@@ -241,7 +331,9 @@
     {
       "cluster": 16,
       "size": 1,
+      "centroid": "PctEmplProfServ",
       "representative": "PctEmplProfServ",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "PctEmplProfServ"
@@ -250,7 +342,9 @@
     {
       "cluster": 17,
       "size": 1,
+      "centroid": "PctEmplManu",
       "representative": "PctEmplManu",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "PctEmplManu"
@@ -259,7 +353,9 @@
     {
       "cluster": 18,
       "size": 1,
+      "centroid": "pctUrban",
       "representative": "pctUrban",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "pctUrban"
@@ -268,7 +364,9 @@
     {
       "cluster": 19,
       "size": 1,
+      "centroid": "pctWFarmSelf",
       "representative": "pctWFarmSelf",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "pctWFarmSelf"
@@ -277,7 +375,9 @@
     {
       "cluster": 20,
       "size": 1,
+      "centroid": "PopDens",
       "representative": "PopDens",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "PopDens"
@@ -286,7 +386,9 @@
     {
       "cluster": 21,
       "size": 1,
+      "centroid": "PctUsePubTrans",
       "representative": "PctUsePubTrans",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "PctUsePubTrans"
@@ -295,7 +397,9 @@
     {
       "cluster": 22,
       "size": 5,
-      "representative": "PctRecImmig8",
+      "centroid": "PctRecImmig8",
+      "representative": "PctForeignBorn",
+      "overridden": true,
       "rep_mean_intra_d": 0.021762496757993216,
       "members": [
         "PctRecentImmig",
@@ -308,7 +412,9 @@
     {
       "cluster": 23,
       "size": 1,
+      "centroid": "racePctAsian",
       "representative": "racePctAsian",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "racePctAsian"
@@ -317,7 +423,9 @@
     {
       "cluster": 24,
       "size": 1,
+      "centroid": "MedOwnCostPctInc",
       "representative": "MedOwnCostPctInc",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "MedOwnCostPctInc"
@@ -326,7 +434,9 @@
     {
       "cluster": 25,
       "size": 2,
-      "representative": "pctWWage",
+      "centroid": "pctWWage",
+      "representative": "PctEmploy",
+      "overridden": true,
       "rep_mean_intra_d": 0.13913642418788041,
       "members": [
         "pctWWage",
@@ -336,7 +446,9 @@
     {
       "cluster": 26,
       "size": 3,
+      "centroid": "agePct65up",
       "representative": "agePct65up",
+      "overridden": false,
       "rep_mean_intra_d": 0.20014109206494995,
       "members": [
         "agePct65up",
@@ -347,7 +459,9 @@
     {
       "cluster": 27,
       "size": 1,
+      "centroid": "PctVacMore6Mos",
       "representative": "PctVacMore6Mos",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "PctVacMore6Mos"
@@ -356,7 +470,9 @@
     {
       "cluster": 28,
       "size": 1,
+      "centroid": "MedOwnCostPctIncNoMtg",
       "representative": "MedOwnCostPctIncNoMtg",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "MedOwnCostPctIncNoMtg"
@@ -365,7 +481,9 @@
     {
       "cluster": 29,
       "size": 2,
+      "centroid": "PctBornSameState",
       "representative": "PctBornSameState",
+      "overridden": false,
       "rep_mean_intra_d": 0.23825893397501208,
       "members": [
         "PctBornSameState",
@@ -375,7 +493,9 @@
     {
       "cluster": 30,
       "size": 2,
+      "centroid": "PctSameHouse85",
       "representative": "PctSameHouse85",
+      "overridden": false,
       "rep_mean_intra_d": 0.19689504339043185,
       "members": [
         "PctSameHouse85",
@@ -385,7 +505,9 @@
     {
       "cluster": 31,
       "size": 1,
+      "centroid": "MedYrHousBuilt",
       "representative": "MedYrHousBuilt",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "MedYrHousBuilt"
@@ -394,7 +516,9 @@
     {
       "cluster": 32,
       "size": 6,
+      "centroid": "population",
       "representative": "population",
+      "overridden": false,
       "rep_mean_intra_d": 0.09130870120836634,
       "members": [
         "population",
@@ -408,7 +532,9 @@
     {
       "cluster": 33,
       "size": 2,
+      "centroid": "NumImmig",
       "representative": "NumImmig",
+      "overridden": false,
       "rep_mean_intra_d": 0.33890812323651154,
       "members": [
         "NumImmig",
@@ -418,7 +544,9 @@
     {
       "cluster": 34,
       "size": 1,
+      "centroid": "LandArea",
       "representative": "LandArea",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "LandArea"
@@ -427,7 +555,9 @@
     {
       "cluster": 35,
       "size": 1,
+      "centroid": "LemasPctOfficDrugUn",
       "representative": "LemasPctOfficDrugUn",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "LemasPctOfficDrugUn"
@@ -436,7 +566,9 @@
     {
       "cluster": 36,
       "size": 4,
+      "centroid": "PctImmigRec8",
       "representative": "PctImmigRec8",
+      "overridden": false,
       "rep_mean_intra_d": 0.09769020095551757,
       "members": [
         "PctImmigRecent",
@@ -448,7 +580,9 @@
     {
       "cluster": 37,
       "size": 3,
-      "representative": "agePct16t24",
+      "centroid": "agePct16t24",
+      "representative": "agePct12t29",
+      "overridden": true,
       "rep_mean_intra_d": 0.08586631216923696,
       "members": [
         "agePct12t21",
@@ -459,7 +593,9 @@
     {
       "cluster": 38,
       "size": 1,
+      "centroid": "MalePctNevMarr",
       "representative": "MalePctNevMarr",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "MalePctNevMarr"
@@ -468,7 +604,9 @@
     {
       "cluster": 39,
       "size": 1,
+      "centroid": "MedRentPctHousInc",
       "representative": "MedRentPctHousInc",
+      "overridden": false,
       "rep_mean_intra_d": 0.0,
       "members": [
         "MedRentPctHousInc"
@@ -477,7 +615,9 @@
     {
       "cluster": 40,
       "size": 2,
-      "representative": "PctWorkMomYoungKids",
+      "centroid": "PctWorkMomYoungKids",
+      "representative": "PctWorkMom",
+      "overridden": true,
       "rep_mean_intra_d": 0.10081344633745526,
       "members": [
         "PctWorkMomYoungKids",
@@ -487,7 +627,9 @@
     {
       "cluster": 41,
       "size": 4,
-      "representative": "PersPerOccupHous",
+      "centroid": "PersPerOccupHous",
+      "representative": "householdsize",
+      "overridden": true,
       "rep_mean_intra_d": 0.08596027414060377,
       "members": [
         "householdsize",
@@ -499,7 +641,9 @@
     {
       "cluster": 42,
       "size": 3,
-      "representative": "PctNotSpeakEnglWell",
+      "centroid": "PctNotSpeakEnglWell",
+      "representative": "racePctHisp",
+      "overridden": true,
       "rep_mean_intra_d": 0.08390922410869356,
       "members": [
         "racePctHisp",
@@ -510,7 +654,9 @@
     {
       "cluster": 43,
       "size": 4,
-      "representative": "PctLargHouseOccup",
+      "centroid": "PctLargHouseOccup",
+      "representative": "PctPersDenseHous",
+      "overridden": true,
       "rep_mean_intra_d": 0.11972660595240418,
       "members": [
         "PctLargHouseFam",
@@ -542,23 +688,23 @@
   ],
   "in_both": [
     "NumImmig",
+    "PctBSorMore",
+    "PctHousOwnOcc",
     "PctIlleg",
-    "PctNotHSGrad",
+    "PctKids2Par",
+    "PctPopUnderPov",
     "PctVacantBoarded",
+    "agePct12t29",
     "agePct65up",
+    "householdsize",
+    "medIncome",
     "pctUrban",
     "population"
   ],
   "only_manual": [
     "MalePctDivorce",
-    "PctBSorMore",
-    "PctHousOwnOcc",
-    "PctKids2Par",
-    "PctPopUnderPov",
+    "PctNotHSGrad",
     "PctUnemployed",
-    "agePct12t29",
-    "householdsize",
-    "medIncome",
     "racePctWhite",
     "racepctblack"
   ],
@@ -577,65 +723,35 @@
     "PctBornSameState",
     "PctEmplManu",
     "PctEmplProfServ",
-    "PctFam2Par",
+    "PctEmploy",
+    "PctForeignBorn",
     "PctHousOccup",
     "PctImmigRec8",
-    "PctLargHouseOccup",
-    "PctNotSpeakEnglWell",
-    "PctOccupMgmtProf",
-    "PctPersOwnOccup",
-    "PctRecImmig8",
+    "PctPersDenseHous",
     "PctSameHouse85",
     "PctUsePubTrans",
     "PctVacMore6Mos",
     "PctWOFullPlumb",
-    "PctWorkMomYoungKids",
-    "PersPerOccupHous",
+    "PctWorkMom",
     "PopDens",
-    "RentHighQ",
-    "agePct16t24",
     "blackPerCap",
     "indianPerCap",
     "pctWFarmSelf",
-    "pctWWage",
-    "racePctAsian"
+    "racePctAsian",
+    "racePctHisp"
   ],
   "manual_to_cluster": {
     "MalePctDivorce": {
       "cluster": 6,
-      "representative": "PctFam2Par"
+      "representative": "PctKids2Par"
     },
-    "PctBSorMore": {
-      "cluster": 15,
-      "representative": "PctOccupMgmtProf"
-    },
-    "PctHousOwnOcc": {
-      "cluster": 7,
-      "representative": "PctPersOwnOccup"
-    },
-    "PctKids2Par": {
-      "cluster": 6,
-      "representative": "PctFam2Par"
-    },
-    "PctPopUnderPov": {
+    "PctNotHSGrad": {
       "cluster": 10,
-      "representative": "PctNotHSGrad"
+      "representative": "PctPopUnderPov"
     },
     "PctUnemployed": {
       "cluster": 10,
-      "representative": "PctNotHSGrad"
-    },
-    "agePct12t29": {
-      "cluster": 37,
-      "representative": "agePct16t24"
-    },
-    "householdsize": {
-      "cluster": 41,
-      "representative": "PersPerOccupHous"
-    },
-    "medIncome": {
-      "cluster": 1,
-      "representative": "RentHighQ"
+      "representative": "PctPopUnderPov"
     },
     "racePctWhite": {
       "cluster": 12,

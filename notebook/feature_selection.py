@@ -101,15 +101,40 @@ print(f"\nUsing d={THRESH} (|r| >= {1-THRESH:.2f}) -> {n_clusters} clusters")
 cluster_df = pd.DataFrame({"feature": kept, "cluster": cluster_ids})
 
 # --------------------------------------------------------------------------
-# 5. Representative per cluster (lowest mean intra-cluster distance)
+# 5. Representative per cluster
 # --------------------------------------------------------------------------
+# The default representative of a multi-member cluster is its CENTROID: the
+# member with the lowest mean intra-cluster correlation distance. For some
+# clusters the centroid is a near-equivalent of a more canonical variable used
+# in the criminology / social-science literature; in those cases an explicit,
+# documented interpretability override (keyed on the centroid feature) replaces
+# it with that canonical member. Every override target is asserted to lie in
+# the same cluster, so the within-cluster correlation guarantee is preserved.
+# This mapping is the single source of truth for the 43-feature working set and
+# matches Table 1 of the report exactly.
+OVERRIDES = {
+    "RentHighQ":            "medIncome",          # income / wealth
+    "PctFam2Par":           "PctKids2Par",        # family structure
+    "PctPersOwnOccup":      "PctHousOwnOcc",      # home ownership
+    "PctNotHSGrad":         "PctPopUnderPov",     # deprivation
+    "PctOccupMgmtProf":     "PctBSorMore",        # education / occupation
+    "PctRecImmig8":         "PctForeignBorn",     # immigration share
+    "pctWWage":             "PctEmploy",          # employment
+    "agePct16t24":          "agePct12t29",        # youth age structure
+    "PctWorkMomYoungKids":  "PctWorkMom",         # working motherhood
+    "PersPerOccupHous":     "householdsize",      # household size
+    "PctNotSpeakEnglWell":  "racePctHisp",        # hispanic / language
+    "PctLargHouseOccup":    "PctPersDenseHous",   # crowded housing
+}
+
 representatives = []
 cluster_summary = []
+n_overrides = 0
 dist_df = pd.DataFrame(dist, index=kept, columns=kept)
 for cid in sorted(cluster_df["cluster"].unique()):
     members = cluster_df.loc[cluster_df["cluster"] == cid, "feature"].tolist()
     if len(members) == 1:
-        rep = members[0]
+        centroid = members[0]
         mean_d = 0.0
     else:
         sub = dist_df.loc[members, members]
@@ -122,27 +147,39 @@ for cid in sorted(cluster_df["cluster"].unique()):
             "mean_intra_d": mean_intra,
             "miss": [miss_rate[m] for m in members],
         }).sort_values(["mean_intra_d", "miss"])
-        rep = ranking.iloc[0]["feature"]
+        centroid = ranking.iloc[0]["feature"]
         mean_d = float(ranking.iloc[0]["mean_intra_d"])
+    # apply interpretability override if one is registered for this centroid
+    rep = OVERRIDES.get(centroid, centroid)
+    if rep != centroid:
+        assert rep in members, (
+            f"override target {rep!r} is not in the cluster of centroid "
+            f"{centroid!r}: {members}")
+        n_overrides += 1
     representatives.append(rep)
     cluster_summary.append({
         "cluster": int(cid),
         "size": len(members),
+        "centroid": centroid,
         "representative": rep,
+        "overridden": rep != centroid,
         "rep_mean_intra_d": mean_d,
         "members": members,
     })
 
-print(f"\nSelected {len(representatives)} representatives.")
+print(f"\nSelected {len(representatives)} representatives "
+      f"({n_overrides} interpretability overrides applied).")
 
-# Sanity check: max intra-cluster |r| of selected set must be < 1 - THRESH
-# (guaranteed only with complete linkage)
+# Residual correlation among the final representatives. Note: complete linkage
+# bounds the WITHIN-cluster correlation, not the correlation BETWEEN cluster
+# representatives, so this value may exceed 1 - THRESH (e.g. PctKids2Par vs
+# PctIlleg). This residual between-cluster correlation is itself discussed in
+# the report (Sections on correlation structure and PCA).
 sel_corr = X[representatives].corr().abs()
 np.fill_diagonal(sel_corr.values, 0.0)
 max_r_selected = float(sel_corr.values.max())
-ok = "PASS" if max_r_selected < (1 - THRESH) + 1e-9 else "FAIL"
-print(f"Maximum |Pearson r| among representatives: {max_r_selected:.3f} "
-      f"(threshold < {1 - THRESH:.2f}) -> {ok}")
+print(f"Maximum |Pearson r| between final representatives: {max_r_selected:.3f} "
+      f"(between-cluster residual; not bounded by the cut)")
 
 # --------------------------------------------------------------------------
 # 6. Comparison with current manual 18-feature selection
@@ -197,14 +234,21 @@ print(f"\nDendrogram saved to {os.path.join(FIG, 'feature_dendrogram.png')}")
 # --------------------------------------------------------------------------
 # 8. Persist results
 # --------------------------------------------------------------------------
+# final_features is the authoritative 43-feature working set consumed by
+# analysis.py (after the interpretability overrides above). Sorted for a
+# stable, diff-friendly artifact.
+final_features = sorted(representatives)
 out = {
     "missingness_threshold": KEEP_MISS_THRESH,
     "distance_threshold": THRESH,
     "n_features_total": len(predictors_all),
     "n_features_after_missing": len(kept),
     "n_clusters": int(n_clusters),
-    "max_abs_r_in_selected": max_r_selected,
+    "n_overrides": n_overrides,
+    "overrides": OVERRIDES,
+    "max_abs_r_between_representatives": max_r_selected,
     "dropped_for_missingness": dropped_miss,
+    "final_features": final_features,
     "representatives": representatives,
     "cluster_summary": cluster_summary,
     "manual_selection": manual_18,
@@ -216,6 +260,8 @@ out = {
 with open(os.path.join(ROOT, "results_feature_selection.json"), "w") as fh:
     json.dump(out, fh, indent=2)
 print(f"Results JSON: {os.path.join(ROOT, 'results_feature_selection.json')}")
+print(f"Final working set: {len(final_features)} features "
+      f"(written as 'final_features').")
 
 # --------------------------------------------------------------------------
 # 9. Pretty-print cluster table

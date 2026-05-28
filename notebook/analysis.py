@@ -58,10 +58,13 @@ TARGET = "ViolentCrimesPerPop"
 
 # Working set of 43 features obtained by a label-blind, data-driven
 # hierarchical-clustering pipeline on the |Pearson r| distance over the
-# 100 low-missingness predictors. See notebook/feature_selection.py and
-# the corresponding Section II of the report for full justification.
-# The features are grouped here by conceptual block, which is also the
-# layout used by the boxplot panels.
+# 100 low-missingness predictors. The authoritative selection (including the
+# 12 documented interpretability overrides) is produced by
+# notebook/feature_selection.py and written to results_feature_selection.json;
+# the list below is exactly that set, merely re-grouped by conceptual block for
+# the box-plot panels and the correlation heatmap. A run-time assertion against
+# the JSON (see below) guarantees the two stay in sync, so the same
+# deterministic selection feeds every subsequent analysis.
 feat_blocks = [
     ("Demography",      ["population", "householdsize", "agePct12t29",
                           "agePct65up", "racePctAsian", "racePctHisp"]),
@@ -85,6 +88,25 @@ feat_blocks = [
 ]
 selected = [f for _, feats in feat_blocks for f in feats]
 assert len(selected) == 43, f"expected 43 features, got {len(selected)}"
+
+# Consistency guard: the working set MUST equal the authoritative selection
+# emitted by feature_selection.py. If the JSON is present (i.e. the selection
+# pipeline has been run), assert exact agreement so the report's claim that the
+# same deterministic pipeline drives every analysis cannot silently drift.
+_fs_json = os.path.join(ROOT, "results_feature_selection.json")
+if os.path.exists(_fs_json):
+    with open(_fs_json) as _fh:
+        _final = set(json.load(_fh)["final_features"])
+    assert set(selected) == _final, (
+        "feature mismatch between analysis.py and feature_selection.py:\n"
+        f"  only in analysis.py: {sorted(set(selected) - _final)}\n"
+        f"  only in selection  : {sorted(_final - set(selected))}\n"
+        "Re-run feature_selection.py or reconcile the two lists.")
+    print("Feature set verified against results_feature_selection.json (43/43).")
+else:
+    print("results_feature_selection.json not found; run feature_selection.py "
+          "to verify the selection. Proceeding with the in-file working set.")
+
 missing = df_full[selected + [TARGET]].isna().sum()
 print("Missing values per selected feature:\n", missing)
 
