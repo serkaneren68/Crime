@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.25)  29 MAY 2026 02:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.25)  29 MAY 2026 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1228,7 +1228,7 @@ ic/amsfonts/cm/cmsy9.pfb><./t1-formata-bold.pfb><./t1-formata-condmedium.pfb><.
 <./t1-formata-regular.pfb><./t1-giovannistd-bookitalic.pfb><./t1-times-bold.pfb
 ><./t1-times-italic.pfb><./t1-times.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/courier/ucrr8a.pfb>
-Output written on crime.pdf (11 pages, 3558917 bytes).
+Output written on crime.pdf (11 pages, 3557877 bytes).
 PDF statistics:
  449 PDF objects out of 1000 (max. 8388607)
  339 compressed objects within 4 object streams
