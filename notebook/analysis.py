@@ -263,6 +263,28 @@ fig.tight_layout()
 fig.savefig(os.path.join(FIG, "correlation_heatmap.png"))
 plt.close(fig)
 
+# Appendix-grade fully annotated heatmap. The 44x44 grid is too dense for the
+# main text, so we render a large source figure and display it on a landscape
+# page in the appendix.
+fig, ax = plt.subplots(figsize=(22, 19))
+sns.heatmap(corr_matrix, cmap="coolwarm", center=0, square=True,
+            annot=True, fmt=".2f", annot_kws={"size": 6.5},
+            cbar_kws={"shrink": 0.5, "label": "Pearson r"},
+            xticklabels=True, yticklabels=True, ax=ax)
+ax.tick_params(axis="both", labelsize=9)
+cum = 0
+for _, fs in feat_blocks[:-1]:
+    cum += len(fs)
+    ax.axhline(cum, color="black", linewidth=0.8)
+    ax.axvline(cum, color="black", linewidth=0.8)
+ax.axhline(len(selected), color="black", linewidth=1.4)
+ax.axvline(len(selected), color="black", linewidth=1.4)
+ax.set_title("Pearson correlation matrix (43 features + ordinal class) "
+             "— full numeric view", fontsize=12)
+fig.tight_layout()
+fig.savefig(os.path.join(FIG, "correlation_heatmap_annotated.png"), dpi=180)
+plt.close(fig)
+
 class_corr = corr_matrix["CrimeClass"].drop("CrimeClass").sort_values(key=lambda s: s.abs(), ascending=False)
 print("Top |correlations| with class (Pearson):\n", class_corr.head(10))
 
@@ -337,6 +359,19 @@ pc_df = pd.DataFrame({"eigenvalue": eigvals,
                       "explained_var_ratio": expl_ratio,
                       "fisher": fisher_pcs}, index=pc_names)
 print(pc_df)
+
+# Top loadings per principal component, used in the appendix to make the
+# substantive content of each PC concrete (which raw features dominate it).
+N_PC_SHOW, N_TOP = 5, 8
+pca_loadings_table = {}
+for k in range(N_PC_SHOW):
+    s = pd.Series(pca.components_[k], index=selected)
+    top = s.reindex(s.abs().sort_values(ascending=False).index).head(N_TOP)
+    pca_loadings_table[f"PC{k+1}"] = {
+        "explained_var_ratio": float(expl_ratio[k]),
+        "fisher": float(fisher_pcs[k]),
+        "top_loadings": [{"feature": f, "loading": float(v)} for f, v in top.items()],
+    }
 
 corr_eig_fisher = np.corrcoef(eigvals, fisher_pcs)[0, 1]
 print(f"Pearson corr(eigenvalue, Fisher of PC) = {corr_eig_fisher:.3f}")
@@ -597,22 +632,34 @@ feature_for_test = "PctKids2Par"
 g_low = df_clean.loc[df_clean["CrimeClass"] == "Low", feature_for_test].values
 g_high = df_clean.loc[df_clean["CrimeClass"] == "High", feature_for_test].values
 
+def cohens_d_pooled(a, b):
+    """Cohen's d with pooled (unbiased) within-group standard deviation."""
+    na, nb = len(a), len(b)
+    var_a = a.var(ddof=1)
+    var_b = b.var(ddof=1)
+    pooled = np.sqrt(((na - 1) * var_a + (nb - 1) * var_b) / (na + nb - 2))
+    return float((a.mean() - b.mean()) / pooled)
+
 ttest_results = {}
 for n in (36, 64):
     rng = np.random.default_rng(42)
     s_low = rng.choice(g_low, size=n, replace=False)
     s_high = rng.choice(g_high, size=n, replace=False)
     t, p = stats.ttest_ind(s_low, s_high, equal_var=False)
+    d = cohens_d_pooled(s_low, s_high)
     ttest_results[n] = {"t": float(t), "p": float(p),
+                        "cohens_d": d,
                         "mean_low": float(s_low.mean()),
                         "mean_high": float(s_high.mean()),
                         "std_low": float(s_low.std(ddof=1)),
                         "std_high": float(s_high.std(ddof=1))}
-    print(f"  n={n}: t={t:.3f}, p={p:.3e}, mean_low={s_low.mean():.3f}, mean_high={s_high.mean():.3f}")
+    print(f"  n={n}: t={t:.3f}, p={p:.3e}, d={d:.2f}, "
+          f"mean_low={s_low.mean():.3f}, mean_high={s_high.mean():.3f}")
 
 # Population (full-class) reference
 t_full, p_full = stats.ttest_ind(g_low, g_high, equal_var=False)
-print(f"  population: t={t_full:.3f}, p={p_full:.3e}")
+d_full = cohens_d_pooled(g_low, g_high)
+print(f"  population: t={t_full:.3f}, p={p_full:.3e}, d={d_full:.2f}")
 print("Done Task 8.")
 
 # ----------------------------------------------------------------------------
@@ -631,12 +678,14 @@ results = {
     "dbscan_clusters": int(n_db_clusters),
     "dbscan_noise": int(n_db_noise),
     "ttest": ttest_results,
-    "ttest_population": {"t": float(t_full), "p": float(p_full)},
+    "ttest_population": {"t": float(t_full), "p": float(p_full),
+                         "cohens_d": d_full},
     "feature_for_test": feature_for_test,
     "class_corr_top_pearson": class_corr.head(10).to_dict(),
     "class_corr_top_spearman": spearman_class.head(10).to_dict(),
     "pearson_spearman_rank_agreement": float(rank_agree),
     "som_mean_cell_purity": mean_purity,
+    "pca_loadings_top": pca_loadings_table,
 }
 with open(os.path.join(ROOT, "results.json"), "w") as fh:
     json.dump(results, fh, indent=2)

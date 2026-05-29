@@ -53,75 +53,86 @@
 \newlabel{tab:outlier}{{3}{5}{Outlier-cleaning comparison on the $43$-feature working set. The per-feature IQR rule is shown only as a rejected baseline; the multivariate Isolation Forest is the method actually used}{table.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Box plots after Isolation Forest cleaning (contamination $=0.05$). The bulk of each distribution is preserved, yet marginal outlier points (circles beyond the whiskers) remain visible --- a direct visual confirmation that the detector removes joint anomalies rather than per-feature extremes.}}{5}{figure.3}\protected@file@percent }
 \newlabel{fig:box_after}{{3}{5}{Box plots after Isolation Forest cleaning (contamination $=0.05$). The bulk of each distribution is preserved, yet marginal outlier points (circles beyond the whiskers) remain visible --- a direct visual confirmation that the detector removes joint anomalies rather than per-feature extremes}{figure.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Correlation Structure}{5}{section.4}\protected@file@percent }
-\newlabel{sec:corr}{{IV}{5}{Correlation Structure}{section.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pearson correlation matrix of the $43$ features and the ordinally coded crime class. Numeric annotations are omitted for legibility; black lines mark the conceptual-block boundaries of Table\nobreakspace  {}\ref  {tab:features}. The opposed warm/cool blocks are the advantage--disadvantage socioeconomic gradient.}}{5}{figure.4}\protected@file@percent }
 \newlabel{fig:corrheat}{{4}{5}{Pearson correlation matrix of the $43$ features and the ordinally coded crime class. Numeric annotations are omitted for legibility; black lines mark the conceptual-block boundaries of Table~\ref {tab:features}. The opposed warm/cool blocks are the advantage--disadvantage socioeconomic gradient}{figure.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Per-feature Pearson correlation with the (ordinal) crime class, all $43$ features ranked. Red bars indicate positive correlation with higher crime levels, blue bars negative (protective) correlation.}}{5}{figure.5}\protected@file@percent }
-\newlabel{fig:classcorr}{{5}{5}{Per-feature Pearson correlation with the (ordinal) crime class, all $43$ features ranked. Red bars indicate positive correlation with higher crime levels, blue bars negative (protective) correlation}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Correlation Structure}{5}{section.4}\protected@file@percent }
+\newlabel{sec:corr}{{IV}{5}{Correlation Structure}{section.4}{}}
 \citation{fisher1936}
-\citation{jolliffe}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Per-feature Pearson correlation with the (ordinal) crime class, all $43$ features ranked. Red bars indicate positive correlation with higher crime levels, blue bars negative (protective) correlation.}}{6}{figure.5}\protected@file@percent }
+\newlabel{fig:classcorr}{{5}{6}{Per-feature Pearson correlation with the (ordinal) crime class, all $43$ features ranked. Red bars indicate positive correlation with higher crime levels, blue bars negative (protective) correlation}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Per-feature Fisher Distance after z-score normalization, all $43$ features ranked. \texttt  {PctKids2Par} and \texttt  {PctIlleg} dominate; roughly half of the features have Fisher Distance close to zero.}}{6}{figure.6}\protected@file@percent }
+\newlabel{fig:fisher_feat}{{6}{6}{Per-feature Fisher Distance after z-score normalization, all $43$ features ranked. \texttt {PctKids2Par} and \texttt {PctIlleg} dominate; roughly half of the features have Fisher Distance close to zero}{figure.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Per-Feature Fisher Discriminability}{6}{section.5}\protected@file@percent }
 \newlabel{sec:fisher}{{V}{6}{Per-Feature Fisher Discriminability}{section.5}{}}
 \newlabel{eq:fisher}{{2}{6}{Per-Feature Fisher Discriminability}{equation.5.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Per-feature Fisher Distance after z-score normalization, all $43$ features ranked. \texttt  {PctKids2Par} and \texttt  {PctIlleg} dominate; roughly half of the features have Fisher Distance close to zero.}}{6}{figure.6}\protected@file@percent }
-\newlabel{fig:fisher_feat}{{6}{6}{Per-feature Fisher Distance after z-score normalization, all $43$ features ranked. \texttt {PctKids2Par} and \texttt {PctIlleg} dominate; roughly half of the features have Fisher Distance close to zero}{figure.6}{}}
+\citation{jolliffe}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces PCA scree plot for the $43$-feature working set. PC1 captures $18.6\%$ of the variance and PC2 a further $14.3\%$; the top five components capture $53.4\%$, and sixteen are needed for $80\%$.}}{7}{figure.7}\protected@file@percent }
 \newlabel{fig:scree}{{7}{7}{PCA scree plot for the $43$-feature working set. PC1 captures $18.6\%$ of the variance and PC2 a further $14.3\%$; the top five components capture $53.4\%$, and sixteen are needed for $80\%$}{figure.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Fisher Distance per z-scored original feature (left) and per principal component (right), on a shared vertical scale. The per-feature signal is spread over several variables, whereas the per-PC signal is concentrated almost entirely in PC1.}}{7}{figure.8}\protected@file@percent }
-\newlabel{fig:fishercmp}{{8}{7}{Fisher Distance per z-scored original feature (left) and per principal component (right), on a shared vertical scale. The per-feature signal is spread over several variables, whereas the per-PC signal is concentrated almost entirely in PC1}{figure.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Principal Component Analysis}{7}{section.6}\protected@file@percent }
 \newlabel{sec:pca}{{VI}{7}{Principal Component Analysis}{section.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Fisher Distance per z-scored original feature (left) and per principal component (right), on a shared vertical scale. The per-feature signal is spread over several variables, whereas the per-PC signal is concentrated almost entirely in PC1.}}{7}{figure.8}\protected@file@percent }
+\newlabel{fig:fishercmp}{{8}{7}{Fisher Distance per z-scored original feature (left) and per principal component (right), on a shared vertical scale. The per-feature signal is spread over several variables, whereas the per-PC signal is concentrated almost entirely in PC1}{figure.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Eigenvalue versus Fisher Distance for the $43$ principal components. Pearson correlation $r=0.76$, Spearman $\rho =0.49$. PC2 has the second-largest eigenvalue yet a near-zero Fisher Distance.}}{7}{figure.9}\protected@file@percent }
 \newlabel{fig:eigfisher}{{9}{7}{Eigenvalue versus Fisher Distance for the $43$ principal components. Pearson correlation $r=0.76$, Spearman $\rho =0.49$. PC2 has the second-largest eigenvalue yet a near-zero Fisher Distance}{figure.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}Low-Dimensional Class Projections}{7}{section.7}\protected@file@percent }
-\newlabel{sec:pcscatter}{{VII}{7}{Low-Dimensional Class Projections}{section.7}{}}
 \citation{fisher1936}
 \citation{rousseeuw}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Top: projection onto (PC1, PC2). A clear monotone ordering Low $\rightarrow $ Medium $\rightarrow $ High emerges along the horizontal PC1 axis, while the vertical PC2 axis adds no separation. Bottom: projection onto the two least important PCs (PC42, PC43), which show no class structure.}}{8}{figure.10}\protected@file@percent }
+\newlabel{fig:pcscat}{{10}{8}{Top: projection onto (PC1, PC2). A clear monotone ordering Low $\rightarrow $ Medium $\rightarrow $ High emerges along the horizontal PC1 axis, while the vertical PC2 axis adds no separation. Bottom: projection onto the two least important PCs (PC42, PC43), which show no class structure}{figure.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Low-Dimensional Class Projections}{8}{section.7}\protected@file@percent }
+\newlabel{sec:pcscatter}{{VII}{8}{Low-Dimensional Class Projections}{section.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces LDA 2-D projection. The three classes form a clearer left--right ordering than in the PCA projection.}}{8}{figure.11}\protected@file@percent }
+\newlabel{fig:lda}{{11}{8}{LDA 2-D projection. The three classes form a clearer left--right ordering than in the PCA projection}{figure.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Quantitative separability of the 2-D PCA and LDA embeddings. Higher is better in both cases.}}{8}{table.4}\protected@file@percent }
+\newlabel{tab:sep}{{4}{8}{Quantitative separability of the 2-D PCA and LDA embeddings. Higher is better in both cases}{table.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Linear Discriminant Analysis and Class Separability}{8}{section.8}\protected@file@percent }
+\newlabel{sec:lda}{{VIII}{8}{Linear Discriminant Analysis and Class Separability}{section.8}{}}
 \citation{lloyd}
 \citation{ester}
 \citation{vandermaaten}
 \citation{kohonen}
 \citation{minisom}
 \citation{hubert}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Top: projection onto (PC1, PC2). A clear monotone ordering Low $\rightarrow $ Medium $\rightarrow $ High emerges along the horizontal PC1 axis, while the vertical PC2 axis adds no separation. Bottom: projection onto the two least important PCs (PC42, PC43), which show no class structure.}}{8}{figure.10}\protected@file@percent }
-\newlabel{fig:pcscat}{{10}{8}{Top: projection onto (PC1, PC2). A clear monotone ordering Low $\rightarrow $ Medium $\rightarrow $ High emerges along the horizontal PC1 axis, while the vertical PC2 axis adds no separation. Bottom: projection onto the two least important PCs (PC42, PC43), which show no class structure}{figure.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VIII}Linear Discriminant Analysis and Class Separability}{8}{section.8}\protected@file@percent }
-\newlabel{sec:lda}{{VIII}{8}{Linear Discriminant Analysis and Class Separability}{section.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces LDA 2-D projection. The three classes form a clearer left--right ordering than in the PCA projection.}}{8}{figure.11}\protected@file@percent }
-\newlabel{fig:lda}{{11}{8}{LDA 2-D projection. The three classes form a clearer left--right ordering than in the PCA projection}{figure.11}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Quantitative separability of the 2-D PCA and LDA embeddings. Higher is better in both cases.}}{8}{table.4}\protected@file@percent }
-\newlabel{tab:sep}{{4}{8}{Quantitative separability of the 2-D PCA and LDA embeddings. Higher is better in both cases}{table.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IX}Unsupervised Cluster Structure}{8}{section.9}\protected@file@percent }
-\newlabel{sec:cluster}{{IX}{8}{Unsupervised Cluster Structure}{section.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces K-Means ($k=3$) on the (PC1, PC2) projection. Left: true classes; right: assigned clusters.}}{9}{figure.12}\protected@file@percent }
 \newlabel{fig:kmeans}{{12}{9}{K-Means ($k=3$) on the (PC1, PC2) projection. Left: true classes; right: assigned clusters}{figure.12}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces DBSCAN ($\varepsilon =0.5$, $\mathrm  {minPts}=10$) on (PC1, PC2). The bulk of the data collapses into one dominant dense cluster (plus a few tiny fringe clusters), with $233$ samples ($12.3\%$) flagged as noise.}}{9}{figure.13}\protected@file@percent }
 \newlabel{fig:dbscan}{{13}{9}{DBSCAN ($\varepsilon =0.5$, $\mathrm {minPts}=10$) on (PC1, PC2). The bulk of the data collapses into one dominant dense cluster (plus a few tiny fringe clusters), with $233$ samples ($12.3\%$) flagged as noise}{figure.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IX}Unsupervised Cluster Structure}{9}{section.9}\protected@file@percent }
+\newlabel{sec:cluster}{{IX}{9}{Unsupervised Cluster Structure}{section.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0a}K-Means}{9}{paragraph.9.0.0.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces t-SNE embedding of the full $43$-dimensional z-scored data, coloured by true class. A continuous gradient is visible across the embedding.}}{9}{figure.14}\protected@file@percent }
 \newlabel{fig:tsne}{{14}{9}{t-SNE embedding of the full $43$-dimensional z-scored data, coloured by true class. A continuous gradient is visible across the embedding}{figure.14}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Adjusted Rand Index (ARI) \cite  {hubert} and Normalised Mutual Information (NMI) between cluster assignments and the true class labels.}}{9}{table.5}\protected@file@percent }
-\newlabel{tab:clust}{{5}{9}{Adjusted Rand Index (ARI) \cite {hubert} and Normalised Mutual Information (NMI) between cluster assignments and the true class labels}{table.5}{}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0a}K-Means}{9}{paragraph.9.0.0.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces $12\times 12$ MiniSom trained on the original z-scored data. Left: scatter of winners coloured by true class (jittered for visibility). Centre: per-neuron hit-count heat-map. Right: dominant class per neuron with per-cell purity (text labels, in $\%$); the mean purity of non-empty cells is $67.5\%$.}}{9}{figure.15}\protected@file@percent }
 \newlabel{fig:som}{{15}{9}{$12\times 12$ MiniSom trained on the original z-scored data. Left: scatter of winners coloured by true class (jittered for visibility). Centre: per-neuron hit-count heat-map. Right: dominant class per neuron with per-cell purity (text labels, in $\%$); the mean purity of non-empty cells is $67.5\%$}{figure.15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Adjusted Rand Index (ARI) \cite  {hubert} and Normalised Mutual Information (NMI) between cluster assignments and the true class labels.}}{9}{table.5}\protected@file@percent }
+\newlabel{tab:clust}{{5}{9}{Adjusted Rand Index (ARI) \cite {hubert} and Normalised Mutual Information (NMI) between cluster assignments and the true class labels}{table.5}{}}
 \@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0b}DBSCAN}{9}{paragraph.9.0.0.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0c}t-SNE}{9}{paragraph.9.0.0.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0d}SOM}{9}{paragraph.9.0.0.4}\protected@file@percent }
 \citation{welch}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Welch's t-test results on \texttt  {PctKids2Par} between the Low and High crime classes, with Cohen's $d$ as an effect-size measure (pooled within-group standard deviation).}}{10}{table.6}\protected@file@percent }
+\newlabel{tab:ttest}{{6}{10}{Welch's t-test results on \texttt {PctKids2Par} between the Low and High crime classes, with Cohen's $d$ as an effect-size measure (pooled within-group standard deviation)}{table.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0c}t-SNE}{10}{paragraph.9.0.0.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0d}SOM}{10}{paragraph.9.0.0.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {X}Significance of the Leading Predictor}{10}{section.10}\protected@file@percent }
+\newlabel{sec:hypothesis}{{X}{10}{Significance of the Leading Predictor}{section.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {XI}Conclusion}{10}{section.11}\protected@file@percent }
+\newlabel{sec:conclusion}{{XI}{10}{Conclusion}{section.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Full Pearson Correlation Matrix}{11}{appendix.Appendix.A}\protected@file@percent }
+\newlabel{app:fullcorr}{{}{11}{Full Pearson Correlation Matrix}{appendix.Appendix.A}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Top-loading features per principal component (signed loadings, sorted by $|\text  {loading}|$). ``Var.'' is the explained-variance ratio of the component; ``Fisher'' is its multi-class Fisher Distance.}}{11}{table.7}\protected@file@percent }
+\newlabel{tab:pcaload}{{7}{11}{Top-loading features per principal component (signed loadings, sorted by $|\text {loading}|$). ``Var.'' is the explained-variance ratio of the component; ``Fisher'' is its multi-class Fisher Distance}{table.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Principal Component Loadings}{11}{appendix.Appendix.A}\protected@file@percent }
+\newlabel{app:pcaload}{{}{11}{Principal Component Loadings}{appendix.Appendix.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Threshold Sensitivity of the Feature Selection}{11}{appendix.Appendix.A}\protected@file@percent }
+\newlabel{app:sweep}{{}{11}{Threshold Sensitivity of the Feature Selection}{appendix.Appendix.A}{}}
+\newlabel{RF1}{12}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Full Pearson correlation matrix of the $43$ features and the ordinally coded crime class with numeric annotations. Black lines separate the conceptual blocks of Table\nobreakspace  {}\ref  {tab:features}; the heavier line isolates the class row and column.}}{12}{figure.16}\protected@file@percent }
+\newlabel{fig:fullcorr}{{16}{12}{Full Pearson correlation matrix of the $43$ features and the ordinally coded crime class with numeric annotations. Black lines separate the conceptual blocks of Table~\ref {tab:features}; the heavier line isolates the class row and column}{figure.16}{}}
+\citation{pedregosa}
+\citation{minisom}
 \citation{uciccrime}
 \bibcite{uciccrime}{1}
 \bibcite{redmondbaveja}{2}
 \bibcite{shawmckay}{3}
 \bibcite{sampson}{4}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Welch's t-test results on \texttt  {PctKids2Par} between the Low and High crime classes.}}{10}{table.6}\protected@file@percent }
-\newlabel{tab:ttest}{{6}{10}{Welch's t-test results on \texttt {PctKids2Par} between the Low and High crime classes}{table.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {X}Significance of the Leading Predictor}{10}{section.10}\protected@file@percent }
-\newlabel{sec:hypothesis}{{X}{10}{Significance of the Leading Predictor}{section.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {XI}Conclusion}{10}{section.11}\protected@file@percent }
-\newlabel{sec:conclusion}{{XI}{10}{Conclusion}{section.11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {}A}{10}{appendix.Appendix.A}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{REFERENCES}{10}{section*.1}\protected@file@percent }
 \bibcite{hastie}{5}
 \bibcite{pedregosa}{6}
 \bibcite{liu2008isolation}{7}
@@ -135,5 +146,10 @@
 \bibcite{minisom}{15}
 \bibcite{hubert}{16}
 \bibcite{welch}{17}
-\@writefile{toc}{\contentsline {subsection}{Serkan Eren}{11}{section*.2}\protected@file@percent }
-\gdef \@abspage@last{11}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Number of clusters produced by complete-linkage hierarchical clustering on the absolute Pearson correlation distance, for nine cut thresholds.}}{13}{table.8}\protected@file@percent }
+\newlabel{tab:sweep}{{8}{13}{Number of clusters produced by complete-linkage hierarchical clustering on the absolute Pearson correlation distance, for nine cut thresholds}{table.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Data and Code Availability}{13}{appendix.Appendix.A}\protected@file@percent }
+\newlabel{app:repro}{{}{13}{Data and Code Availability}{appendix.Appendix.A}{}}
+\@writefile{toc}{\contentsline {section}{REFERENCES}{13}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Serkan Eren}{13}{section*.2}\protected@file@percent }
+\gdef \@abspage@last{13}

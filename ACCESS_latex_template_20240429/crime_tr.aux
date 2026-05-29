@@ -53,64 +53,81 @@
 \newlabel{tab:outlier}{{3}{5}{$43$-özellik çalışma kümesinde aykırı değer temizleme karşılaştırması. Özellik-başına IQR kuralı yalnızca reddedilen bir taban olarak gösterilmiştir; fiilen kullanılan yöntem çok-değişkenli Isolation Forest'tır}{table.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Isolation Forest temizliği (kirlilik $=0{,}05$) sonrası kutu grafikleri. Her dağılımın ana gövdesi korunur, ancak marjinal aykırı değer noktaları (bıyıkların ötesindeki daireler) hâlâ görünürdür --- detektörün özellik-başına uç değerleri değil birleşik anomalileri kaldırdığının doğrudan görsel kanıtı.}}{5}{figure.3}\protected@file@percent }
 \newlabel{fig:box_after}{{3}{5}{Isolation Forest temizliği (kirlilik $=0{,}05$) sonrası kutu grafikleri. Her dağılımın ana gövdesi korunur, ancak marjinal aykırı değer noktaları (bıyıkların ötesindeki daireler) hâlâ görünürdür --- detektörün özellik-başına uç değerleri değil birleşik anomalileri kaldırdığının doğrudan görsel kanıtı}{figure.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}KORELASYON YAPISI}{5}{section.4}\protected@file@percent }
-\newlabel{sec:corr}{{IV}{5}{KORELASYON YAPISI}{section.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces $43$ özellik ile ordinal kodlanmış suç sınıfının Pearson korelasyon matrisi. Okunabilirlik için sayısal etiketler çıkarılmıştır; siyah çizgiler Tablo\nobreakspace  {}\ref  {tab:features}'deki kavramsal-blok sınırlarını işaretler. Zıt sıcak/soğuk bloklar, avantaj--dezavantaj sosyoekonomik gradyanıdır.}}{5}{figure.4}\protected@file@percent }
 \newlabel{fig:corrheat}{{4}{5}{$43$ özellik ile ordinal kodlanmış suç sınıfının Pearson korelasyon matrisi. Okunabilirlik için sayısal etiketler çıkarılmıştır; siyah çizgiler Tablo~\ref {tab:features}'deki kavramsal-blok sınırlarını işaretler. Zıt sıcak/soğuk bloklar, avantaj--dezavantaj sosyoekonomik gradyanıdır}{figure.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces $43$ özelliğin tamamının suç sınıfı (ordinal) ile özellik-başına Pearson korelasyonu, sıralanmış halde. Kırmızı çubuklar yüksek suç düzeyleriyle pozitif korelasyonu, mavi çubuklar negatif (koruyucu) korelasyonu gösterir.}}{5}{figure.5}\protected@file@percent }
-\newlabel{fig:classcorr}{{5}{5}{$43$ özelliğin tamamının suç sınıfı (ordinal) ile özellik-başına Pearson korelasyonu, sıralanmış halde. Kırmızı çubuklar yüksek suç düzeyleriyle pozitif korelasyonu, mavi çubuklar negatif (koruyucu) korelasyonu gösterir}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}KORELASYON YAPISI}{5}{section.4}\protected@file@percent }
+\newlabel{sec:corr}{{IV}{5}{KORELASYON YAPISI}{section.4}{}}
 \citation{fisher1936}
-\citation{jolliffe}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces $43$ özelliğin tamamının suç sınıfı (ordinal) ile özellik-başına Pearson korelasyonu, sıralanmış halde. Kırmızı çubuklar yüksek suç düzeyleriyle pozitif korelasyonu, mavi çubuklar negatif (koruyucu) korelasyonu gösterir.}}{6}{figure.5}\protected@file@percent }
+\newlabel{fig:classcorr}{{5}{6}{$43$ özelliğin tamamının suç sınıfı (ordinal) ile özellik-başına Pearson korelasyonu, sıralanmış halde. Kırmızı çubuklar yüksek suç düzeyleriyle pozitif korelasyonu, mavi çubuklar negatif (koruyucu) korelasyonu gösterir}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Z-skor normalizasyonu sonrası özellik-başına Fisher Uzaklığı, $43$ özelliğin tamamı sıralanmış halde. \texttt  {PctKids2Par} ve \texttt  {PctIlleg} domine eder; özelliklerin yaklaşık yarısı sıfıra yakın Fisher Uzaklığına sahiptir.}}{6}{figure.6}\protected@file@percent }
+\newlabel{fig:fisher_feat}{{6}{6}{Z-skor normalizasyonu sonrası özellik-başına Fisher Uzaklığı, $43$ özelliğin tamamı sıralanmış halde. \texttt {PctKids2Par} ve \texttt {PctIlleg} domine eder; özelliklerin yaklaşık yarısı sıfıra yakın Fisher Uzaklığına sahiptir}{figure.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}ÖZELLİK-BAŞINA FISHER AYIRT EDİCİLİĞİ}{6}{section.5}\protected@file@percent }
 \newlabel{sec:fisher}{{V}{6}{ÖZELLİK-BAŞINA FISHER AYIRT EDİCİLİĞİ}{section.5}{}}
 \newlabel{eq:fisher}{{2}{6}{ÖZELLİK-BAŞINA FISHER AYIRT EDİCİLİĞİ}{equation.5.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Z-skor normalizasyonu sonrası özellik-başına Fisher Uzaklığı, $43$ özelliğin tamamı sıralanmış halde. \texttt  {PctKids2Par} ve \texttt  {PctIlleg} domine eder; özelliklerin yaklaşık yarısı sıfıra yakın Fisher Uzaklığına sahiptir.}}{6}{figure.6}\protected@file@percent }
-\newlabel{fig:fisher_feat}{{6}{6}{Z-skor normalizasyonu sonrası özellik-başına Fisher Uzaklığı, $43$ özelliğin tamamı sıralanmış halde. \texttt {PctKids2Par} ve \texttt {PctIlleg} domine eder; özelliklerin yaklaşık yarısı sıfıra yakın Fisher Uzaklığına sahiptir}{figure.6}{}}
+\citation{jolliffe}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces $43$-özellik çalışma kümesi için PCA scree grafiği. PC1 varyansın $\%18{,}6$'sını, PC2 ek $\%14{,}3$'ünü yakalar; ilk beş bileşen $\%53{,}4$'ü, $\%80$ için on altı bileşen gereklidir.}}{7}{figure.7}\protected@file@percent }
 \newlabel{fig:scree}{{7}{7}{$43$-özellik çalışma kümesi için PCA scree grafiği. PC1 varyansın $\%18{,}6$'sını, PC2 ek $\%14{,}3$'ünü yakalar; ilk beş bileşen $\%53{,}4$'ü, $\%80$ için on altı bileşen gereklidir}{figure.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Z-skorlanmış orijinal özellik-başına (sol) ve temel bileşen-başına (sağ) Fisher Uzaklığı, ortak dikey ölçekte. Özellik-başına sinyal birkaç değişkene yayılırken, PC-başına sinyal neredeyse tamamen PC1'de yoğunlaşmıştır.}}{7}{figure.8}\protected@file@percent }
-\newlabel{fig:fishercmp}{{8}{7}{Z-skorlanmış orijinal özellik-başına (sol) ve temel bileşen-başına (sağ) Fisher Uzaklığı, ortak dikey ölçekte. Özellik-başına sinyal birkaç değişkene yayılırken, PC-başına sinyal neredeyse tamamen PC1'de yoğunlaşmıştır}{figure.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {VI}TEMEL BİLEŞEN ANALİZİ}{7}{section.6}\protected@file@percent }
 \newlabel{sec:pca}{{VI}{7}{TEMEL BİLEŞEN ANALİZİ}{section.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Z-skorlanmış orijinal özellik-başına (sol) ve temel bileşen-başına (sağ) Fisher Uzaklığı, ortak dikey ölçekte. Özellik-başına sinyal birkaç değişkene yayılırken, PC-başına sinyal neredeyse tamamen PC1'de yoğunlaşmıştır.}}{7}{figure.8}\protected@file@percent }
+\newlabel{fig:fishercmp}{{8}{7}{Z-skorlanmış orijinal özellik-başına (sol) ve temel bileşen-başına (sağ) Fisher Uzaklığı, ortak dikey ölçekte. Özellik-başına sinyal birkaç değişkene yayılırken, PC-başına sinyal neredeyse tamamen PC1'de yoğunlaşmıştır}{figure.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces $43$ temel bileşen için eigenvalue'ya karşı Fisher Uzaklığı. Pearson korelasyonu $r=0{,}76$, Spearman $\rho =0{,}49$. PC2 ikinci en büyük eigenvalue'ya sahip olmasına rağmen sıfıra yakın Fisher Uzaklığı taşır.}}{7}{figure.9}\protected@file@percent }
 \newlabel{fig:eigfisher}{{9}{7}{$43$ temel bileşen için eigenvalue'ya karşı Fisher Uzaklığı. Pearson korelasyonu $r=0{,}76$, Spearman $\rho =0{,}49$. PC2 ikinci en büyük eigenvalue'ya sahip olmasına rağmen sıfıra yakın Fisher Uzaklığı taşır}{figure.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VII}DÜŞÜK-BOYUTLU SINIF PROJEKSİYONLARI}{7}{section.7}\protected@file@percent }
-\newlabel{sec:pcscatter}{{VII}{7}{DÜŞÜK-BOYUTLU SINIF PROJEKSİYONLARI}{section.7}{}}
 \citation{fisher1936}
 \citation{rousseeuw}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Üst: (PC1, PC2) üzerine projeksiyon. Yatay PC1 ekseni boyunca Düşük $\rightarrow $ Orta $\rightarrow $ Yüksek monoton bir sıralama belirirken, dikey PC2 ekseni hiçbir ayrım katmaz. Alt: en önemsiz iki PC (PC42, PC43) üzerine projeksiyon; hiçbir sınıf yapısı göstermez.}}{8}{figure.10}\protected@file@percent }
+\newlabel{fig:pcscat}{{10}{8}{Üst: (PC1, PC2) üzerine projeksiyon. Yatay PC1 ekseni boyunca Düşük $\rightarrow $ Orta $\rightarrow $ Yüksek monoton bir sıralama belirirken, dikey PC2 ekseni hiçbir ayrım katmaz. Alt: en önemsiz iki PC (PC42, PC43) üzerine projeksiyon; hiçbir sınıf yapısı göstermez}{figure.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VII}DÜŞÜK-BOYUTLU SINIF PROJEKSİYONLARI}{8}{section.7}\protected@file@percent }
+\newlabel{sec:pcscatter}{{VII}{8}{DÜŞÜK-BOYUTLU SINIF PROJEKSİYONLARI}{section.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces LDA 2-B projeksiyonu. Üç sınıf, PCA projeksiyonuna kıyasla LD1 ekseni boyunca daha net bir sol--sağ sıralama oluşturur.}}{8}{figure.11}\protected@file@percent }
+\newlabel{fig:lda}{{11}{8}{LDA 2-B projeksiyonu. Üç sınıf, PCA projeksiyonuna kıyasla LD1 ekseni boyunca daha net bir sol--sağ sıralama oluşturur}{figure.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 2-B PCA ve LDA gömmelerinin nicel ayrılabilirliği. Her iki ölçüde de yüksek değer daha iyidir.}}{8}{table.4}\protected@file@percent }
+\newlabel{tab:sep}{{4}{8}{2-B PCA ve LDA gömmelerinin nicel ayrılabilirliği. Her iki ölçüde de yüksek değer daha iyidir}{table.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}DOĞRUSAL AYIRMA ANALİZİ VE SINIF AYRILABİLİRLİĞİ}{8}{section.8}\protected@file@percent }
+\newlabel{sec:lda}{{VIII}{8}{DOĞRUSAL AYIRMA ANALİZİ VE SINIF AYRILABİLİRLİĞİ}{section.8}{}}
 \citation{lloyd}
 \citation{ester}
 \citation{vandermaaten}
 \citation{kohonen}
 \citation{minisom}
 \citation{hubert}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Üst: (PC1, PC2) üzerine projeksiyon. Yatay PC1 ekseni boyunca Düşük $\rightarrow $ Orta $\rightarrow $ Yüksek monoton bir sıralama belirirken, dikey PC2 ekseni hiçbir ayrım katmaz. Alt: en önemsiz iki PC (PC42, PC43) üzerine projeksiyon; hiçbir sınıf yapısı göstermez.}}{8}{figure.10}\protected@file@percent }
-\newlabel{fig:pcscat}{{10}{8}{Üst: (PC1, PC2) üzerine projeksiyon. Yatay PC1 ekseni boyunca Düşük $\rightarrow $ Orta $\rightarrow $ Yüksek monoton bir sıralama belirirken, dikey PC2 ekseni hiçbir ayrım katmaz. Alt: en önemsiz iki PC (PC42, PC43) üzerine projeksiyon; hiçbir sınıf yapısı göstermez}{figure.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VIII}DOĞRUSAL AYIRMA ANALİZİ VE SINIF AYRILABİLİRLİĞİ}{8}{section.8}\protected@file@percent }
-\newlabel{sec:lda}{{VIII}{8}{DOĞRUSAL AYIRMA ANALİZİ VE SINIF AYRILABİLİRLİĞİ}{section.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces LDA 2-B projeksiyonu. Üç sınıf, PCA projeksiyonuna kıyasla LD1 ekseni boyunca daha net bir sol--sağ sıralama oluşturur.}}{8}{figure.11}\protected@file@percent }
-\newlabel{fig:lda}{{11}{8}{LDA 2-B projeksiyonu. Üç sınıf, PCA projeksiyonuna kıyasla LD1 ekseni boyunca daha net bir sol--sağ sıralama oluşturur}{figure.11}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces 2-B PCA ve LDA gömmelerinin nicel ayrılabilirliği. Her iki ölçüde de yüksek değer daha iyidir.}}{8}{table.4}\protected@file@percent }
-\newlabel{tab:sep}{{4}{8}{2-B PCA ve LDA gömmelerinin nicel ayrılabilirliği. Her iki ölçüde de yüksek değer daha iyidir}{table.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IX}DENETİMSİZ KÜME YAPISI}{8}{section.9}\protected@file@percent }
-\newlabel{sec:cluster}{{IX}{8}{DENETİMSİZ KÜME YAPISI}{section.9}{}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0a}K-Means}{8}{paragraph.9.0.0.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces (PC1, PC2) projeksiyonu üzerinde K-Means ($k=3$). Sol: gerçek sınıflar; sağ: atanan kümeler.}}{9}{figure.12}\protected@file@percent }
 \newlabel{fig:kmeans}{{12}{9}{(PC1, PC2) projeksiyonu üzerinde K-Means ($k=3$). Sol: gerçek sınıflar; sağ: atanan kümeler}{figure.12}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces (PC1, PC2) üzerinde DBSCAN ($\varepsilon =0{,}5$, $\mathrm  {minPts}=10$). Verinin büyük kısmı tek bir baskın yoğun kümede toplanır (artı birkaç küçük kenar kümesi), $233$ örnek ($\%12{,}3$) gürültü olarak işaretlenir.}}{9}{figure.13}\protected@file@percent }
 \newlabel{fig:dbscan}{{13}{9}{(PC1, PC2) üzerinde DBSCAN ($\varepsilon =0{,}5$, $\mathrm {minPts}=10$). Verinin büyük kısmı tek bir baskın yoğun kümede toplanır (artı birkaç küçük kenar kümesi), $233$ örnek ($\%12{,}3$) gürültü olarak işaretlenir}{figure.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Tam $43$-boyutlu z-skorlanmış verinin, gerçek sınıfa göre renklendirilmiş t-SNE gömmesi. Gömme boyunca sürekli bir gradyan görünür.}}{9}{figure.14}\protected@file@percent }
-\newlabel{fig:tsne}{{14}{9}{Tam $43$-boyutlu z-skorlanmış verinin, gerçek sınıfa göre renklendirilmiş t-SNE gömmesi. Gömme boyunca sürekli bir gradyan görünür}{figure.14}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Küme atamaları ile gerçek sınıf etiketleri arasındaki Düzeltilmiş Rand İndeksi (ARI) \cite  {hubert} ve Normalize Karşılıklı Bilgi (NMI).}}{9}{table.5}\protected@file@percent }
 \newlabel{tab:clust}{{5}{9}{Küme atamaları ile gerçek sınıf etiketleri arasındaki Düzeltilmiş Rand İndeksi (ARI) \cite {hubert} ve Normalize Karşılıklı Bilgi (NMI)}{table.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IX}DENETİMSİZ KÜME YAPISI}{9}{section.9}\protected@file@percent }
+\newlabel{sec:cluster}{{IX}{9}{DENETİMSİZ KÜME YAPISI}{section.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Tam $43$-boyutlu z-skorlanmış verinin, gerçek sınıfa göre renklendirilmiş t-SNE gömmesi. Gömme boyunca sürekli bir gradyan görünür.}}{9}{figure.14}\protected@file@percent }
+\newlabel{fig:tsne}{{14}{9}{Tam $43$-boyutlu z-skorlanmış verinin, gerçek sınıfa göre renklendirilmiş t-SNE gömmesi. Gömme boyunca sürekli bir gradyan görünür}{figure.14}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Orijinal z-skorlanmış veride eğitilmiş $12\times 12$ MiniSom. Sol: kazananların gerçek sınıfa göre saçılımı (görünürlük için titreştirilmiş). Orta: nöron-başına vuruş-sayısı ısı haritası. Sağ: nöron-başına baskın sınıf ve hücre-başına saflık (metin etiketleri, $\%$ olarak); boş olmayan hücrelerin ortalama saflığı $\%67{,}5$'tir.}}{9}{figure.15}\protected@file@percent }
 \newlabel{fig:som}{{15}{9}{Orijinal z-skorlanmış veride eğitilmiş $12\times 12$ MiniSom. Sol: kazananların gerçek sınıfa göre saçılımı (görünürlük için titreştirilmiş). Orta: nöron-başına vuruş-sayısı ısı haritası. Sağ: nöron-başına baskın sınıf ve hücre-başına saflık (metin etiketleri, $\%$ olarak); boş olmayan hücrelerin ortalama saflığı $\%67{,}5$'tir}{figure.15}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0a}K-Means}{9}{paragraph.9.0.0.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0b}DBSCAN}{9}{paragraph.9.0.0.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0c}t-SNE}{9}{paragraph.9.0.0.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0d}SOM}{9}{paragraph.9.0.0.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {X}BAŞAT ÖNGÖRÜCÜNÜN ANLAMLILIĞI}{9}{section.10}\protected@file@percent }
-\newlabel{sec:hypothesis}{{X}{9}{BAŞAT ÖNGÖRÜCÜNÜN ANLAMLILIĞI}{section.10}{}}
 \citation{welch}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Düşük ve Yüksek suç sınıfları arasında \texttt  {PctKids2Par} üzerinde Welch t-testi sonuçları, etki büyüklüğü ölçüsü olarak Cohen $d$'siyle birlikte (havuzlanmış grup-içi standart sapma).}}{10}{table.6}\protected@file@percent }
+\newlabel{tab:ttest}{{6}{10}{Düşük ve Yüksek suç sınıfları arasında \texttt {PctKids2Par} üzerinde Welch t-testi sonuçları, etki büyüklüğü ölçüsü olarak Cohen $d$'siyle birlikte (havuzlanmış grup-içi standart sapma)}{table.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0c}t-SNE}{10}{paragraph.9.0.0.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\numberline {\mbox  {IX-}0d}SOM}{10}{paragraph.9.0.0.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {X}BAŞAT ÖNGÖRÜCÜNÜN ANLAMLILIĞI}{10}{section.10}\protected@file@percent }
+\newlabel{sec:hypothesis}{{X}{10}{BAŞAT ÖNGÖRÜCÜNÜN ANLAMLILIĞI}{section.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {XI}SONUÇ}{10}{section.11}\protected@file@percent }
+\newlabel{sec:conclusion}{{XI}{10}{SONUÇ}{section.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Tam Pearson Korelasyon Matrisi}{11}{appendix.Appendix.A}\protected@file@percent }
+\newlabel{app:fullcorr}{{}{11}{Tam Pearson Korelasyon Matrisi}{appendix.Appendix.A}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Temel bileşen-başına en yüksek yüklemeli özellikler (işaretli yüklemeler, $|\text  {yükleme}|$'ye göre sıralanmış). ``Var.'' bileşenin açıklanan-varyans oranı; ``Fisher'' çok-sınıflı Fisher Uzaklığı.}}{11}{table.7}\protected@file@percent }
+\newlabel{tab:pcaload}{{7}{11}{Temel bileşen-başına en yüksek yüklemeli özellikler (işaretli yüklemeler, $|\text {yükleme}|$'ye göre sıralanmış). ``Var.'' bileşenin açıklanan-varyans oranı; ``Fisher'' çok-sınıflı Fisher Uzaklığı}{table.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Temel Bileşen Yüklemeleri}{11}{appendix.Appendix.A}\protected@file@percent }
+\newlabel{app:pcaload}{{}{11}{Temel Bileşen Yüklemeleri}{appendix.Appendix.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Özellik Seçiminin Eşik Duyarlılığı}{11}{appendix.Appendix.A}\protected@file@percent }
+\newlabel{app:sweep}{{}{11}{Özellik Seçiminin Eşik Duyarlılığı}{appendix.Appendix.A}{}}
+\newlabel{RF1}{12}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces $43$ özellik ve ordinal kodlanmış suç sınıfının sayısal etiketlerle tam Pearson korelasyon matrisi. Siyah çizgiler Tablo\nobreakspace  {}\ref  {tab:features}'in kavramsal bloklarını ayırır; daha kalın çizgi sınıf satırını ve sütununu izole eder.}}{12}{figure.16}\protected@file@percent }
+\newlabel{fig:fullcorr}{{16}{12}{$43$ özellik ve ordinal kodlanmış suç sınıfının sayısal etiketlerle tam Pearson korelasyon matrisi. Siyah çizgiler Tablo~\ref {tab:features}'in kavramsal bloklarını ayırır; daha kalın çizgi sınıf satırını ve sütununu izole eder}{figure.16}{}}
+\citation{pedregosa}
+\citation{minisom}
 \citation{uciccrime}
 \bibcite{uciccrime}{1}
 \bibcite{redmondbaveja}{2}
@@ -118,12 +135,6 @@
 \bibcite{sampson}{4}
 \bibcite{hastie}{5}
 \bibcite{pedregosa}{6}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Düşük ve Yüksek suç sınıfları arasında \texttt  {PctKids2Par} üzerinde Welch t-testi sonuçları.}}{10}{table.6}\protected@file@percent }
-\newlabel{tab:ttest}{{6}{10}{Düşük ve Yüksek suç sınıfları arasında \texttt {PctKids2Par} üzerinde Welch t-testi sonuçları}{table.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {XI}SONUÇ}{10}{section.11}\protected@file@percent }
-\newlabel{sec:conclusion}{{XI}{10}{SONUÇ}{section.11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {}A}{10}{appendix.Appendix.A}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{REFERENCES}{10}{section*.1}\protected@file@percent }
 \bibcite{liu2008isolation}{7}
 \bibcite{fisher1936}{8}
 \bibcite{jolliffe}{9}
@@ -135,5 +146,10 @@
 \bibcite{minisom}{15}
 \bibcite{hubert}{16}
 \bibcite{welch}{17}
-\@writefile{toc}{\contentsline {subsection}{Serkan Eren}{11}{section*.2}\protected@file@percent }
-\gdef \@abspage@last{11}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Mutlak Pearson korelasyon uzaklığı üzerinde tam-bağlantı hiyerarşik kümeleme tarafından üretilen küme sayısı, dokuz kesim eşiği için.}}{13}{table.8}\protected@file@percent }
+\newlabel{tab:sweep}{{8}{13}{Mutlak Pearson korelasyon uzaklığı üzerinde tam-bağlantı hiyerarşik kümeleme tarafından üretilen küme sayısı, dokuz kesim eşiği için}{table.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Veri ve Kod Erişilebilirliği}{13}{appendix.Appendix.A}\protected@file@percent }
+\newlabel{app:repro}{{}{13}{Veri ve Kod Erişilebilirliği}{appendix.Appendix.A}{}}
+\@writefile{toc}{\contentsline {section}{REFERENCES}{13}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Serkan Eren}{13}{section*.2}\protected@file@percent }
+\gdef \@abspage@last{13}

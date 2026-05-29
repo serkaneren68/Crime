@@ -94,6 +94,13 @@ for t in [0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60]:
     print(f"{t:>6.2f} {1-t:>8.2f} {nc:>10d}")
 
 THRESH = 0.35  # cut: merge anything with |r| >= 0.65 -> 43 clusters
+# Save the full sweep so it can be reproduced as a sensitivity table in the
+# appendix of the report.
+sweep_thresholds = [0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60]
+threshold_sweep = {
+    f"{t:.2f}": int(fcluster(Z, t=t, criterion="distance").max())
+    for t in sweep_thresholds
+}
 cluster_ids = fcluster(Z, t=THRESH, criterion="distance")
 n_clusters = cluster_ids.max()
 print(f"\nUsing d={THRESH} (|r| >= {1-THRESH:.2f}) -> {n_clusters} clusters")
@@ -244,6 +251,7 @@ out = {
     "n_features_total": len(predictors_all),
     "n_features_after_missing": len(kept),
     "n_clusters": int(n_clusters),
+    "threshold_sweep": threshold_sweep,
     "n_overrides": n_overrides,
     "overrides": OVERRIDES,
     "max_abs_r_between_representatives": max_r_selected,

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.25)  29 MAY 2026 21:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.25)  29 MAY 2026 23:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -421,100 +421,112 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count296
 \@thisrulewidth=\dimen192
 )
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count297
+\rotFPtop=\skip57
+\rotFPbot=\skip58
+\rot@float@box=\box58
+\rot@mess@toks=\toks27
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count297
-\l__pdf_internal_box=\box58
+\l__color_backend_stack_int=\count298
+\l__pdf_internal_box=\box59
 )
 (./crime_tr.aux)
 \openout1 = `crime_tr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 -- Lines per column: 56 (exact).
 \symNewLetters=\mathgroup6
 \symxsymbols=\mathgroup7
-LaTeX Font Info:    Redeclaring math symbol \ddagger on input line 32.
-LaTeX Font Info:    Redeclaring math symbol \dagger on input line 32.
-\c@mv@regular=\count298
+LaTeX Font Info:    Redeclaring math symbol \ddagger on input line 33.
+LaTeX Font Info:    Redeclaring math symbol \dagger on input line 33.
+\c@mv@regular=\count299
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `regular' on input line 32.
+(Font)              `operators' in the math version `regular' on input line 33.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `regular'
-(Font)                  OT1/cmr/m/n --> T1/formata/n/n on input line 32.
+(Font)                  OT1/cmr/m/n --> T1/formata/n/n on input line 33.
 LaTeX Font Info:    Overwriting symbol font `NewLetters' in version `regular'
-(Font)                  T1/times/n/it --> T1/formata/n/it on input line 32.
+(Font)                  T1/times/n/it --> T1/formata/n/it on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `regular'
-(Font)                  T1/formata/n/n --> T1/formata/n/n on input line 32.
+(Font)                  T1/formata/n/n --> T1/formata/n/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `regular'
-(Font)                  OT1/cmr/m/it --> T1/formata/n/it on input line 32.
+(Font)                  OT1/cmr/m/it --> T1/formata/n/it on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `regular'
-(Font)                  OT1/cmr/bx/n --> T1/formata/m/n on input line 32.
+(Font)                  OT1/cmr/bx/n --> T1/formata/m/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `regular'
-(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 32.
-\c@mv@medium=\count299
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 33.
+\c@mv@medium=\count300
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `medium' on input line 32.
+(Font)              `operators' in the math version `medium' on input line 33.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `medium'
-(Font)                  OT1/cmr/m/n --> T1/formata/m/n on input line 32.
+(Font)                  OT1/cmr/m/n --> T1/formata/m/n on input line 33.
 LaTeX Font Info:    Overwriting symbol font `NewLetters' in version `medium'
-(Font)                  T1/times/n/it --> T1/formata/m/it on input line 32.
+(Font)                  T1/times/n/it --> T1/formata/m/it on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `medium'
-(Font)                  > T1/formata/m/n on input line 32.
+(Font)                  > T1/formata/m/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `medium'
-(Font)                  OT1/cmr/m/it --> T1/formata/m/it on input line 32.
+(Font)                  OT1/cmr/m/it --> T1/formata/m/it on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `medium'
-(Font)                  OT1/cmr/bx/n --> T1/formata/b/n on input line 32.
+(Font)                  OT1/cmr/bx/n --> T1/formata/b/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `medium'
-(Font)                  OT1/cmtt/m/n --> OT1/pcr/b/n on input line 32.
-\c@mv@black=\count300
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/b/n on input line 33.
+\c@mv@black=\count301
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `black' on input line 32.
+(Font)              `operators' in the math version `black' on input line 33.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `black'
-(Font)                  OT1/cmr/m/n --> T1/formata/b/n on input line 32.
+(Font)                  OT1/cmr/m/n --> T1/formata/b/n on input line 33.
 LaTeX Font Info:    Overwriting symbol font `NewLetters' in version `black'
-(Font)                  T1/times/n/it --> T1/formata/b/it on input line 32.
+(Font)                  T1/times/n/it --> T1/formata/b/it on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `black'
-(Font)                  > T1/formata/b/n on input line 32.
+(Font)                  > T1/formata/b/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `black'
-(Font)                  OT1/cmr/m/it --> T1/formata/b/it on input line 32.
+(Font)                  OT1/cmr/m/it --> T1/formata/b/it on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `black'
-(Font)                  OT1/cmr/bx/n --> T1/formata/b/n on input line 32.
+(Font)                  OT1/cmr/bx/n --> T1/formata/b/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `black'
-(Font)                  OT1/cmtt/m/n --> OT1/pcr/b/n on input line 32.
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/b/n on input line 33.
 LaTeX Font Info:    Trying to load font information for T1+times on input line 
-32.
+33.
 (./t1times.fd)
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count301
+\scratchcounter=\count302
 \scratchdimen=\dimen193
-\scratchbox=\box59
-\nofMPsegments=\count302
-\nofMParguments=\count303
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count304
+\scratchbox=\box60
+\nofMPsegments=\count303
+\nofMParguments=\count304
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count305
 \MPscratchDim=\dimen194
-\MPnumerator=\count305
-\makeMPintoPDFobject=\count306
-\everyMPtoPDFconversion=\toks28
+\MPnumerator=\count306
+\makeMPintoPDFobject=\count307
+\everyMPtoPDFconversion=\toks29
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -524,7 +536,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 32.
+Package hyperref Info: Link coloring OFF on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -535,51 +547,51 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count307
+\c@section@level=\count308
 )
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
 
 (./crime_tr.out) (./crime_tr.out)
 \@outlinefile=\write3
 \openout3 = `crime_tr.out'.
 
-LaTeX Font Info:    Redeclaring math version `bold' on input line 32.
+LaTeX Font Info:    Redeclaring math version `bold' on input line 33.
 LaTeX Font Info:    Encoding `OT1' has changed to `T1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 32.
+(Font)              `operators' in the math version `bold' on input line 33.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/m/n --> T1/times/b/n on input line 32.
+(Font)                  OT1/cmr/m/n --> T1/times/b/n on input line 33.
 LaTeX Font Info:    Overwriting symbol font `NewLetters' in version `bold'
-(Font)                  T1/times/n/it --> T1/times/b/it on input line 32.
+(Font)                  T1/times/n/it --> T1/times/b/it on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  > T1/times/b/n on input line 32.
+(Font)                  > T1/times/b/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/m/it --> T1/times/b/it on input line 32.
+(Font)                  OT1/cmr/m/it --> T1/times/b/it on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/times/b/n on input line 32.
+(Font)                  OT1/cmr/bx/n --> T1/times/b/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/pcr/b/n on input line 32.
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/b/n on input line 33.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/m/n --> OMS/cmsy/b/n on input line 32.
-<bullet.png, id=78, 12.045pt x 35.38219pt>
+(Font)                  OMS/cmsy/m/n --> OMS/cmsy/b/n on input line 33.
+<bullet.png, id=87, 12.045pt x 35.38219pt>
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 49.
+Package pdftex.def Info: bullet.png  used on input line 50.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 50
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 51
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
@@ -587,42 +599,42 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 
 LaTeX Font Warning: Font shape `T1/pcr/n/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 50.
+(Font)              using `T1/pcr/m/n' instead on input line 51.
 
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 53.
+Package pdftex.def Info: bullet.png  used on input line 54.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
-LaTeX Font Info:    Calculating math sizes for size <9.9> on input line 59.
-LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 59.
+LaTeX Font Info:    Calculating math sizes for size <9.9> on input line 60.
+LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 60.
 
-Overfull \hbox (9.2679pt too wide) in paragraph at lines 59--59
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 60--60
 []  
  []
 
 
-Overfull \hbox (9.2679pt too wide) in paragraph at lines 59--59
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 60--60
 []  
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 65--66
+Underfull \hbox (badness 1838) in paragraph at lines 66--67
 \T1/times/n/n/10 mekaniz-mas^^Y Bˆl¸m []II[]'de tan^^Ym-lan-m^^Y≥t^^Yr. Prob-le
 mi Áok-
  []
 
 
-Underfull \hbox (badness 2951) in paragraph at lines 67--68
+Underfull \hbox (badness 2951) in paragraph at lines 68--69
 []\T1/times/n/n/10 Makalenin geri kalan^^Y ≥u ≥ek-ilde or-ga-nize edilmi≥tir.
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<logo.png, id=92, 206.27063pt x 53.44969pt>
+<logo.png, id=101, 206.27063pt x 53.44969pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 68.
+Package pdftex.def Info: logo.png  used on input line 69.
 (pdftex.def)             Requested size: 91.32pt x 23.66309pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -648,155 +660,155 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
  <./logo.png> <./bullet.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 \T1/times/n/n/10 Communities and Crime veri seti [[]1[]]; $\OT1/cmr/m/n/10 128$
  \T1/times/n/n/10 s¸-tunla
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 \T1/times/n/n/10 tan^^Ym-lanan $\OT1/cmr/m/n/10 1 994$ \T1/times/n/n/10 toplu-l
 uk iÁerir: be≥ tane ˆngˆr¸c¸
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 \T1/times/n/n/10 ol-mayan tan^^Ym-lay^^Yc^^Y (\T1/pcr/n/n/10 state\T1/times/n/n
 /10 , \T1/pcr/n/n/10 county\T1/times/n/n/10 , \T1/pcr/n/n/10 community\T1/times
 /n/n/10 ,
  []
 
 
-Overfull \hbox (10.703pt too wide) in paragraph at lines 72--73
+Overfull \hbox (10.703pt too wide) in paragraph at lines 73--74
 \T1/times/n/n/10 ˆznite-lik \T1/pcr/n/n/10 ViolentCrimesPerPop\T1/times/n/n/10 
 . T¸m ˆngˆr¸c¸ deßi≥ken-
  []
 
 
-Underfull \hbox (badness 2452) in paragraph at lines 72--73
+Underfull \hbox (badness 2452) in paragraph at lines 73--74
 \T1/times/n/n/10 ler, veri seti yazarlar^^Y taraf^^Yn-dan $\OMS/cmsy/m/n/10 ^^F
 \OT1/cmr/m/n/10 3$ \T1/times/n/n/10 stan-dart sap-man^^Yn
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 72--73
+Underfull \hbox (badness 1596) in paragraph at lines 73--74
 \T1/times/n/n/10 yˆn-temiyle ˆnce-den $\OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; \OT
 1/cmr/m/n/10 1]$ \T1/times/n/n/10 ar-al^^Yß^^Yna nor-mal-ize edilmi≥tir;
  []
 
 
-Underfull \hbox (badness 6157) in paragraph at lines 72--73
+Underfull \hbox (badness 6157) in paragraph at lines 73--74
 \T1/pcr/n/n/10 ViolentCrimesPerPop\T1/times/n/n/10 , ter-tillere gˆre e≥it-frek
 ansl^^Y
  []
 
 
-Underfull \hbox (badness 6141) in paragraph at lines 76--77
+Underfull \hbox (badness 6141) in paragraph at lines 77--78
 \T1/times/n/n/10 Be≥ tan^^Ym-lay^^Yc^^Y s¸-tun ilk ad^^Ymda d¸≥¸r¸lm¸≥t¸r. Veri
 
  []
 
 
-Underfull \hbox (badness 3557) in paragraph at lines 76--77
+Underfull \hbox (badness 3557) in paragraph at lines 77--78
 \T1/times/n/n/10 seti ard^^Yn-dan LEMAS polis-g¸c¸ an-ketinden t¸retilmi≥,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
 \OT1/cmr/m/n/10 22$ \T1/times/n/n/10 deßi≥k-enden olu≥an biti≥ik bir blok iÁeri
 r (ˆrn.
  []
 
 
-Overfull \hbox (17.76978pt too wide) in paragraph at lines 76--77
+Overfull \hbox (17.76978pt too wide) in paragraph at lines 77--78
 \T1/pcr/n/n/10 LemasSwornFT\T1/times/n/n/10 , \T1/pcr/n/n/10 PolicPerPop\T1/tim
 es/n/n/10 , \T1/pcr/n/n/10 RacialMatchCommPol\T1/times/n/n/10 );
  []
 
 
-Underfull \hbox (badness 4608) in paragraph at lines 80--81
+Underfull \hbox (badness 4608) in paragraph at lines 81--82
 \T1/times/n/n/10 ta≥^^Y-mak-tad^^Yr: \T1/pcr/n/n/10 medIncome\T1/times/n/n/10 ,
  \T1/pcr/n/n/10 medFamInc\T1/times/n/n/10 , \T1/pcr/n/n/10 perCapInc\T1/times/n
 /n/10 ,
  []
 
 
-Overfull \hbox (4.90627pt too wide) in paragraph at lines 82--83
+Overfull \hbox (4.90627pt too wide) in paragraph at lines 83--84
 []\T1/times/n/n/10 Ayn^^Y bil-giyi ta≥^^Yyan iki ˆzel-lik, ko-re-lasy-on-lar^^Y
 n^^Yn i≥aretinden
  []
 
 
-Overfull \hbox (7.43964pt too wide) in paragraph at lines 82--83
+Overfull \hbox (7.43964pt too wide) in paragraph at lines 83--84
 \T1/times/n/n/10 baß^^Ym-s^^Yz olarak re-dun-dant kabul edilme-lidir: \T1/pcr/n
 /n/10 racePctWhite
  []
 
-<feature_dendrogram.png, id=117, 1084.05pt x 650.43pt>
+<feature_dendrogram.png, id=126, 1084.05pt x 650.43pt>
 File: feature_dendrogram.png Graphic file (type png)
 <use feature_dendrogram.png>
-Package pdftex.def Info: feature_dendrogram.png  used on input line 93.
+Package pdftex.def Info: feature_dendrogram.png  used on input line 94.
 (pdftex.def)             Requested size: 505.12177pt x 303.07208pt.
 
-Underfull \hbox (badness 2197) in paragraph at lines 100--101
+Underfull \hbox (badness 2197) in paragraph at lines 101--102
 \T1/times/n/n/10 yayg^^Yn kul-lan^^Ylan bir deßi≥kenle ˆrt¸≥mekte oldußun-dan
  []
 
 
-Underfull \hbox (badness 2245) in paragraph at lines 100--101
+Underfull \hbox (badness 2245) in paragraph at lines 101--102
 \T1/times/n/n/10 yak^^Yn-e≥deßer merkez yer-ine kanonik lit-er-at¸r deßi≥keni
  []
 
 
-Underfull \hbox (badness 3312) in paragraph at lines 100--101
+Underfull \hbox (badness 3312) in paragraph at lines 101--102
 \T1/times/n/n/10 ter-cih edilmi≥tir (ˆrn. gelir-ve-varl^^Yk k¸mesinde merkez
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 []\T1/times/b/n/8 medIncome\T1/times/m/n/8 , med-Fam-Inc, per-Cap-Inc, white-Pe
 r-Cap,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 \T1/times/m/n/8 OwnOcc{Low,Med,Hi}Quart, Rent{Low,Med}Q, RentHighQ$[]$,
  []
 
 
-Underfull \hbox (badness 2103) in paragraph at lines 112--113
+Underfull \hbox (badness 2103) in paragraph at lines 113--114
 []\T1/times/m/n/8 MalePctDivorce, Fe-malePct-Div, To-talPct-Div, PctFam2Par$[]$
 , \T1/times/b/n/8 Pc-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 []\T1/times/m/n/8 PctRecentImmig, Pc-tRec-Im-mig5, PctRecImmig8$[]$, Pc-tRec-Im
 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
 []\T1/times/m/n/8 PctImmigRecent, Pc-tIm-mi-gRec5, \T1/times/b/n/8 PctImmigRec8
 $[]$\T1/times/m/n/8 ,
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 129--130
+Underfull \hbox (badness 3199) in paragraph at lines 130--131
 []\T1/times/m/n/8 PctLargHouseFam, PctLargHouseOccup$[]$, PersPer-Ren-tOc-c-Hou
 s,
  []
 
 
-Underfull \hbox (badness 2221) in paragraph at lines 136--137
+Underfull \hbox (badness 2221) in paragraph at lines 137--138
 \T1/times/n/n/10 ter-min-is-tik bir Áal^^Y≥ma k¸mesi ¸re-tir --- $\OT1/cmr/m/n/
 10 24$\T1/times/n/n/10 '¸ sin-gle-ton
  []
 
-<notaglinelogo.png, id=126, 169.38281pt x 42.91031pt>
+<notaglinelogo.png, id=135, 169.38281pt x 42.91031pt>
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 137.
+Package pdftex.def Info: notaglinelogo.png  used on input line 138.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -829,7 +841,7 @@ Overfull \vbox (16.25023pt too high) has occurred while \output is active []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 137.
+Package pdftex.def Info: notaglinelogo.png  used on input line 138.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -847,137 +859,137 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [3 <./feature_dendrogram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 []\T1/pcr/m/n/8 population\T1/times/m/n/8 , \T1/pcr/m/n/8 householdsize\T1/time
 s/m/n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 []\T1/pcr/m/n/8 pctUrban\T1/times/m/n/8 , \T1/pcr/m/n/8 PopDens\T1/times/m/n/8 
 , \T1/pcr/m/n/8 PctUsePubTrans\T1/times/m/n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 []\T1/pcr/m/n/8 medIncome\T1/times/m/n/8 , \T1/pcr/m/n/8 blackPerCap\T1/times/m
 /n/8 , \T1/pcr/m/n/8 HispPerCap\T1/times/m/n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 \T1/pcr/m/n/8 AsianPerCap\T1/times/m/n/8 , \T1/pcr/m/n/8 indianPerCap\T1/times/
 m/n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 []\T1/pcr/m/n/8 MedOwnCostPctInc\T1/times/m/n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 \T1/pcr/m/n/8 MedOwnCostPctIncNoMtg\T1/times/m/n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
 []\T1/pcr/m/n/8 PctEmploy\T1/times/m/n/8 , \T1/pcr/m/n/8 PctEmplProfServ\T1/tim
 es/m/n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 []\T1/pcr/m/n/8 NumImmig\T1/times/m/n/8 , \T1/pcr/m/n/8 PctForeignBorn\T1/times
 /m/n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 []\T1/pcr/m/n/8 PctHousOwnOcc\T1/times/m/n/8 , \T1/pcr/m/n/8 MedNumBR\T1/times/
 m/n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 \T1/pcr/m/n/8 PctVacantBoarded\T1/times/m/n/8 , \T1/pcr/m/n/8 PctHousOccup\T1/t
 imes/m/n/8 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 \T1/pcr/m/n/8 PctVacMore6Mos\T1/times/m/n/8 , \T1/pcr/m/n/8 MedYrHousBuilt\T1/t
 imes/m/n/8 ,
  []
 
 
-Underfull \hbox (badness 4582) in paragraph at lines 166--167
+Underfull \hbox (badness 4582) in paragraph at lines 167--168
 \T1/times/n/n/10 ele bˆl¸n-m¸≥ ve kavram-sal blok-lara gˆre etiketlen-mi≥
  []
 
 
-Underfull \hbox (badness 2197) in paragraph at lines 166--167
+Underfull \hbox (badness 2197) in paragraph at lines 167--168
 \T1/times/n/n/10 biÁimde sun-mak-tad^^Yr. ‹Á daß^^Yl^^Ym ˆr¸n-t¸s¸ gˆze Áarpar.
 
  []
 
 
-Underfull \hbox (badness 5490) in paragraph at lines 166--167
+Underfull \hbox (badness 5490) in paragraph at lines 167--168
 \T1/times/n/n/10 ùlk olarak, birÁok ˆzel-lik g¸Ál¸ biÁimde saßa Áarp^^Yk-
  []
 
 
-Underfull \hbox (badness 7116) in paragraph at lines 166--167
+Underfull \hbox (badness 7116) in paragraph at lines 167--168
 \T1/times/n/n/10 t^^Yr ve uzun bir ¸st kuyrußa sahip-tir --- en be-lir-gin
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 166--167
+Underfull \hbox (badness 1688) in paragraph at lines 167--168
 \T1/times/n/n/10 k¸Á¸k bir toplu-luk k¸mesini yan-s^^Yt^^Yr (Áok b¸y¸k ya da
  []
 
-<boxplot_before.png, id=150, 930.47626pt x 640.49287pt>
+<boxplot_before.png, id=159, 930.47626pt x 640.49287pt>
 File: boxplot_before.png Graphic file (type png)
 <use boxplot_before.png>
-Package pdftex.def Info: boxplot_before.png  used on input line 170.
+Package pdftex.def Info: boxplot_before.png  used on input line 171.
 (pdftex.def)             Requested size: 242.67355pt x 167.04219pt.
 
-Underfull \hbox (badness 4739) in paragraph at lines 175--176
+Underfull \hbox (badness 4739) in paragraph at lines 176--177
 []\T1/times/b/n/10 Neden Áok-deßi≥kenli bir de-tek-tˆr. \T1/times/n/n/10 Uni-va
 ri-ate IQR
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 \T1/times/n/n/10 reddi gibi bir ˆzellik-ba≥^^Yna fil-tre, \T1/times/n/it/10 her
 -hangi bir \T1/times/n/n/10 tek
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 175--176
+Underfull \hbox (badness 1742) in paragraph at lines 176--177
 \T1/times/n/n/10 boyutta uÁ deßer ta≥^^Yyan ˆrneßi atar. Bu, bu-radaki veri
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 \T1/times/n/n/10 ay^^Yrt edici ˆzel-lik (\T1/pcr/n/n/10 PctPopUnderPov\T1/times
 /n/n/10 , \T1/pcr/n/n/10 PctIlleg\T1/times/n/n/10 ,
  []
 
 
-Underfull \hbox (badness 2662) in paragraph at lines 175--176
+Underfull \hbox (badness 2662) in paragraph at lines 176--177
 \T1/times/n/n/10 dolay^^Ys^^Yyla mar-ji-nal k^^Yrpma, tam da anal-izin be-tim-l
 e-m-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
 []\T1/times/n/n/10 Bu ne-denle ni-hai boru hatt^^Y, \T1/pcr/n/n/10 scikit-learn
  \T1/times/n/n/10 [[]6[]]
  []
 
 
-Underfull \hbox (badness 3471) in paragraph at lines 196--197
+Underfull \hbox (badness 3471) in paragraph at lines 197--198
 \T1/times/n/n/10 Y¸ksek-s^^Yn^^Yf daral-mas^^Y $\OT1/cmr/m/n/10 43$\T1/times/n/
 n/10 -ˆzellik k¸mesinde ($\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 %10[]4$\T1/times/
 n/n/10 ),
@@ -985,7 +997,7 @@ n/n/10 ),
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 197.
+Package pdftex.def Info: notaglinelogo.png  used on input line 198.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1003,114 +1015,102 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [4 <./boxplot_before.png>]
-<boxplot_after.png, id=165, 930.47626pt x 640.49287pt>
+<boxplot_after.png, id=175, 930.47626pt x 640.49287pt>
 File: boxplot_after.png Graphic file (type png)
 <use boxplot_after.png>
-Package pdftex.def Info: boxplot_after.png  used on input line 200.
+Package pdftex.def Info: boxplot_after.png  used on input line 201.
 (pdftex.def)             Requested size: 242.67355pt x 167.04219pt.
 
-Underfull \hbox (badness 5652) in paragraph at lines 209--210
+Underfull \hbox (badness 5652) in paragraph at lines 210--211
 \T1/times/n/n/10 --- yok-sul-luk (\T1/pcr/n/n/10 PctPopUnderPov\T1/times/n/n/10
  ), evlilik-d^^Y≥^^Y doßum
  []
 
 
-Underfull \hbox (badness 4492) in paragraph at lines 209--210
+Underfull \hbox (badness 4492) in paragraph at lines 210--211
 \T1/times/n/n/10 ve konut Á¸r¸mesi (\T1/pcr/n/n/10 PctVacantBoarded\T1/times/n/
 n/10 ) --- ben-zer
  []
 
 
-Underfull \hbox (badness 1902) in paragraph at lines 209--210
+Underfull \hbox (badness 1902) in paragraph at lines 210--211
 \T1/times/n/n/10 biÁimde kendi iÁinde poz-i-tif ko-re-lasy-on-ludur. ùki s¸per-
 
  []
 
-<correlation_heatmap.png, id=170, 813.94087pt x 732.63713pt>
+<correlation_heatmap.png, id=180, 813.94087pt x 732.63713pt>
 File: correlation_heatmap.png Graphic file (type png)
 <use correlation_heatmap.png>
-Package pdftex.def Info: correlation_heatmap.png  used on input line 213.
+Package pdftex.def Info: correlation_heatmap.png  used on input line 214.
 (pdftex.def)             Requested size: 242.67355pt x 218.42897pt.
-<feature_class_correlation.png, id=173, 642.29962pt x 353.21962pt>
+<feature_class_correlation.png, id=183, 642.29962pt x 353.21962pt>
 File: feature_class_correlation.png Graphic file (type png)
 <use feature_class_correlation.png>
-Package pdftex.def Info: feature_class_correlation.png  used on input line 220.
+Package pdftex.def Info: feature_class_correlation.png  used on input line 221.
 
 (pdftex.def)             Requested size: 242.67355pt x 133.44873pt.
 
-Underfull \hbox (badness 6927) in paragraph at lines 225--226
+Underfull \hbox (badness 6927) in paragraph at lines 226--227
 []\T1/times/n/n/10 ìekil []5[], $\OT1/cmr/m/n/10 43$ \T1/times/n/n/10 ˆzel-lißi
 n tamam^^Yn^^Y suÁ s^^Yn^^Yf^^Y (or-di-nal)
  []
 
 
-Underfull \hbox (badness 4792) in paragraph at lines 225--226
+Underfull \hbox (badness 4792) in paragraph at lines 226--227
 \T1/times/n/n/10 ile ko-re-lasy-on-lar^^Yna gˆre s^^Yralar. En g¸Ál¸ tekil ko-r
 e-
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 225--226
+Underfull \hbox (badness 1590) in paragraph at lines 226--227
 \T1/times/n/n/10 lasy-on-lar \T1/pcr/n/n/10 PctKids2Par \T1/times/n/n/10 ($\OMS
 /cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0[]69$\T1/times/n/n/10 ), \T1/pcr/n/n/10 PctIll
 eg \T1/times/n/n/10 ($\OT1/cmr/m/n/10 +0[]62$\T1/times/n/n/10 ),
  []
 
 
-Overfull \hbox (11.75768pt too wide) in paragraph at lines 225--226
+Overfull \hbox (11.75768pt too wide) in paragraph at lines 226--227
 \T1/pcr/n/n/10 PctPopUnderPov \T1/times/n/n/10 ($\OT1/cmr/m/n/10 +0[]52$\T1/tim
 es/n/n/10 ), \T1/pcr/n/n/10 PctPersDenseHous \T1/times/n/n/10 ($\OT1/cmr/m/n/10
  +0[]47$\T1/times/n/n/10 ),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 \T1/pcr/n/n/10 PctHousOwnOcc \T1/times/n/n/10 ($\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/
 n/10 0[]46$\T1/times/n/n/10 ), \T1/pcr/n/n/10 medIncome \T1/times/n/n/10 ($\OMS
 /cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0[]45$\T1/times/n/n/10 ) ve
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 \T1/pcr/n/n/10 PctVacantBoarded \T1/times/n/n/10 ($\OT1/cmr/m/n/10 +0[]38$\T1/t
 imes/n/n/10 )'dir. ù≥aretler, toplu-luk
  []
 
 
-Underfull \hbox (badness 4699) in paragraph at lines 225--226
+Underfull \hbox (badness 4699) in paragraph at lines 226--227
 \T1/times/n/n/10 d¸zeyinde suÁun sosyal-d¸zensizlik aÁ^^Yk-la-mas^^Yyla tu-tar-
 
  []
 
 
-Underfull \hbox (badness 2970) in paragraph at lines 225--226
+Underfull \hbox (badness 2970) in paragraph at lines 226--227
 \T1/times/n/n/10 aile parÁalan-mas^^Y ve konut Á¸r¸mesi daha y¸k-sek ≥id-
  []
 
 
-Underfull \hbox (badness 1997) in paragraph at lines 225--226
-\T1/times/n/n/10 ba≥^^Yna bir-den fa-zla ki≥i bar^^Ynd^^Yran konutta ya≥ayan n¸
--
- []
-
-
-Underfull \hbox (badness 7540) in paragraph at lines 225--226
-\T1/times/n/n/10 gˆz-den kaÁ-mas^^Y ko-lay olurdu; an-cak k¸meleme boru
- []
-
-
-Underfull \hbox (badness 3803) in paragraph at lines 225--226
-\T1/times/n/n/10 hatt^^Y onu kendi bloßu-nun tem-sil-cisi olarak tu-tar. ùk-in-
-
- []
-
-
-Underfull \hbox (badness 1939) in paragraph at lines 225--226
+Underfull \hbox (badness 1939) in paragraph at lines 226--227
 \T1/times/n/n/10 suÁunu, kanonik gelir ve aile deßi≥ken-leri kadar yak^^Yn-
  []
 
 
-Underfull \hbox (badness 1824) in paragraph at lines 225--226
+Underfull \hbox (badness 1983) in paragraph at lines 226--227
+\T1/times/n/n/10 deßer bir gˆ-zlemdir. Dißer uÁta, de-mografik ve coßrafi
+ []
+
+
+Underfull \hbox (badness 1824) in paragraph at lines 226--227
 \T1/times/n/n/10 deßi≥ken-ler --- \T1/pcr/n/n/10 pctUrban\T1/times/n/n/10 , \T1
 /pcr/n/n/10 LandArea\T1/times/n/n/10 , \T1/pcr/n/n/10 agePct65up\T1/times/n/n/1
 0 ,
@@ -1118,7 +1118,7 @@ Underfull \hbox (badness 1824) in paragraph at lines 225--226
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 226.
+Package pdftex.def Info: notaglinelogo.png  used on input line 227.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1135,95 +1135,88 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[5 <./boxplot_after.png> <./correlation_heatmap.png> <./feature_class_correlati
-on.png>]
-Underfull \hbox (badness 4303) in paragraph at lines 231--232
+[5 <./boxplot_after.png> <./correlation_heatmap.png>]
+Underfull \hbox (badness 4303) in paragraph at lines 232--233
 \T1/times/n/n/10 Z-skor nor-mal-iza-sy-onun-dan sonra, ˆzellik-ba≥^^Yna Fisher
  []
 
 
-Underfull \hbox (badness 2261) in paragraph at lines 235--237
+Underfull \hbox (badness 2261) in paragraph at lines 236--238
 \T1/times/n/n/10 burada $\OML/cmm/m/it/10 ^^V[]$\T1/times/n/n/10 , $\T1/times/n
 /it/10 f$ \T1/times/n/n/10 ˆzel-lißinin $\T1/times/n/it/10 c$ \T1/times/n/n/10 
 s^^Yn^^Yf^^Yn-daki or-ta-la-mas^^Y, $\OML/cmm/m/it/10 ^^V[]$
  []
 
 
-Underfull \hbox (badness 2197) in paragraph at lines 235--237
+Underfull \hbox (badness 2197) in paragraph at lines 236--238
 \T1/times/n/n/10 or-ta-la-malar^^Yn^^Y s^^Yn^^Yf-iÁi daß^^Yl^^Yma gˆre iyi ay^^
 Yrd^^Yß^^Yn^^Y gˆs-
  []
 
-<fisher_features.png, id=192, 570.48131pt x 641.84793pt>
+<fisher_features.png, id=203, 570.48131pt x 641.84793pt>
 File: fisher_features.png Graphic file (type png)
 <use fisher_features.png>
-Package pdftex.def Info: fisher_features.png  used on input line 240.
+Package pdftex.def Info: fisher_features.png  used on input line 241.
 (pdftex.def)             Requested size: 242.67355pt x 273.0315pt.
 
-Underfull \hbox (badness 1975) in paragraph at lines 245--246
+Underfull \hbox (badness 1975) in paragraph at lines 246--247
 \T1/times/n/n/10 s^^Yrala-mas^^Yyla neredeyse ayn^^Yd^^Yr; bu bek-le-nen bir so
 nuÁ-
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 245--246
+Underfull \hbox (badness 1565) in paragraph at lines 246--247
 \T1/times/n/n/10 tur: tek bir z-skorlanm^^Y≥ ˆzel-lik iÁin hem Fisher Uza-k-
  []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 245--246
+Underfull \hbox (badness 1635) in paragraph at lines 246--247
 \T1/times/n/n/10 l^^Yß^^Y hem de mut-lak s^^Yn^^Yf ko-re-lasy-onu, s^^Yn^^Yf or
 -ta-la-malar^^Y
  []
 
 
-Underfull \hbox (badness 1496) in paragraph at lines 245--246
+Underfull \hbox (badness 1496) in paragraph at lines 246--247
 \T1/times/n/n/10 iki ˆzel-lik \T1/pcr/n/n/10 PctKids2Par \T1/times/n/n/10 ($\T1
 /times/n/it/10 J  \OT1/cmr/m/n/10 =  0[]90$\T1/times/n/n/10 ) ve \T1/pcr/n/n/10
  PctIlleg
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 245--246
+Underfull \hbox (badness 3148) in paragraph at lines 246--247
 \T1/times/n/n/10 ($\T1/times/n/it/10 J  \OT1/cmr/m/n/10 =  0[]69$\T1/times/n/n/
 10 ) olup, bun-lar^^Y \T1/pcr/n/n/10 PctPopUnderPov \T1/times/n/n/10 ($\OT1/cmr
 /m/n/10 0[]37$\T1/times/n/n/10 ),
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 245--246
+Underfull \hbox (badness 1776) in paragraph at lines 246--247
 \T1/pcr/n/n/10 PctPersDenseHous \T1/times/n/n/10 ($\OT1/cmr/m/n/10 0[]28$\T1/ti
 mes/n/n/10 ), \T1/pcr/n/n/10 PctHousOwnOcc \T1/times/n/n/10 ($\OT1/cmr/m/n/10 0
 []27$\T1/times/n/n/10 )
  []
 
 
-Underfull \hbox (badness 6063) in paragraph at lines 245--246
+Underfull \hbox (badness 6063) in paragraph at lines 246--247
 \T1/times/n/n/10 ve \T1/pcr/n/n/10 medIncome \T1/times/n/n/10 ($\OT1/cmr/m/n/10
  0[]26$\T1/times/n/n/10 ) izler. ùki yap^^Ysal gˆ-zlem ˆne
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 245--246
+Underfull \hbox (badness 2626) in paragraph at lines 246--247
 \T1/times/n/n/10 b^^Yrak^^Yr ve ¸Á¸nc¸ s^^Yradaki \T1/pcr/n/n/10 PctPopUnderPov
 \T1/times/n/n/10 'a doßru
  []
 
 
-Underfull \hbox (badness 2126) in paragraph at lines 245--246
+Underfull \hbox (badness 2126) in paragraph at lines 246--247
 \T1/times/n/n/10 b¸y¸k bir d¸≥¸≥ vard^^Yr; onun skoru \T1/pcr/n/n/10 PctIlleg\T
 1/times/n/n/10 'inkinin
  []
 
-
-Underfull \hbox (badness 7064) in paragraph at lines 245--246
-\T1/times/n/n/10 yar^^Ys^^Yn-dan azd^^Yr. ùk-in-cisi, $\OT1/cmr/m/n/10 43$ \T1/
-times/n/n/10 ˆzel-lißin yak-la≥^^Yk yar^^Ys^^Y
- []
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 250.
+Package pdftex.def Info: notaglinelogo.png  used on input line 247.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1240,46 +1233,45 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[6 <./fisher_features.png>]
-<pca_scree.png, id=209, 498.21132pt x 280.94963pt>
+[6 <./feature_class_correlation.png> <./fisher_features.png>]
+<pca_scree.png, id=220, 498.21132pt x 280.94963pt>
 File: pca_scree.png Graphic file (type png)
 <use pca_scree.png>
-Package pdftex.def Info: pca_scree.png  used on input line 253.
+Package pdftex.def Info: pca_scree.png  used on input line 254.
 (pdftex.def)             Requested size: 242.67355pt x 136.84772pt.
 
-Underfull \hbox (badness 8170) in paragraph at lines 258--259
+Underfull \hbox (badness 8170) in paragraph at lines 259--260
 []\T1/times/n/n/10 Her PC pro-jek-siy-onu bir ˆzel-lik gibi ele al^^Y-narak
  []
 
-<fisher_comparison.png, id=213, 1004.10132pt x 426.84468pt>
+<fisher_comparison.png, id=224, 1004.10132pt x 426.84468pt>
 File: fisher_comparison.png Graphic file (type png)
 <use fisher_comparison.png>
-Package pdftex.def Info: fisher_comparison.png  used on input line 262.
+Package pdftex.def Info: fisher_comparison.png  used on input line 263.
 (pdftex.def)             Requested size: 242.67355pt x 103.16125pt.
-<eigval_vs_fisher.png, id=214, 498.21132pt x 353.21962pt>
+<eigval_vs_fisher.png, id=225, 498.21132pt x 353.21962pt>
 File: eigval_vs_fisher.png Graphic file (type png)
 <use eigval_vs_fisher.png>
-Package pdftex.def Info: eigval_vs_fisher.png  used on input line 269.
+Package pdftex.def Info: eigval_vs_fisher.png  used on input line 270.
 (pdftex.def)             Requested size: 230.53912pt x 163.44774pt.
-<pca_top2.png, id=217, 498.21132pt x 389.35463pt>
-File: pca_top2.png Graphic file (type png)
-<use pca_top2.png>
-Package pdftex.def Info: pca_top2.png  used on input line 282.
-(pdftex.def)             Requested size: 242.67355pt x 189.6507pt.
-<pca_bottom2.png, id=218, 498.21132pt x 389.35463pt>
-File: pca_bottom2.png Graphic file (type png)
-<use pca_bottom2.png>
-Package pdftex.def Info: pca_bottom2.png  used on input line 284.
-(pdftex.def)             Requested size: 242.67355pt x 189.6507pt.
 
-Underfull \hbox (badness 1571) in paragraph at lines 289--290
-\T1/times/n/n/10 t¸m dikey yay^^Yl^^Ym^^Y dolay^^Ys^^Yyla s^^Yn^^Yf-ilgisiz var
-yasyon-dur
+Package hyperref Warning: Suppressing empty link on input line 275.
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 275--276
+\T1/times/n/n/10 yer-ine, veri hakk^^Ynda iÁerikli bir gˆ-zlemdir: suÁla il-i≥k
+-
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 275--276
+\T1/times/n/it/10 bile≥eni-dir\T1/times/n/n/10 ; ona e≥-lik eden dißer be-lir-g
+in ek-sen-ler (PC2
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 290.
+Package pdftex.def Info: notaglinelogo.png  used on input line 276.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1297,52 +1289,42 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [7 <./pca_scree.png> <./fisher_comparison.png> <./eigval_vs_fisher.png>]
-<lda_scatter.png, id=234, 498.21132pt x 389.35463pt>
-File: lda_scatter.png Graphic file (type png)
-<use lda_scatter.png>
-Package pdftex.def Info: lda_scatter.png  used on input line 297.
+<pca_top2.png, id=241, 498.21132pt x 389.35463pt>
+File: pca_top2.png Graphic file (type png)
+<use pca_top2.png>
+Package pdftex.def Info: pca_top2.png  used on input line 283.
+(pdftex.def)             Requested size: 242.67355pt x 189.6507pt.
+<pca_bottom2.png, id=242, 498.21132pt x 389.35463pt>
+File: pca_bottom2.png Graphic file (type png)
+<use pca_bottom2.png>
+Package pdftex.def Info: pca_bottom2.png  used on input line 285.
 (pdftex.def)             Requested size: 242.67355pt x 189.6507pt.
 
-Underfull \hbox (badness 1436) in paragraph at lines 316--317
+Underfull \hbox (badness 1571) in paragraph at lines 290--291
+\T1/times/n/n/10 t¸m dikey yay^^Yl^^Ym^^Y dolay^^Ys^^Yyla s^^Yn^^Yf-ilgisiz var
+yasyon-dur
+ []
+
+<lda_scatter.png, id=245, 498.21132pt x 389.35463pt>
+File: lda_scatter.png Graphic file (type png)
+<use lda_scatter.png>
+Package pdftex.def Info: lda_scatter.png  used on input line 298.
+(pdftex.def)             Requested size: 242.67355pt x 189.6507pt.
+
+Underfull \hbox (badness 1436) in paragraph at lines 317--318
 []\T1/times/n/n/10 Kar≥^^Yla≥t^^Yrmay^^Y ni-cel k^^Yl-mak iÁin 2-B gˆm-mel-erde
  iki
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 316--317
+Underfull \hbox (badness 1596) in paragraph at lines 317--318
 \T1/times/n/n/10 s^^Yn^^Yf etiket-leri bˆl¸m-leme olarak kul-lan^^Ylarak) PCA i
 Áin
  []
 
-<cluster_kmeans.png, id=246, 932.73468pt x 390.258pt>
-File: cluster_kmeans.png Graphic file (type png)
-<use cluster_kmeans.png>
-Package pdftex.def Info: cluster_kmeans.png  used on input line 324.
-(pdftex.def)             Requested size: 242.67355pt x 101.53613pt.
-<cluster_dbscan.png, id=247, 932.73468pt x 390.258pt>
-File: cluster_dbscan.png Graphic file (type png)
-<use cluster_dbscan.png>
-Package pdftex.def Info: cluster_dbscan.png  used on input line 331.
-(pdftex.def)             Requested size: 242.67355pt x 101.53613pt.
-<cluster_tsne.png, id=248, 498.21132pt x 389.35463pt>
-File: cluster_tsne.png Graphic file (type png)
-<use cluster_tsne.png>
-Package pdftex.def Info: cluster_tsne.png  used on input line 338.
-(pdftex.def)             Requested size: 242.67355pt x 189.6507pt.
-<cluster_som.png, id=249, 1074.11287pt x 353.21962pt>
-File: cluster_som.png Graphic file (type png)
-<use cluster_som.png>
-Package pdftex.def Info: cluster_som.png  used on input line 345.
-(pdftex.def)             Requested size: 242.67355pt x 79.79974pt.
-
-Underfull \hbox (badness 1902) in paragraph at lines 364--365
-\T1/times/n/n/10 yan-s^^Yt^^Yr. ùki girdi ek-s-enin-den yal-n^^Yzca PC1 s^^Yn^^
-Yf sinyali
- []
-
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 365.
+Package pdftex.def Info: notaglinelogo.png  used on input line 318.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1360,31 +1342,34 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [8 <./pca_top2.png> <./pca_bottom2.png> <./lda_scatter.png>]
-Underfull \hbox (badness 5302) in paragraph at lines 366--367
+<cluster_kmeans.png, id=269, 932.73468pt x 390.258pt>
+File: cluster_kmeans.png Graphic file (type png)
+<use cluster_kmeans.png>
+Package pdftex.def Info: cluster_kmeans.png  used on input line 325.
+(pdftex.def)             Requested size: 242.67355pt x 101.53613pt.
+<cluster_dbscan.png, id=270, 932.73468pt x 390.258pt>
+File: cluster_dbscan.png Graphic file (type png)
+<use cluster_dbscan.png>
+Package pdftex.def Info: cluster_dbscan.png  used on input line 332.
+(pdftex.def)             Requested size: 242.67355pt x 101.53613pt.
+<cluster_tsne.png, id=271, 498.21132pt x 389.35463pt>
+File: cluster_tsne.png Graphic file (type png)
+<use cluster_tsne.png>
+Package pdftex.def Info: cluster_tsne.png  used on input line 339.
+(pdftex.def)             Requested size: 242.67355pt x 189.6507pt.
+<cluster_som.png, id=272, 1074.11287pt x 353.21962pt>
+File: cluster_som.png Graphic file (type png)
+<use cluster_som.png>
+Package pdftex.def Info: cluster_som.png  used on input line 346.
+(pdftex.def)             Requested size: 242.67355pt x 79.79974pt.
+
+Underfull \hbox (badness 5302) in paragraph at lines 367--368
 \T1/times/n/n/10 oekonomik gradyan'' olu≥-tur-dußun-dan, yoßunluk-tabanl^^Y
- []
-
-
-Underfull \hbox (badness 1622) in paragraph at lines 370--371
-$\OT1/cmr/m/n/10 12 \OMS/cmsy/m/n/10 ^^B \OT1/cmr/m/n/10 12$ \T1/times/n/n/10 M
-in-i-Som ^^Yz-garas^^Y (ìekil []15[]) en s^^Yn^^Yf-organize
- []
-
-
-Underfull \hbox (badness 1881) in paragraph at lines 370--371
-\OMS/cmsy/m/n/10 ^^U \OT1/cmr/m/n/10 %90$ \T1/times/n/n/10 safl^^Yßa ula≥a-cak 
-≥ek-ilde or-taya ko-yar. Bo≥ ol-
- []
-
-
-Underfull \hbox (badness 1460) in paragraph at lines 374--375
-\T1/times/n/n/10 Hipotez testi iÁin \T1/pcr/n/n/10 PctKids2Par \T1/times/n/n/10
- ˆzel-lißi (iki-ebeveynli
  []
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 375.
+Package pdftex.def Info: notaglinelogo.png  used on input line 368.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1405,46 +1390,69 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.375 \begin{align*}
-                     [9 <./cluster_kmeans.png> <./cluster_dbscan.png> <./cluste
-r_tsne.png> <./cluster_som.png>]
-Overfull \hbox (16.76746pt too wide) in paragraph at lines 385--394
+l.368 
+       [9 <./cluster_kmeans.png> <./cluster_dbscan.png> <./cluster_tsne.png> <.
+/cluster_som.png>]
+Underfull \hbox (badness 1622) in paragraph at lines 371--372
+$\OT1/cmr/m/n/10 12 \OMS/cmsy/m/n/10 ^^B \OT1/cmr/m/n/10 12$ \T1/times/n/n/10 M
+in-i-Som ^^Yz-garas^^Y (ìekil []15[]) en s^^Yn^^Yf-organize
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 371--372
+\OMS/cmsy/m/n/10 ^^U \OT1/cmr/m/n/10 %90$ \T1/times/n/n/10 safl^^Yßa ula≥a-cak 
+≥ek-ilde or-taya ko-yar. Bo≥ ol-
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 375--376
+\T1/times/n/n/10 Hipotez testi iÁin \T1/pcr/n/n/10 PctKids2Par \T1/times/n/n/10
+ ˆzel-lißi (iki-ebeveynli
+ []
+
+
+Overfull \hbox (56.37312pt too wide) in paragraph at lines 386--395
  [][] 
  []
 
 
-Underfull \hbox (badness 3128) in paragraph at lines 396--397
-\T1/times/n/n/10 Á^^Ykar-mak ˆrnek or-ta-la-malar^^Yn^^Y neredeyse deßi≥tirmezk
-en
- []
-
-
-Underfull \hbox (badness 1442) in paragraph at lines 400--401
+Underfull \hbox (badness 1442) in paragraph at lines 401--402
 \T1/times/n/n/10 lik seÁimi $\OT1/cmr/m/n/10 122$ \T1/times/n/n/10 ˆngˆr¸c¸y¸ r
 e-dun-dant ol-mayan $\OT1/cmr/m/n/10 43$ \T1/times/n/n/10 ˆzel-
  []
 
 
-Underfull \hbox (badness 3312) in paragraph at lines 400--401
-\T1/times/n/n/10 suÁ oran^^Y ¸Á s^^Yn^^Yfa ayr^^Y≥t^^Yr^^Ylm^^Y≥t^^Yr. ìu tu-ta
-rl^^Y tablo or-
+Underfull \hbox (badness 6961) in paragraph at lines 403--404
+[]\T1/times/n/n/10 ùlk olarak, aile-yap^^Ys^^Y ve sosy-oekonomik tem-sil-ciler
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 400--401
-\T1/times/n/n/10 s^^Yra uyumu $\OT1/cmr/m/n/10 0[]97$\T1/times/n/n/10 ); veri-g
-¸d¸ml¸ k¸me ayr^^Yca a≥^^Yr^^Y kal-a-
+Overfull \hbox (69.65645pt too wide) in paragraph at lines 403--404
+\T1/times/n/n/10 (\T1/pcr/n/n/10 PctKids2Par\T1/times/n/n/10 , \T1/pcr/n/n/10 P
+ctIlleg\T1/times/n/n/10 , \T1/pcr/n/n/10 PctPopUnderPov\T1/times/n/n/10 , \T1/p
+cr/n/n/10 PctPersDenseHous\T1/times/n/n/10 ,
  []
 
 
-Underfull \hbox (badness 3579) in paragraph at lines 406--407
-\T1/times/n/n/10 T¸m analiz boru hat-t^^Yn^^Y uygu-layan Jupyter not def-teri
+Underfull \hbox (badness 6477) in paragraph at lines 403--404
+\T1/pcr/n/n/10 PctHousOwnOcc\T1/times/n/n/10 , \T1/pcr/n/n/10 medIncome\T1/time
+s/n/n/10 ) en g¸Ál¸ tekil s^^Yn^^Yf
  []
 
-LaTeX Font Info:    Calculating math sizes for size <7.61> on input line 410.
+
+Underfull \hbox (badness 5847) in paragraph at lines 403--404
+\T1/times/n/n/10 sinyalini ta≥^^Yr; bu hem Pear-son hem Spear-man ko-re-
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 403--404
+\OT1/cmr/m/n/10 0[]97$\T1/times/n/n/10 ); veri-g¸d¸ml¸ k¸me ayr^^Yca a≥^^Yr^^Y 
+kal-a-bal^^Yk-la≥-may^^Y
+ []
+
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 421.
+Package pdftex.def Info: notaglinelogo.png  used on input line 404.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1461,58 +1469,234 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[10pdfTeX warning (ext4): destination with the same identifier (name{appendix.A
+[10]
+<correlation_heatmap_annotated.png, id=319, 1447.4075pt x 1309.693pt>
+File: correlation_heatmap_annotated.png Graphic file (type png)
+<use correlation_heatmap_annotated.png>
+Package pdftex.def Info: correlation_heatmap_annotated.png  used on input line 
+416.
+(pdftex.def)             Requested size: 638.39795pt x 577.6656pt.
+
+Underfull \hbox (badness 1448) in paragraph at lines 424--425
+\T1/times/n/n/10 luk ve evlilik-d^^Y≥^^Y doßum poz-i-tif y¸k-lenirken; gelir, i
+ki-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
+[]\T1/pcr/m/n/8 PctPopUnderPov $\OT1/cmr/m/n/8 +0[]32$\T1/times/m/n/8 , \T1/pcr
+/m/n/8 medIncome
+ []
+
+
+Underfull \hbox (badness 2689) in paragraph at lines 435--436
+\OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0[]31$\T1/times/m/n/8 , \T1/pcr/m/n/8 PctKids
+2Par $\OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0[]31$\T1/times/m/n/8 , \T1/pcr/m/n/8 P
+ctIlleg
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
+\OT1/cmr/m/n/8 +0[]26$\T1/times/m/n/8 , \T1/pcr/m/n/8 PctHousOwnOcc $\OMS/cmsy/
+m/n/8 ^^@\OT1/cmr/m/n/8 0[]25$\T1/times/m/n/8 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+[]\T1/pcr/m/n/8 PctForeignBorn $\OT1/cmr/m/n/8 +0[]32$\T1/times/m/n/8 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+\T1/pcr/m/n/8 racePctAsian $\OT1/cmr/m/n/8 +0[]30$\T1/times/m/n/8 , \T1/pcr/m/n
+/8 NumImmig
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+\OT1/cmr/m/n/8 +0[]27$\T1/times/m/n/8 , \T1/pcr/m/n/8 PctBornSameState
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+\OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0[]25$\T1/times/m/n/8 , \T1/pcr/m/n/8 PctPers
+DenseHous
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+\OT1/cmr/m/n/8 +0[]24$\T1/times/m/n/8 , \T1/pcr/m/n/8 MedOwnCostPctInc $\OT1/cm
+r/m/n/8 +0[]24$\T1/times/m/n/8 ,
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 437--438
+\T1/pcr/m/n/8 racePctHisp $\OT1/cmr/m/n/8 +0[]22$\T1/times/m/n/8 , \T1/pcr/m/n/
+8 PctVacMore6Mos
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+[]\T1/pcr/m/n/8 MedYrHousBuilt $\OT1/cmr/m/n/8 +0[]38$\T1/times/m/n/8 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+\T1/pcr/m/n/8 PctUsePubTrans $\OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0[]33$\T1/times
+/m/n/8 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+\T1/pcr/m/n/8 PctSameHouse85 $\OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0[]32$\T1/times
+/m/n/8 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+\T1/pcr/m/n/8 agePct65up $\OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0[]29$\T1/times/m/n
+/8 , \T1/pcr/m/n/8 PopDens $\OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0[]28$\T1/times/m
+/n/8 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+\T1/pcr/m/n/8 MedOwnCostPctIncNoMtg $\OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0[]26$\T
+1/times/m/n/8 ,
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 439--440
+\T1/pcr/m/n/8 pctWFarmSelf $\OT1/cmr/m/n/8 +0[]26$\T1/times/m/n/8 , \T1/pcr/m/n
+/8 householdsize
+ []
+
+
+Overfull \hbox (15.87665pt too wide) in paragraph at lines 431--446
+ [][] 
+ []
+
+
+Overfull \hbox (74.97118pt too wide) in paragraph at lines 458--473
+ [][] 
+ []
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 473.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[11pdfTeX warning (ext4): destination with the same identifier (name{appendix.A
 ppendix.A}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.421 \bibitem{liu2008isolation}
-                                ]
+l.473 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{appendix.Appendix.A}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.473 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{appendix.Appendix.A}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.473 \end{table}
+                 ]
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 473.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[12 <./correlation_heatmap_annotated.png>]pdfTeX warning (ext4): destination wi
+th the same identifier (name{appendix.Appendix.A}) has been already used, dupli
+cate ignored
+<to be read again> 
+                   \relax 
+l.476 \section{Veri ve Kod Eri≈üilebilirliƒüi}
+                                              
+Underfull \hbox (badness 4120) in paragraph at lines 478--479
+\T1/times/n/n/10 scikit-learn [[]6[]], seaborn ve Min-i-Som [[]15[]] kul-lan^^Y
+larak
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <7.61> on input line 482.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 445.
+(hyperref)                be the same. Added a new anchor on input line 517.
 
-<serkan_vek.jpg, id=305, 803.0pt x 803.0pt>
+<serkan_vek.jpg, id=348, 803.0pt x 803.0pt>
 File: serkan_vek.jpg Graphic file (type jpg)
 <use serkan_vek.jpg>
-Package pdftex.def Info: serkan_vek.jpg  used on input line 445.
+Package pdftex.def Info: serkan_vek.jpg  used on input line 517.
 (pdftex.def)             Requested size: 72.26688pt x 72.26688pt.
 File: serkan_vek.jpg Graphic file (type jpg)
 <use serkan_vek.jpg>
-Package pdftex.def Info: serkan_vek.jpg  used on input line 445.
+Package pdftex.def Info: serkan_vek.jpg  used on input line 517.
 (pdftex.def)             Requested size: 72.26688pt x 72.26688pt.
 
-Underfull \hbox (badness 4492) in paragraph at lines 445--447
+Underfull \hbox (badness 4492) in paragraph at lines 517--519
 []\T1/formata/m/n/8 Serkan Eren \T1/times/n/n/8 B.Sc. dere-cesini 2023 y^^Yl^^Y
 nda
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 445--447
+Underfull \hbox (badness 1648) in paragraph at lines 517--519
 \T1/times/n/n/8 lißi Bˆl¸m¸'nden alm^^Y≥ olup, h‚li-haz^^Yrda ayn^^Y
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 445--447
+Underfull \hbox (badness 3199) in paragraph at lines 517--519
 \T1/times/n/n/8 ¸niver-sit-ede Ya-pay Zek‚ alan^^Ynda M.Sc. pro-
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 445--447
+Underfull \hbox (badness 1694) in paragraph at lines 517--519
 \T1/times/n/n/8 hat-lar^^Y ve gˆm¸l¸ yaz^^Yl^^Ym en-te-grasy-onu konu-
  []
 
 
-Underfull \hbox (badness 4144) in paragraph at lines 445--447
+Underfull \hbox (badness 4144) in paragraph at lines 517--519
 \T1/times/n/n/8 lar^^Ynda Áal^^Y≥-malar y¸r¸t-mek-te-dir. Mesleki ilgi
  []
 
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 449.
+Package pdftex.def Info: bullet.png  used on input line 521.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 450.
+Package pdftex.def Info: notaglinelogo.png  used on input line 522.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1529,23 +1713,21 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[11
-
- <./serkan_vek.jpg>] (./crime_tr.aux)
+[13 <./serkan_vek.jpg>] (./crime_tr.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `crime_tr.out' has not changed.
-(rerunfilecheck)             Checksum: D0F32F0ADF0013BF2D1B582C92294659;3666.
+(rerunfilecheck)             Checksum: 0338CF6B0ED953B2A8FF31D0E928518B;4474.
  ) 
 Here is how much of TeX's memory you used:
- 11664 strings out of 480247
- 182996 string characters out of 5896151
- 492919 words of memory out of 5000000
- 29329 multiletter control sequences out of 15000+600000
- 630566 words of font info for 216 fonts, out of 8000000 for 9000
+ 11822 strings out of 480247
+ 185719 string characters out of 5896151
+ 495911 words of memory out of 5000000
+ 29475 multiletter control sequences out of 15000+600000
+ 632108 words of font info for 217 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 70i,13n,76p,2951b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,13n,76p,2815b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1566,10 +1748,10 @@ blic/amsfonts/cm/cmsy9.pfb><./t1-formata-bold.pfb><./t1-formata-condmedium.pfb>
 b><./t1-formata-regular.pfb><./t1-giovannistd-bookitalic.pfb><./t1-times-bold.p
 fb><./t1-times-italic.pfb><./t1-times.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/courier/ucrr8a.pfb>
-Output written on crime_tr.pdf (11 pages, 3573308 bytes).
+Output written on crime_tr.pdf (13 pages, 4960969 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 337 compressed objects within 4 object streams
- 73 named destinations out of 1000 (max. 500000)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 491 PDF objects out of 1000 (max. 8388607)
+ 376 compressed objects within 4 object streams
+ 78 named destinations out of 1000 (max. 500000)
+ 294 words of extra memory for PDF output out of 10000 (max. 10000000)
 

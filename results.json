@@ -341,6 +341,7 @@
     "36": {
       "t": 9.011385090943604,
       "p": 2.8492779833652507e-13,
+      "cohens_d": 2.124003835229858,
       "mean_low": 0.7586111111111111,
       "mean_high": 0.4630555555555555,
       "std_low": 0.13045311752892635,
@@ -349,6 +350,7 @@
     "64": {
       "t": 12.730994533215325,
       "p": 7.348935254331148e-23,
+      "cohens_d": 2.250543141421355,
       "mean_low": 0.7925,
       "mean_high": 0.44421875,
       "std_low": 0.11220729116450584,
@@ -357,7 +359,8 @@
   },
   "ttest_population": {
     "t": 39.28346973432519,
-    "p": 2.626902312067897e-207
+    "p": 2.626902312067897e-207,
+    "cohens_d": 2.2762981738379873
   },
   "feature_for_test": "PctKids2Par",
   "class_corr_top_pearson": {
@@ -385,5 +388,197 @@
     "PctEmploy": -0.3438737016549017
   },
   "pearson_spearman_rank_agreement": 0.9685895499848988,
-  "som_mean_cell_purity": 0.6747061474693591
+  "som_mean_cell_purity": 0.6747061474693591,
+  "pca_loadings_top": {
+    "PC1": {
+      "explained_var_ratio": 0.1861727963751895,
+      "fisher": 0.560667232698521,
+      "top_loadings": [
+        {
+          "feature": "PctPopUnderPov",
+          "loading": 0.3182412244726827
+        },
+        {
+          "feature": "medIncome",
+          "loading": -0.31366058817569803
+        },
+        {
+          "feature": "PctKids2Par",
+          "loading": -0.30704422771094947
+        },
+        {
+          "feature": "PctIlleg",
+          "loading": 0.2554226879018264
+        },
+        {
+          "feature": "PctHousOwnOcc",
+          "loading": -0.247229576431127
+        },
+        {
+          "feature": "PctEmploy",
+          "loading": -0.23631094077014014
+        },
+        {
+          "feature": "blackPerCap",
+          "loading": -0.23201308106393648
+        },
+        {
+          "feature": "HispPerCap",
+          "loading": -0.22202111861534576
+        }
+      ]
+    },
+    "PC2": {
+      "explained_var_ratio": 0.1428852027818848,
+      "fisher": 0.06122254691315329,
+      "top_loadings": [
+        {
+          "feature": "PctForeignBorn",
+          "loading": 0.31568257777965225
+        },
+        {
+          "feature": "racePctAsian",
+          "loading": 0.2964049262624465
+        },
+        {
+          "feature": "NumImmig",
+          "loading": 0.27135119830712157
+        },
+        {
+          "feature": "PctBornSameState",
+          "loading": -0.2453261329466891
+        },
+        {
+          "feature": "PctPersDenseHous",
+          "loading": 0.24442772139415148
+        },
+        {
+          "feature": "MedOwnCostPctInc",
+          "loading": 0.23537952389494748
+        },
+        {
+          "feature": "racePctHisp",
+          "loading": 0.22118446235597372
+        },
+        {
+          "feature": "PctVacMore6Mos",
+          "loading": -0.2189490174620814
+        }
+      ]
+    },
+    "PC3": {
+      "explained_var_ratio": 0.08562335033754687,
+      "fisher": 0.009583349668343918,
+      "top_loadings": [
+        {
+          "feature": "MedYrHousBuilt",
+          "loading": 0.380619567992889
+        },
+        {
+          "feature": "PctUsePubTrans",
+          "loading": -0.3326508263095507
+        },
+        {
+          "feature": "PctSameHouse85",
+          "loading": -0.3146576237993047
+        },
+        {
+          "feature": "agePct65up",
+          "loading": -0.2920817788588172
+        },
+        {
+          "feature": "PopDens",
+          "loading": -0.2827533132416642
+        },
+        {
+          "feature": "MedOwnCostPctIncNoMtg",
+          "loading": -0.2565487952040662
+        },
+        {
+          "feature": "pctWFarmSelf",
+          "loading": 0.2545877796596473
+        },
+        {
+          "feature": "householdsize",
+          "loading": 0.2175630032897941
+        }
+      ]
+    },
+    "PC4": {
+      "explained_var_ratio": 0.06399724492238157,
+      "fisher": 0.01634097520259422,
+      "top_loadings": [
+        {
+          "feature": "PctEmplProfServ",
+          "loading": 0.4005345255264443
+        },
+        {
+          "feature": "racePctHisp",
+          "loading": -0.347342047849036
+        },
+        {
+          "feature": "PctBSorMore",
+          "loading": 0.32797740811071024
+        },
+        {
+          "feature": "PctPersDenseHous",
+          "loading": -0.32709782281369837
+        },
+        {
+          "feature": "MalePctNevMarr",
+          "loading": 0.2891124013834667
+        },
+        {
+          "feature": "agePct12t29",
+          "loading": 0.23555020678256303
+        },
+        {
+          "feature": "PctForeignBorn",
+          "loading": -0.22237378563270457
+        },
+        {
+          "feature": "PctWorkMom",
+          "loading": 0.20661229517398585
+        }
+      ]
+    },
+    "PC5": {
+      "explained_var_ratio": 0.055353275371798884,
+      "fisher": 0.03474927668774849,
+      "top_loadings": [
+        {
+          "feature": "LandArea",
+          "loading": 0.4510937095774291
+        },
+        {
+          "feature": "population",
+          "loading": 0.4309010429285509
+        },
+        {
+          "feature": "LemasPctOfficDrugUn",
+          "loading": 0.2975620657691338
+        },
+        {
+          "feature": "MalePctNevMarr",
+          "loading": -0.24113239745268342
+        },
+        {
+          "feature": "NumImmig",
+          "loading": 0.22719965471139947
+        },
+        {
+          "feature": "PctEmplProfServ",
+          "loading": -0.21687670642782947
+        },
+        {
+          "feature": "PctHousOccup",
+          "loading": -0.21102563584831052
+        },
+        {
+          "feature": "householdsize",
+          "loading": -0.21074835097587902
+        }
+      ]
+    }
+  }
 }

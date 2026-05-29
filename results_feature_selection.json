@@ -4,6 +4,17 @@
   "n_features_total": 122,
   "n_features_after_missing": 100,
   "n_clusters": 43,
+  "threshold_sweep": {
+    "0.20": 57,
+    "0.25": 52,
+    "0.30": 48,
+    "0.35": 43,
+    "0.40": 41,
+    "0.45": 37,
+    "0.50": 34,
+    "0.55": 31,
+    "0.60": 29
+  },
   "n_overrides": 12,
   "overrides": {
     "RentHighQ": "medIncome",
